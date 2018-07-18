@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  <meta name=referrer content=never>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Hexo</title>
+  <meta name="description" content="iOS 7 引入 JSCore， iOS8 后引入WebKit，提供WKScriptMessageHandler   JSContext：给JavaScript提供运行的上下文环境,通过-evaluateScript:方法就可以执行一JS代码 JSValue：封装了JS与ObjC中的对应的类型，以及调用JS的API等 JSManagedValue：管理数据和方法的类 JSVirtualMachi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyBlog">
+<meta property="og:url" content="https://Alexzzn.github.io/2018/07/18/iOS/web和js交互小结/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="iOS 7 引入 JSCore， iOS8 后引入WebKit，提供WKScriptMessageHandler   JSContext：给JavaScript提供运行的上下文环境,通过-evaluateScript:方法就可以执行一JS代码 JSValue：封装了JS与ObjC中的对应的类型，以及调用JS的API等 JSManagedValue：管理数据和方法的类 JSVirtualMachi">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-18T07:07:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MyBlog">
+<meta name="twitter:description" content="iOS 7 引入 JSCore， iOS8 后引入WebKit，提供WKScriptMessageHandler   JSContext：给JavaScript提供运行的上下文环境,通过-evaluateScript:方法就可以执行一JS代码 JSValue：封装了JS与ObjC中的对应的类型，以及调用JS的API等 JSManagedValue：管理数据和方法的类 JSVirtualMachi">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://Alexzzn.github.io/2018/07/18/iOS/web和js交互小结/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="MyBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <!-- font-awesome CSS -->
+  <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+    
+    
+
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav">
+        
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">96</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/银行卡文档/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/Block_OC_1/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/WKWebView/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/Web/phpѧϰ1/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/Web/ESLint配置/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-iOS/web和js交互小结" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/07/18/iOS/web和js交互小结/" class="article-date">
+	  <time datetime="2018-07-18T07:07:52.000Z" itemprop="datePublished">2018-07-18</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/07/18/iOS/web和js交互小结/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>iOS 7 引入 JSCore， iOS8 后引入WebKit，提供WKScriptMessageHandler</p>
+</blockquote>
+<ul>
+<li>JSContext：给JavaScript提供运行的上下文环境,通过-evaluateScript:方法就可以执行一JS代码</li>
+<li>JSValue：封装了JS与ObjC中的对应的类型，以及调用JS的API等</li>
+<li>JSManagedValue：管理数据和方法的类</li>
+<li>JSVirtualMachine：处理线程相关，使用较少</li>
+<li>JSExport：这是一个协议，如果采用协议的方法交互，自己定义的协议必须遵守此协议，在协议中声明的API都会在JS中暴露出来，才能调用</li>
+</ul>
+<blockquote>
+<p>ObjC调用JS</p>
+</blockquote>
+<ul>
+<li>-(JSValue <em>)evaluateScript:(NSString </em>)script;方法就可以执行一段JavaScript脚本</li>
+<li>-(JSValue <em>)callWithArguments:(NSArray </em>)arguments;方法可以反过来将参数传进去来调用方法</li>
+<li><blockquote>
+<p>JS调用OC</p>
+</blockquote>
+</li>
+<li><p>Blcok</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">JSContext *context = [[JSContext alloc] init];</span><br><span class="line">// 定义一个block</span><br><span class="line">context[@&quot;fun1&quot;] = ^() &#123;</span><br><span class="line">               </span><br><span class="line">  NSArray *args = [JSContext currentArguments];</span><br><span class="line">  for (JSValue *jsVal in args) &#123;</span><br><span class="line">   NSLog(@&quot;%@&quot;, jsVal);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  JSValue *this = [JSContext currentThis];</span><br><span class="line">  NSLog(@&quot;this: %@&quot;,this);</span><br><span class="line">&#125;;</span><br><span class="line">// 调用js的fun1方法</span><br><span class="line"> [context evaluateScript:@&quot;fun1(&apos;arr&apos;, [a, b],&#123; a:&apos;b&apos;&#125;);&quot;];</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>建立模型 遵循 jsexport协议</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">MyJSModel</span>:<span class="title">JSExport</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// show showAlert</span></span><br><span class="line">	<span class="function"><span class="keyword">func</span> <span class="title">showAlert</span><span class="params">(title:String,msg:String)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyJSModelManger</span>:<span class="title">MyJSModel</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> context:<span class="type">JSContext</span>?</span><br><span class="line">	<span class="keyword">var</span> webview:<span class="type">WKWebView</span>?</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 执行代理方法</span></span><br><span class="line">	<span class="function"><span class="keyword">func</span> <span class="title">showAlert</span><span class="params">(title:String,msg:String)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">debugPrint</span>(title,msg)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注入模型</p>
+</blockquote>
+<ul>
+<li>定义代理协议（声明js要执行的方法）</li>
+<li>遵守JSExport协议</li>
+<li>实体类(MyJSModelManager)代理此协议(声明变量 JSContext，UIWebView)</li>
+<li>注入模型<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">self.jsContext = [webView valueForKeyPath:@&quot;documentView.webView.mainFrame.javaScriptContext&quot;];</span><br><span class="line"></span><br><span class="line">MyJSModelManager *model = [MyJSModelManager new];</span><br><span class="line">self.jsContext[@&quot;mymodel&quot;] = model;</span><br><span class="line">model.jsContext = self.jsContext;</span><br><span class="line">model.webView = self.webView;</span><br><span class="line"> // 异常</span><br><span class="line"> self.jsContext.exceptionHandler =^(JSContext *context,JSValue *exceptionValue) &#123;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>web端调用</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// html5</span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"margin-top: 100px"</span>&gt;</span> </span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>JsToNative/h1&gt; </span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"show"</span> <span class="attr">onclick</span>=<span class="string">"mymodel.showAlert()"</span>&gt;</span> </span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://Alexzzn.github.io/2018/07/18/iOS/web和js交互小结/" title="" target="_blank" rel="external">https://Alexzzn.github.io/2018/07/18/iOS/web和js交互小结/</a>
+    </li>
+    
+    
+  </ul>
+</blockquote>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2018/07/18/Android/kotlin ѧϰ/" title="(no title)"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2018/07/18/Android/RxJava/" title="(no title)"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+  
+    
+    
+    
+        <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+    
+    
+    
+        
+
+
+    
+    
+        
+    
+    
+
+
+
+</body>
+</html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  <meta name=referrer content=never>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Hexo</title>
+  <meta name="description" content="`c++ #include  int num[] = {8,6,3,5,1,3,7,9}; // 8 void swap(int &amp;amp;a,int &amp;amp;b) { int temp = 0; temp = a; a = b; b = temp; } // 冒泡排序void sort1(int arr[],int n) { int i,j = 0; for (i = 0; i &amp;lt; n;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyBlog">
+<meta property="og:url" content="https://Alexzzn.github.io/2018/07/18/编程/常用n2排序算法/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="`c++ #include  int num[] = {8,6,3,5,1,3,7,9}; // 8 void swap(int &amp;amp;a,int &amp;amp;b) { int temp = 0; temp = a; a = b; b = temp; } // 冒泡排序void sort1(int arr[],int n) { int i,j = 0; for (i = 0; i &amp;lt; n;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-18T07:07:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MyBlog">
+<meta name="twitter:description" content="`c++ #include  int num[] = {8,6,3,5,1,3,7,9}; // 8 void swap(int &amp;amp;a,int &amp;amp;b) { int temp = 0; temp = a; a = b; b = temp; } // 冒泡排序void sort1(int arr[],int n) { int i,j = 0; for (i = 0; i &amp;lt; n;">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://Alexzzn.github.io/2018/07/18/编程/常用n2排序算法/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="MyBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <!-- font-awesome CSS -->
+  <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+    
+    
+
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav">
+        
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">96</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/银行卡文档/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/Block_OC_1/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/WKWebView/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/Web/phpѧϰ1/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/Web/ESLint配置/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-编程/常用n2排序算法" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/07/18/编程/常用n2排序算法/" class="article-date">
+	  <time datetime="2018-07-18T07:07:50.000Z" itemprop="datePublished">2018-07-18</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/07/18/编程/常用n2排序算法/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <p><code>`</code>c++</p>
+<p>#include <iostream></iostream></p>
+<p>int num[] = {8,6,3,5,1,3,7,9}; // 8</p>
+<p>void swap(int &amp;a,int &amp;b) {</p>
+<pre><code>int temp = 0;
+temp = a;
+a = b;
+b = temp;
+</code></pre><p>}</p>
+<p>// 冒泡排序<br>void sort1(int arr[],int n) {</p>
+<pre><code>int i,j = 0;
+for (i = 0; i &lt; n; ++i) {
+
+    for (j = 0; j &lt; n - i -1; ++j) {
+
+        if (arr[j]&gt;arr[j+1]){
+
+            swap(arr[j],arr[j+1]);
+        }
+    }
+}
+</code></pre><p>}</p>
+<p>// 选择排序<br>void sort2(int arr[],int n) {</p>
+<pre><code>for (int i = 0; i &lt; n; ++i) {
+
+    // 每次循环第一个i默认最小值
+    int minIndex = i;
+    for (int j = i+1; j &lt; n; ++j) {
+
+        if (arr[minIndex] &gt; arr[j]) {
+            minIndex = j;
+        }
+    }
+    // 替换最小值
+    swap(arr[minIndex],arr[i]);
+}
+</code></pre><p>}</p>
+<p>// 插入排序</p>
+<p>void sort3(int arr[], int n) {</p>
+<pre><code>for (int i = 1; i &lt; n; ++i) {
+
+    // 对比i前几个元素
+    for (int j = i; j &gt;= 1; j--) {
+
+        if (arr[j]&lt;arr[j-1]) {
+            swap(arr[j],arr[j-1]);
+        }
+    }
+}
+</code></pre><p>}</p>
+<p>//  插入排序优化<br>void sort4(int arr[],int n) {</p>
+<pre><code>for (int i = 1; i &lt; n; i++) {
+    /* code */
+    int j = 0;
+    int temp = arr[i];
+
+    for (j = i; j &gt; 0 &amp;&amp; arr[j-1]&gt;temp; j--) {
+        /* code */
+        arr[j] = arr[j-1];
+    }
+    arr[j] = temp;
+}
+</code></pre><p>}</p>
+<p>int main(int argc, char const <em>argv[])<br>{<br>    /</em> code */<br>    sort4(num,8);<br>    for (int i = 0; i &lt; 8; ++i) {<br>        printf(“%d\n”, num[i]);<br>    }<br>    return 0;<br>}</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://Alexzzn.github.io/2018/07/18/编程/常用n2排序算法/" title="" target="_blank" rel="external">https://Alexzzn.github.io/2018/07/18/编程/常用n2排序算法/</a>
+    </li>
+    
+    
+  </ul>
+</blockquote>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2018/07/18/Web/Promise小结 js/" title="(no title)"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2018/07/18/iOS/swift4 字符串/" title="(no title)"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+  
+    
+    
+    
+        <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+    
+    
+    
+        
+
+
+    
+    
+        
+    
+    
+
+
+
+</body>
+</html>

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  <meta name=referrer content=never>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Hexo</title>
+  <meta name="description" content="runtime oc 参考地址：http://www.jianshu.com/p/f900de4a1495   对象instance –&amp;gt; 类class –&amp;gt; 方法 –&amp;gt; method(-&amp;gt;sel -&amp;gt; imp) –&amp;gt;实现函数  运行时机制最关键核心是objc_msgSend函数，通过给target（类）发送selecter（SEL）来传递消息，通过imp 指针">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyBlog">
+<meta property="og:url" content="https://Alexzzn.github.io/2018/07/18/iOS/Runtime_OC/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="runtime oc 参考地址：http://www.jianshu.com/p/f900de4a1495   对象instance –&amp;gt; 类class –&amp;gt; 方法 –&amp;gt; method(-&amp;gt;sel -&amp;gt; imp) –&amp;gt;实现函数  运行时机制最关键核心是objc_msgSend函数，通过给target（类）发送selecter（SEL）来传递消息，通过imp 指针">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-18T07:07:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MyBlog">
+<meta name="twitter:description" content="runtime oc 参考地址：http://www.jianshu.com/p/f900de4a1495   对象instance –&amp;gt; 类class –&amp;gt; 方法 –&amp;gt; method(-&amp;gt;sel -&amp;gt; imp) –&amp;gt;实现函数  运行时机制最关键核心是objc_msgSend函数，通过给target（类）发送selecter（SEL）来传递消息，通过imp 指针">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://Alexzzn.github.io/2018/07/18/iOS/Runtime_OC/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="MyBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <!-- font-awesome CSS -->
+  <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+    
+    
+
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav">
+        
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">96</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/银行卡文档/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/Block_OC_1/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/WKWebView/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/Web/phpѧϰ1/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/Web/ESLint配置/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-iOS/Runtime_OC" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/07/18/iOS/Runtime_OC/" class="article-date">
+	  <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/07/18/iOS/Runtime_OC/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <h3 id="runtime-oc"><a href="#runtime-oc" class="headerlink" title="runtime oc"></a>runtime oc</h3><blockquote>
+<p>参考地址：<a href="http://www.jianshu.com/p/f900de4a1495" target="_blank" rel="noopener">http://www.jianshu.com/p/f900de4a1495</a></p>
+</blockquote>
+<blockquote>
+<p>对象instance –&gt; 类class –&gt; 方法 –&gt; method(-&gt;sel -&gt; imp) –&gt;实现函数</p>
+</blockquote>
+<p>运行时机制最关键核心是objc_msgSend函数，通过给target（类）发送selecter（SEL）来传递消息，通过imp 指针找到method入口,找到匹配的IMP，指向实现的C函数。</p>
+<p>运行时可以通过C操作函数，动态地创建修改类信息，动态绑定方法和重写实现，灵活地实现一些自定义功能</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">- 类相关：</span><br><span class="line">           + 数据类型：<span class="class"><span class="keyword">class</span>，<span class="title">object</span>；</span></span><br><span class="line"><span class="class">                    - <span class="title">isa</span> 元类</span></span><br><span class="line"><span class="class">                    - <span class="title">superClass</span> 根类</span></span><br><span class="line"><span class="class">           + 操作函数:</span></span><br><span class="line"><span class="class">                     - <span class="title">class_</span>：</span></span><br><span class="line"><span class="class">                               + <span class="title">get</span>: 类名，父类; 实例变量，成员变量；属性；实例方法，类方法，方法实现；</span></span><br><span class="line"><span class="class">                               + <span class="title">copy</span>: 成员变量列表；属性列表；方法列表；协议列表；</span></span><br><span class="line"><span class="class">                               + <span class="title">add</span>: 成员变量；属性；方法；协议；</span></span><br><span class="line"><span class="class">                               + <span class="title">replace</span>：属性；方法；</span></span><br><span class="line"><span class="class">                               + <span class="title">respond</span>:响应方法判断（内省）</span></span><br><span class="line"><span class="class">                               + <span class="title">isMetaclass</span>:元类判断（内省）</span></span><br><span class="line"><span class="class">                               + <span class="title">conform</span>:遵循协议判断（内省）</span></span><br><span class="line"><span class="class">                     - <span class="title">objc_</span>：</span></span><br><span class="line"><span class="class">                               + <span class="title">get</span>: 实例变量；成员变量；类名；类；元类；关联对象；</span></span><br><span class="line"><span class="class">                               + <span class="title">copy</span>: 对象；类；类列表；协议列表；</span></span><br><span class="line"><span class="class">                               + <span class="title">set</span>: 实例变量；成员变量；类；类列表；协议；关联对象；</span></span><br><span class="line"><span class="class">                               + <span class="title">dispose</span>: 对象；</span></span><br><span class="line"><span class="class">                     - 动态创建/销毁类、对象</span></span><br><span class="line"><span class="class">   - 成员变量、属性相关：</span></span><br><span class="line"><span class="class">           + 数据类型：<span class="title">Ivar</span>；<span class="title">objc_property_t</span>；<span class="title">objc_property_attribute_t</span>；</span></span><br><span class="line"><span class="class">           + 操作函数：</span></span><br><span class="line"><span class="class">                      - <span class="title">ivar_</span>：</span></span><br><span class="line"><span class="class">                      - <span class="title">property_</span>：</span></span><br><span class="line"><span class="class">   - 方法消息相关：</span></span><br><span class="line"><span class="class">           + 数据类型：<span class="title">SEL</span>；<span class="title">IMP</span>; <span class="title">Method</span>；方法缓存</span></span><br><span class="line"><span class="class">           + 操作函数: </span></span><br><span class="line"><span class="class">                      - <span class="title">method_</span>：</span></span><br><span class="line"><span class="class">                               + <span class="title">invoke</span>: 方法实现的返回值；</span></span><br><span class="line"><span class="class">                               + <span class="title">get</span>: 方法名；方法实现；参数与返回值相关；</span></span><br><span class="line"><span class="class">                               + <span class="title">set</span>：方法实现；</span></span><br><span class="line"><span class="class">                               + <span class="title">exchange</span>：交换方法实现</span></span><br><span class="line"><span class="class">           + 方法调用：<span class="title">msgSend</span>函数（找到方法实现）</span></span><br><span class="line"><span class="class">           + 消息转发：</span></span><br><span class="line"><span class="class">                     - <span class="title">Method</span> <span class="title">Resolution</span></span></span><br><span class="line"><span class="class">                     - <span class="title">Fast</span> <span class="title">Forwarding</span></span></span><br><span class="line"><span class="class">                     - <span class="title">Normal</span> <span class="title">Forwarding</span></span></span><br><span class="line"><span class="class">   - 协议相关：</span></span><br><span class="line"><span class="class">           + 数据类型：<span class="title">Protocol</span>；</span></span><br><span class="line"><span class="class">           + 操作函数：</span></span><br><span class="line"><span class="class">                      - <span class="title">protocol_</span>：</span></span><br><span class="line"><span class="class">                               + <span class="title">get</span>: 协议；属性；</span></span><br><span class="line"><span class="class">                               + <span class="title">copy</span>：协议列表；属性列表；</span></span><br><span class="line"><span class="class">                               + <span class="title">add</span>：属性；方法；协议；</span></span><br><span class="line"><span class="class">                               + <span class="title">isEqual</span>：判断两协议等同；</span></span><br><span class="line"><span class="class">                               + <span class="title">comform</span>：判断是否遵循协议；</span></span><br><span class="line"><span class="class">   - 其他：类名；版本号；类信息；</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Method Swizzling;ISA Swizzling；</p>
+</blockquote>
+<p>运行时Runtime的一切都围绕这两个中心：类的动态配置 和 消息传递。通过操作函数来配置类信息，通过msgSend函数传递消息。<br> <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">struct</span> <span class="title">objc_class</span> </span>&#123;</span><br><span class="line">    <span class="type">Class</span> isa  <span class="type">OBJC_ISA_AVAILABILITY</span>;</span><br><span class="line"></span><br><span class="line">#<span class="keyword">if</span> !__OBJC2__</span><br><span class="line">    <span class="type">Class</span> super_class                       <span class="type">OBJC2_UNAVAILABLE</span>;  <span class="comment">// 父类</span></span><br><span class="line"></span><br><span class="line">    const char *name                        <span class="type">OBJC2_UNAVAILABLE</span>;  <span class="comment">// 类名</span></span><br><span class="line">    long version                            <span class="type">OBJC2_UNAVAILABLE</span>;  <span class="comment">// 类的版本信息，默认为0</span></span><br><span class="line">    long info                               <span class="type">OBJC2_UNAVAILABLE</span>;  <span class="comment">// 类信息，供运行期使用的一些位标识</span></span><br><span class="line"></span><br><span class="line">    long instance_size                      <span class="type">OBJC2_UNAVAILABLE</span>;  <span class="comment">// 类的实例变量大小</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">objc_ivar_list</span> *<span class="title">ivars</span>            <span class="title">OBJC2_UNAVAILABLE</span>;  // 类的成员变量链表</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">    <span class="title">struct</span> <span class="title">objc_method_list</span> **<span class="title">methodLists</span>   <span class="title">OBJC2_UNAVAILABLE</span>;  // 方法定义的链表</span></span><br><span class="line"><span class="class">    <span class="title">struct</span> <span class="title">objc_cache</span> *<span class="title">cache</span>                <span class="title">OBJC2_UNAVAILABLE</span>;  // 方法缓存</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">    <span class="title">struct</span> <span class="title">objc_protocol_list</span> *<span class="title">protocols</span>    <span class="title">OBJC2_UNAVAILABLE</span>;  // 协议链表</span></span><br><span class="line"><span class="class">#<span class="title">endif</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">&#125; <span class="title">OBJC2_UNAVAILABLE</span>;</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>数据类型：<br>isa和super_class ：不同的类中可以有相同的方法（同一个类的方法不能同名，哪怕参数类型不同，后面解释…），所以要先确定是那个类。isa和super_class是找到实现函数的关键映射，决定找到存放在哪个类的方法实现。（isa用于自省确定所属类，super_class确定继承关系）。</p>
+</blockquote>
+<p>实例对象的isa指针指向类，类的isa指针指向其元类（metaClass）。对象就是一个含isa指针的结构体。类存储实例对象的方法列表，元类存储类的方法列表，元类也是类对象</p>
+<p>文／楚天舒（简书作者）<br>原文链接：<a href="http://www.jianshu.com/p/f900de4a1495" target="_blank" rel="noopener">http://www.jianshu.com/p/f900de4a1495</a><br>著作权归作者所有，转载请联系作者获得授权，并标注“简书作者”。<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">objc_object</span> </span>&#123;</span><br><span class="line">    <span class="type">Class</span> isa  <span class="type">OBJC_ISA_AVAILABILITY</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">typedef <span class="class"><span class="keyword">struct</span> <span class="title">objc_object</span> *<span class="title">id</span>;</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>向一个Objective-C对象发送消息时，运行时库会根据实例对象的isa指针找到这个实例对象所属的类。Runtime库会在类的方法列表由super_class指针找到父类的方法列表直至根类NSObject中去寻找与消息对应的selector指向的方法。找到后即运行这个方法。</p>
+</blockquote>
+<p>文／楚天舒（简书作者）<br>原文链接：<a href="http://www.jianshu.com/p/f900de4a1495" target="_blank" rel="noopener">http://www.jianshu.com/p/f900de4a1495</a><br>著作权归作者所有，转载请联系作者获得授权，并标注“简书作者”。</p>
+<blockquote>
+<p>class_：get: 类名，父类，元类；实例变量，成员变量；属性；实例方法，类方法，方法实现；<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取类的类名</span></span><br><span class="line">const char * class_getName ( <span class="type">Class</span> cls );</span><br><span class="line"><span class="comment">// 获取类的父类</span></span><br><span class="line"><span class="type">Class</span> class_getSuperclass ( <span class="type">Class</span> cls );</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取实例大小</span></span><br><span class="line">size_t class_getInstanceSize ( <span class="type">Class</span> cls );</span><br><span class="line"><span class="comment">// 获取类中指定名称实例成员变量的信息</span></span><br><span class="line"><span class="type">Ivar</span> class_getInstanceVariable ( <span class="type">Class</span> cls, const char *name );</span><br><span class="line"><span class="comment">// 获取类成员变量的信息</span></span><br><span class="line"><span class="type">Ivar</span> class_getClassVariable ( <span class="type">Class</span> cls, const char *name );</span><br><span class="line"><span class="comment">// 获取指定的属性</span></span><br><span class="line">objc_property_t class_getProperty ( <span class="type">Class</span> cls, const char *name );</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取实例方法</span></span><br><span class="line"><span class="type">Method</span> class_getInstanceMethod ( <span class="type">Class</span> cls, <span class="type">SEL</span> name );</span><br><span class="line"><span class="comment">// 获取类方法</span></span><br><span class="line"><span class="type">Method</span> class_getClassMethod ( <span class="type">Class</span> cls, <span class="type">SEL</span> name );</span><br><span class="line"><span class="comment">// 获取方法的具体实现</span></span><br><span class="line"><span class="type">IMP</span> class_getMethodImplementation ( <span class="type">Class</span> cls, <span class="type">SEL</span> name );</span><br><span class="line"><span class="type">IMP</span> class_getMethodImplementation_stret ( <span class="type">Class</span> cls, <span class="type">SEL</span> name );</span><br><span class="line"></span><br><span class="line">&gt; copy: 成员变量列表；属性列表；方法列表；协议列表；</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取整个成员变量列表</span></span><br><span class="line"><span class="type">Ivar</span> * class_copyIvarList ( <span class="type">Class</span> cls, unsigned int *outCount );</span><br><span class="line"><span class="comment">// 获取属性列表</span></span><br><span class="line">objc_property_t * class_copyPropertyList ( <span class="type">Class</span> cls, unsigned int *outCount );</span><br><span class="line"><span class="comment">// 获取所有方法的列表</span></span><br><span class="line"><span class="type">Method</span> * class_copyMethodList ( <span class="type">Class</span> cls, unsigned int *outCount );</span><br><span class="line"><span class="comment">// 获取类实现的协议列表</span></span><br><span class="line"><span class="type">Protocol</span> * class_copyProtocolList ( <span class="type">Class</span> cls, unsigned int *outCount );</span><br></pre></td></tr></table></figure>
+<p>b、 操作函数:</p>
+<p>method_：<br>invoke: 方法实现的返回值；<br>// 调用指定方法的实现<br>id method_invoke ( id receiver, Method m, … );</p>
+<p>// 调用返回一个数据结构的方法的实现<br>void method_invoke_stret ( id receiver, Method m, … );<br>get: 方法名；方法实现；参数与返回值相关；</p>
+<p>// 获取方法名<br>SEL method_getName ( Method m );</p>
+<p>// 返回方法的实现<br>IMP method_getImplementation ( Method m );<br>// 获取描述方法参数和返回值类型的字符串<br>const char <em> method_getTypeEncoding ( Method m );<br>// 返回方法的参数的个数<br>unsigned int method_getNumberOfArguments ( Method m );<br>// 通过引用返回方法指定位置参数的类型字符串<br>void method_getArgumentType ( Method m, unsigned int index, char </em>dst, size_t dst_len );<br>copy: 返回值类型，参数类型</p>
+<p>// 获取方法的返回值类型的字符串<br>char * method_copyReturnType ( Method m );</p>
+<p>// 获取方法的指定位置参数的类型字符串<br>char * method_copyArgumentType ( Method m, unsigned int index );</p>
+<p>// 通过引用返回方法的返回值类型字符串<br>void method_getReturnType ( Method m, char *dst, size_t dst_len );<br>set：方法实现；</p>
+<p>// 设置方法的实现<br>IMP method_setImplementation ( Method m, IMP imp );<br>exchange：交换方法实现</p>
+<p>// 交换两个方法的实现<br>void method_exchangeImplementations ( Method m1, Method m2 );<br>description : 方法描述</p>
+<p>// 返回指定方法的方法描述结构体<br>struct objc_method_description <em> method_getDescription ( Method m );<br>sel_<br>// 返回给定选择器指定的方法的名称<br>const char </em> sel_getName ( SEL sel );</p>
+<p>// 在Objective-C Runtime系统中注册一个方法，将方法名映射到一个选择器，并返回这个选择器<br>SEL sel_registerName ( const char *str );</p>
+<p>// 在Objective-C Runtime系统中注册一个方法<br>SEL sel_getUid ( const char *str );</p>
+<p>// 比较两个选择器<br>BOOL sel_isEqual ( SEL lhs, SEL rhs );<br>c、方法调用流程：向对象发送消息，实际上是调用objc_msgSend函数，obj_msgSend的实际动作就是：找到这个函数指针，然后调用它。</p>
+<p>id objc_msgSend(receiver self, selector _cmd, arg1, arg2, …)<br>self和_cmd是隐藏参数，在编译期被插入实现代码。<br>self：指向消息的接受者target的对象类型，作为一个占位参数，消息传递成功后self将指向消息的receiver。<br>_cmd: 指向方法实现的SEL类型。</p>
+<p>当向一般对象发送消息时，调用objc_msgSend；当向super发送消息时，调用的是objc_msgSendSuper； 如果返回值是一个结构体，则会调用objc_msgSend_stret或objc_msgSendSuper_stret。</p>
+<p>0.1-检查target是否为nil。如果为nil，直接cleanup，然后return。(这就是我们可以向nil发送消息的原因。)<br>如果方法返回值是一个对象，那么发送给nil的消息将返回nil；如果方法返回值为指针类型，其指针大小为小于或者等于sizeof(void<em>)，float，double，long double 或者long long的整型标量，发送给nil的消息将返回0；如果方法返回值为结构体,发送给nil的消息将返回0。结构体中各个字段的值将都是0；如果方法的返回值不是上述提到的几种情况，那么发送给nil的消息的返回值将是未定义的。<br>0.2-如果target非nil，在target的Class中根据Selector去找IMP。（因为同一个方法可能在不同的类中有不同的实现，所以我们需要依赖于接收者的类来找到的确切的实现）。<br>1-首先它找到selector对应的方法实现:
+</em>1.1-在target类的方法缓存列表里检查有没有对应的方法实现，有的话，直接调用。<br><em>1.2-比较请求的selector和类方法列表中的selector，对应的话，直接调用。
+</em>1.3-比较请求的selector和父类方法列表，父类的父类，直至根类，如果有对应，则直接调用。（方法重写拦截父类方法的原理）<br>2-调用方法实现，并将接收者对象及方法的所有参数传给它。<br>3-最后，将实现函数的返回值作为自己的返回值。</p>
+<p>d、动态方法解析与消息转发：如果以上的类中没有找到对应的selector（一般保险起见先用respondsToSelector:内省判断）：，还可以利用消息转发机制依次执行以下流程：</p>
+<p>Method Resolution（动态方法解析）：<br>用所属类的类方法+（BOOL）resolveInstanceMethod:(实例方法)或者+（BOOL）resolveClassMethod:(类方法),在此方法里添加class_addMethod函数。一般用于@dynamic动态属性。（当一个属性声明为@dynamic，就是向编译器保证编译时不用管/get实现，一定会在运行时实现）。<br>Fast Forwarding （快速消息转发）：<br>如果上一步无法响应消息，调用- (id)forwardingTargetForSelector:(SEL)aSelector方法，将消息接受者转发到另一个对象target（不能为self，否则死循环）。</p>
+<p>Normal Forwarding（普通消息转发）：<br>如果上一步无法响应消息：<br>调用方法签名- (NSMethodSignature )methodSignatureForSelector:(SEL)aSelector，方法签名目的将函数的参数类型和返回值封装；<br>如果返回非nil，则创建一个NSInvocation对象利用方法签名和selector封装未被处理的消息，作为参数传递给- (void)forwardInvocation:(NSInvocation )anInvocation。<br>这一步比较耗时。</p>
+<p>如果以上步骤（消息传递和消息转发）还是不能响应消息，则调动doesNotRecognizeSelector：方法，抛出异常。</p>
+<p>unrecognized selector sent to instance<br>(消息转发可以利用转移消息接受对象，实现伪多重继承的效果。)</p>
+<p>4、 协议相关：@protocol声明了可以被其他任何类实现的方法，协议仅仅是定义一个接口，而由其他的类去负责实现。<br>数据类型：Protocol；</p>
+<p>typedef struct objc_object Protocol;<br>protocol是一个对象结构体。</p>
+<p>操作函数：</p>
+<p>objc_:<br>// 返回指定的协议<br>Protocol <em> objc_getProtocol ( const char </em>name );</p>
+<p>// 获取运行时所知道的所有协议的数组<br>Protocol *<em> objc_copyProtocolList ( unsigned int </em>outCount );</p>
+<p>// 创建新的协议实例<br>Protocol <em> objc_allocateProtocol ( const char </em>name );</p>
+<p>// 在运行时中注册新创建的协议<br>void objc_registerProtocol ( Protocol <em>proto );<br>protocol_：<br>get: 协议；属性；<br>// 返回协议名<br>const char </em> protocol_getName ( Protocol <em>p );<br>// 获取协议的指定属性<br>objc_property_t protocol_getProperty ( Protocol </em>proto, const char *name, BOOL isRequiredProperty, BOOL isInstanceProperty );<br>copy：协议列表；属性列表；</p>
+<p>// 获取协议中的属性列表<br>objc_property_t <em> protocol_copyPropertyList ( Protocol </em>proto, unsigned int <em>outCount );<br>// 获取协议采用的协议<br>Protocol ** protocol_copyProtocolList ( Protocol </em>proto, unsigned int *outCount );<br>add：属性；方法；协议；</p>
+<p>// 为协议添加方法<br>void protocol_addMethodDescription ( Protocol <em>proto, SEL name, const char </em>types, BOOL isRequiredMethod, BOOL isInstanceMethod );</p>
+<p>// 添加一个已注册的协议到协议中<br>void protocol_addProtocol ( Protocol <em>proto, Protocol </em>addition );</p>
+<p>// 为协议添加属性<br>void protocol_addProperty ( Protocol <em>proto, const char </em>name, const objc_property_attribute_t *attributes, unsigned int attributeCount, BOOL isRequiredProperty, BOOL isInstanceProperty );<br>isEqual：判断两协议等同；</p>
+<p>// 测试两个协议是否相等<br>BOOL protocol_isEqual ( Protocol <em>proto, Protocol </em>other );<br>comform：判断是否遵循协议；</p>
+<p>// 查看协议是否采用了另一个协议<br>BOOL protocol_conformsToProtocol ( Protocol <em>proto, Protocol </em>other );<br>5、 其他：类名；版本号；类信息；（忽略）<br>三、 动态实现：</p>
+<p>Method Swizzling;<br>Method Swizzling可以在运行时通过修改类的方法列表中selector对应的函数或者设置交换方法实现，来动态修改方法。可以重写某个方法而不用继承，同时还可以调用原先的实现。通常应用于在category中添加一个方法。<br>为保证改变方法引起冲突，确保方法混用只能一次性：<br>比如，在+load方法或者dispatch_once中执行。<br>ISA Swizzling；<br>ISA Swizzling可以动态修改对象的isa指针，改变对象的类，类似于创建子类实现相同的功能。KVO即是同过ISA Swizzling实现的。<br>四、 其他概念：category；super；<br>category:<br>typedef struct objc_category *Category;</p>
+<p>struct objc_category {<br>    char <em>category_name                          OBJC2_UNAVAILABLE; // 分类名<br>    char </em>class_name                             OBJC2_UNAVAILABLE; // 分类所属的类名<br>    struct objc_method_list <em>instance_methods    OBJC2_UNAVAILABLE; // 实例方法列表<br>    struct objc_method_list </em>class_methods       OBJC2_UNAVAILABLE; // 类方法列表<br>    struct objc_protocol_list *protocols         OBJC2_UNAVAILABLE; // 分类所实现的协议列表<br>}  </p>
+<p>// objc-runtime-new.h中定义：<br>struct category_t {<br>    const char <em>name;                        // name 是指 class_name 而不是 category_name<br>    classref_t cls;                          // cls是要扩展的类对象，编译期间是不会定义的，而是在Runtime阶段通过name对应到对应的类对象<br>    struct method_list_t </em>instanceMethods;<br>    struct method_list_t <em>classMethods;<br>    struct protocol_list_t </em>protocols;<br>    struct property_list_t *instanceProperties;    // instanceProperties表示Category里所有的properties，(这就是我们可以通过objc_setAssociatedObject和objc_getAssociatedObject增加实例变量的原因，)不过这个和一般的实例变量是不一样的</p>
+<p>};<br>category就是定义方法的结构体，instance_methods列表是objc_class中方法列表的一个子集，class_methods列表是元类方法列表的一个子集。由其结构成员可知，category为什么不能添加成员变量（可添加属性，只有set/get方法）。</p>
+<p>给category添加方法后，category_list会生成method list。这个方法列表是倒序添加的，也就是说，新生成的category的方法会先于旧的category的方法插入。（category的方法会优先于类方法执行）。</p>
+<p>super：<br>super并不是隐藏参数，它实际上只是一个”编译器标示符”，它负责告诉编译器，当调用方法时，跳过当前类去调用父类的方法，而不是本类中的方法。self是类的一个隐藏参数，每个方法的实现的第一个参数即为self。实际上给super发消息时，super还是与self指向的是相同的消息接收者。</p>
+<p>struct objc_super {<br>   <strong>unsafe_unretained id receiver;
+   </strong>unsafe_unretained Class super_class;<br>};<br>原理：使用super来接收消息时，编译器会生成一个objc_super结构体。发送消息时，不是调用objc_msgSend函数，而是调用objc_msgSendSuper函数:</p>
+<p>id objc_msgSendSuper ( struct objc_super *super, SEL op, … );<br>该函数实际的操作是：从objc_super结构体指向的superClass的方法列表开始查找selector，找到后以objc-&gt;receiver去调用这个selector。</p>
+<p>Runtime开源源码对一些方法的实现：</p>
+<ul>
+<li><p>(Class)class ;</p>
+</li>
+<li><p>(Class)class {<br>  return object_getClass(self);<br>}</p>
+</li>
+</ul>
+<ul>
+<li><p>(Class)class;</p>
+</li>
+<li><p>(Class)class {<br>  return self;<br>}</p>
+</li>
+</ul>
+<ul>
+<li><p>(BOOL)isKindOf:aClass;// (for循环遍历父类，每次判断返回的结果可能不同)</p>
+</li>
+<li><p>(BOOL)isKindOf:aClass<br>{<br>  Class cls;<br>  for (cls = isa; cls; cls = cls-&gt;superclass) </p>
+<pre><code>if (cls == (Class)aClass)
+    return YES;
+</code></pre><p>  return NO;<br>}</p>
+</li>
+<li><p>(BOOL)isMemberOf:aClass;</p>
+</li>
+<li><p>(BOOL)isMemberOf:aClass<br>{<br>  return isa == (Class)aClass;<br>}</p>
+</li>
+</ul>
+<p>文／楚天舒（简书作者）<br>原文链接：<a href="http://www.jianshu.com/p/f900de4a1495" target="_blank" rel="noopener">http://www.jianshu.com/p/f900de4a1495</a><br>著作权归作者所有，转载请联系作者获得授权，并标注“简书作者”。</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://Alexzzn.github.io/2018/07/18/iOS/Runtime_OC/" title="" target="_blank" rel="external">https://Alexzzn.github.io/2018/07/18/iOS/Runtime_OC/</a>
+    </li>
+    
+    
+  </ul>
+</blockquote>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2018/07/18/Web/ESLint配置/" title="(no title)"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2018/07/18/iOS/webviewTojs/" title="(no title)"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+  
+    
+    
+    
+        <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+    
+    
+    
+        
+
+
+    
+    
+        
+    
+    
+
+
+
+</body>
+</html>

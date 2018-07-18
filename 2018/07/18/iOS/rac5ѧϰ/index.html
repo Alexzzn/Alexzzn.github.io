@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  <meta name=referrer content=never>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Hexo</title>
+  <meta name="description" content="Reactivecocoa 5.0摘自那一抹忧伤 import ReactiveCocoa import Result import ReactiveSwift (值得注意的是Signal 依赖于ReactiveSwift )(NoError 依赖于 Result)主要的类型1.事件（Event）2.监听器（Observer）3.存根（Disposable）4.信号（Signal)主要用法 1.信">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyBlog">
+<meta property="og:url" content="https://Alexzzn.github.io/2018/07/18/iOS/rac5ѧϰ/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="Reactivecocoa 5.0摘自那一抹忧伤 import ReactiveCocoa import Result import ReactiveSwift (值得注意的是Signal 依赖于ReactiveSwift )(NoError 依赖于 Result)主要的类型1.事件（Event）2.监听器（Observer）3.存根（Disposable）4.信号（Signal)主要用法 1.信">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-18T07:07:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MyBlog">
+<meta name="twitter:description" content="Reactivecocoa 5.0摘自那一抹忧伤 import ReactiveCocoa import Result import ReactiveSwift (值得注意的是Signal 依赖于ReactiveSwift )(NoError 依赖于 Result)主要的类型1.事件（Event）2.监听器（Observer）3.存根（Disposable）4.信号（Signal)主要用法 1.信">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://Alexzzn.github.io/2018/07/18/iOS/rac5ѧϰ/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="MyBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <!-- font-awesome CSS -->
+  <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+    
+    
+
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav">
+        
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">96</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/银行卡文档/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/Block_OC_1/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/WKWebView/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/Web/phpѧϰ1/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/Web/ESLint配置/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-iOS/rac5ѧϰ" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/07/18/iOS/rac5ѧϰ/" class="article-date">
+	  <time datetime="2018-07-18T07:07:56.000Z" itemprop="datePublished">2018-07-18</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/07/18/iOS/rac5ѧϰ/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <h4 id="Reactivecocoa-5-0"><a href="#Reactivecocoa-5-0" class="headerlink" title="Reactivecocoa 5.0"></a>Reactivecocoa 5.0</h4><p><a href="http://www.qingpingshan.com/m/view.php?aid=204766" target="_blank" rel="noopener">摘自那一抹忧伤</a></p>
+<p>import ReactiveCocoa</p>
+<p>import Result</p>
+<p>import ReactiveSwift</p>
+<p>(值得注意的是Signal 依赖于ReactiveSwift )<br>(NoError 依赖于 Result)<br>主要的类型<br>1.事件（Event）<br>2.监听器（Observer）<br>3.存根（Disposable）<br>4.信号（Signal)<br>主要用法</p>
+<p>1.信号的创建<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">// MARK: - 0.创建信号的方法</span><br><span class="line">    func createSignalMehods() &#123;</span><br><span class="line">        // 1.通过信号发生器创建(冷信号)</span><br><span class="line">        let producer = SignalProducer&lt;String, NoError&gt;.init &#123; (observer, _) in</span><br><span class="line">            print(&quot;新的订阅，启动操作&quot;)</span><br><span class="line">            observer.send(value: &quot;Hello&quot;)</span><br><span class="line">            observer.send(value: &quot;World&quot;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        let subscriber1 = Observer&lt;String, NoError&gt;(value: &#123; print(&quot;观察者1接收到值 \($0)&quot;) &#125;)</span><br><span class="line">        let subscriber2 = Observer&lt;String, NoError&gt;(value: &#123; print(&quot;观察者2接收到值 \($0)&quot;) &#125;)</span><br><span class="line"></span><br><span class="line">        print(&quot;观察者1订阅信号发生器&quot;)</span><br><span class="line">        producer.start(subscriber1)</span><br><span class="line">        print(&quot;观察者2订阅信号发生器&quot;)</span><br><span class="line">        producer.start(subscriber2)</span><br><span class="line">        //注意：发生器将再次启动工作</span><br><span class="line"></span><br><span class="line">        // 2.通过管道创建（热信号）</span><br><span class="line">        let (signalA, observerA) = Signal&lt;String, NoError&gt;.pipe()</span><br><span class="line">        let (signalB, observerB) = Signal&lt;String, NoError&gt;.pipe()</span><br><span class="line">        Signal.combineLatest(signalA, signalB).observeValues &#123; (value) in</span><br><span class="line">            print( &quot;收到的值\(value.0) + \(value.1)&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">        observerA.send(value: &quot;1&quot;)</span><br><span class="line">        observerA.sendCompleted()</span><br><span class="line">        observerB.send(value: &quot;2&quot;)</span><br><span class="line">        observerB.sendCompleted()</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>2.文本输入框的监听<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// MARK: - 1.监听输入框输入</span><br><span class="line">    func testTF() &#123;</span><br><span class="line">        // 输入时监听</span><br><span class="line">        userNameTF.reactive.continuousTextValues.observeValues &#123; text in</span><br><span class="line">            print(text ?? &quot;&quot;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 监听粘贴进来的文本</span><br><span class="line">        let result = userNameTF.reactive.values(forKeyPath: &quot;text&quot;)</span><br><span class="line">        result.start &#123; (text) in</span><br><span class="line">            print(text)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>3.按钮监听<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// MARK: - 3.按钮监听</span><br><span class="line">    func testBtnClick() &#123;</span><br><span class="line">        testBtn.reactive.trigger(for: .touchUpInside).observeValues &#123;</span><br><span class="line">           print(&quot;按钮点击&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>4.信号合并<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">// MARK: - 4.信号联合</span><br><span class="line">    func testCombineLatest() &#123;</span><br><span class="line"></span><br><span class="line">        // 通过管道创建</span><br><span class="line">        let (signalA, observerA) = Signal&lt;String, NoError&gt;.pipe()</span><br><span class="line">        let (signalB, observerB) = Signal&lt;String, NoError&gt;.pipe()</span><br><span class="line">        Signal.combineLatest(signalA, signalB).observeValues &#123; (value) in</span><br><span class="line">            print( &quot;收到的值\(value.0) + \(value.1)&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">        observerA.send(value: &quot;1&quot;)</span><br><span class="line">        observerA.sendCompleted()</span><br><span class="line">        observerB.send(value: &quot;2&quot;)</span><br><span class="line">        observerB.sendCompleted()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    // MARK: - 5.信号联合</span><br><span class="line">    func testZip() &#123;</span><br><span class="line">        let (signalA, observerA) = Signal&lt;String, NoError&gt;.pipe()</span><br><span class="line">        let (signalB, observerB) = Signal&lt;String, NoError&gt;.pipe()</span><br><span class="line"></span><br><span class="line">        Signal.zip(signalA, signalB).observeValues &#123; (value) in</span><br><span class="line">            print( &quot;收到的值\(value.0) + \(value.1)&quot;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        signalA.zip(with: signalB).observeValues &#123; (value) in</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        observerA.send(value: &quot;1&quot;)</span><br><span class="line">        observerA.sendCompleted()</span><br><span class="line">        observerB.send(value: &quot;2&quot;)</span><br><span class="line">        observerB.sendCompleted()</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>5.Scheduler调度器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// MARK: - 6.Scheduler(调度器)</span><br><span class="line">    func testScheduler() &#123;</span><br><span class="line">        // 主线程上延时0.3秒调用</span><br><span class="line">        QueueScheduler.main.schedule(after: Date.init(timeIntervalSinceNow: 0.3)) &#123;</span><br><span class="line">            print(&quot;主线程调用&quot;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        QueueScheduler.init().schedule(after: Date.init(timeIntervalSinceNow: 0.3))&#123;</span><br><span class="line">            print(&quot;子线程调用&quot;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>6.Delegate<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let (signal, obser) = Signal&lt;Any, NoError&gt;.pipe()</span><br><span class="line">    @IBAction func btnClick(btn: UIButton) &#123;</span><br><span class="line">        obser.send(value: &quot;代理测试&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">    // MARK: - 7.Delegate</span><br><span class="line">    func testDelegate() &#123;</span><br><span class="line">        redView.signal.observeValues &#123; (value) in</span><br><span class="line">            print(&quot;按钮点击\(value)&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>7.通知<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// MARK: - 8.通知</span><br><span class="line">    func testNoti() &#123;</span><br><span class="line">     // 普通的通知方法</span><br><span class="line">       NotificationCenter.default.reactive.notifications(forName: Notification.Name(rawValue: &quot;home&quot;)).observeValues &#123; (value) in</span><br><span class="line">            print(value.object ?? &quot;&quot;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        NotificationCenter.default.post(name: NSNotification.Name(rawValue: &quot;home&quot;), object: nil)</span><br><span class="line"></span><br><span class="line">        // 键盘的通知</span><br><span class="line">        NotificationCenter.default.reactive.notifications(forName: Notification.Name(rawValue: &quot;UIKeyboardWillShowNotification&quot; ), object: nil).observeValues &#123; (value) in</span><br><span class="line">            print(&quot;键盘弹起&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">        NotificationCenter.default.reactive.notifications(forName: Notification.Name(rawValue: &quot;UIKeyboardWillHideNotification&quot;), object: nil).observeValues &#123; (value) in</span><br><span class="line">            print(&quot;键盘收起&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>8.KVO<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// MARK: - 9.KVO</span><br><span class="line">    func testKVO() &#123;</span><br><span class="line">        let result = self.view.reactive.values(forKeyPath: &quot;bounds&quot;)</span><br><span class="line">        result.start &#123; [weak self](rect) in</span><br><span class="line">            print(self?.view ?? &quot;&quot;)</span><br><span class="line">            print(rect)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>9.迭代器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">// MARK: - 10.迭代器</span><br><span class="line">    func testIterator() &#123;</span><br><span class="line"></span><br><span class="line">        // 数组的迭代器</span><br><span class="line">        let array:[String] = [&quot;name&quot;,&quot;name2&quot;]</span><br><span class="line">        var arrayIterator =  array.makeIterator()</span><br><span class="line">        while let temp = arrayIterator.next() &#123;</span><br><span class="line">            print(temp)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // swift 系统自带的遍历</span><br><span class="line">        array.forEach &#123; (value) in</span><br><span class="line">            print(value)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 字典的迭代器</span><br><span class="line">        let dict:[String: String] = [&quot;key&quot;:&quot;name&quot;, &quot;key1&quot;:&quot;name1&quot;]</span><br><span class="line">        var dictIterator =  dict.makeIterator()</span><br><span class="line">        while let temp = dictIterator.next() &#123;</span><br><span class="line">            print(temp)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // swift 系统自带的遍历</span><br><span class="line">        dict.forEach &#123; (key, value) in</span><br><span class="line">            print(&quot;\(key) + \(value)&quot;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>10 、其他事件绑定<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">// UI绑定到Model  </span><br><span class="line">       Signal.combineLatest(uerNameTF1.reactive.continuousTextValues,passwordTF1.reactive.continuousTextValues).observeValues &#123; (name, password) in</span><br><span class="line">            //print(&quot;name = \(name) + password = \(password)&quot;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 当输入框的两个值长度都大于或者等于6，按钮才可以点击</span><br><span class="line">        Signal.combineLatest(uerNameTF1.reactive.continuousTextValues,passwordTF1.reactive.continuousTextValues).map &#123; (name, password) -&gt; Bool in</span><br><span class="line">            return ((name?.characters.count)! &gt;= 6 &amp;&amp; (password?.characters.count)! &gt;= 6)</span><br><span class="line">        &#125;.observeValues &#123; [weak self](value) in</span><br><span class="line">            print(&quot;合并\(value)&quot;)</span><br><span class="line">            self?.loginBtn.isEnabled = value</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 参数省略        </span><br><span class="line">        Signal.combineLatest(uerNameTF1.reactive.continuousTextValues,passwordTF1.reactive.continuousTextValues).map &#123; $0?.characters.count ?? 0 &gt;= 6 &amp;&amp; $1?.characters.count ?? 0 &gt;= 6</span><br><span class="line">            &#125;.observeValues &#123; [weak self](value) in</span><br><span class="line">                print(&quot;合并\(value)&quot;)</span><br><span class="line">                self?.loginBtn.isEnabled = value</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        loginBtn.reactive.isEnabled &lt;~ Signal.combineLatest(uerNameTF1.reactive.continuousTextValues,passwordTF1.reactive.continuousTextValues).map &#123; $0?.characters.count ?? 0 &gt;= 6 &amp;&amp; $1?.characters.count ?? 0 &gt;= 6</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
+<p>(责任编辑：那一抹忧伤)</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://Alexzzn.github.io/2018/07/18/iOS/rac5ѧϰ/" title="" target="_blank" rel="external">https://Alexzzn.github.io/2018/07/18/iOS/rac5ѧϰ/</a>
+    </li>
+    
+    
+  </ul>
+</blockquote>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2018/07/18/iOS/iOS开发笔记/" title="(no title)"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2018/07/18/iOS/iOS进阶学习/" title="(no title)"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+  
+    
+    
+    
+        <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+    
+    
+    
+        
+
+
+    
+    
+        
+    
+    
+
+
+
+</body>
+</html>

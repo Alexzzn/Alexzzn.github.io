@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  <meta name=referrer content=never>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Hexo</title>
+  <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950func test() &amp;#123;               var count:UInt32 = 0                let cla = NSClassFromString(&quot;LDShareCont">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyBlog">
+<meta property="og:url" content="https://Alexzzn.github.io/2018/07/18/iOS/runtime/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950func test() &amp;#123;               var count:UInt32 = 0                let cla = NSClassFromString(&quot;LDShareCont">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-18T07:07:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MyBlog">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950func test() &amp;#123;               var count:UInt32 = 0                let cla = NSClassFromString(&quot;LDShareCont">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://Alexzzn.github.io/2018/07/18/iOS/runtime/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="MyBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <!-- font-awesome CSS -->
+  <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+    
+    
+
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav">
+        
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">96</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/银行卡文档/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/Block_OC_1/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/WKWebView/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/Web/phpѧϰ1/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/Web/ESLint配置/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-iOS/runtime" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/07/18/iOS/runtime/" class="article-date">
+	  <time datetime="2018-07-18T07:07:54.000Z" itemprop="datePublished">2018-07-18</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/07/18/iOS/runtime/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">test</span><span class="params">()</span></span> &#123;</span><br><span class="line">       </span><br><span class="line">        <span class="keyword">var</span> <span class="built_in">count</span>:<span class="type">UInt32</span> = <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">let</span> cla = <span class="type">NSClassFromString</span>(<span class="string">"LDShareContentModel"</span>)</span><br><span class="line">        <span class="keyword">let</span> properties = class_copyPropertyList(cla, &amp;<span class="built_in">count</span>)</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>..&lt;<span class="built_in">count</span> &#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">let</span> index = <span class="type">Int</span>(i)</span><br><span class="line">            <span class="keyword">let</span> property = properties[index]</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">let</span> propertyName = property_getName(property)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">let</span> strName = <span class="type">String</span>.fromCString(propertyName)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"---"</span>,strName)</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        free(properties)</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">        <span class="built_in">count</span> = <span class="number">0</span></span><br><span class="line">        <span class="keyword">let</span> methods = class_copyMethodList(cla, &amp;<span class="built_in">count</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>..&lt;<span class="built_in">count</span> &#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">let</span> index = <span class="type">Int</span>(i)</span><br><span class="line">            <span class="keyword">let</span> method = methods[index]</span><br><span class="line">            <span class="keyword">let</span> sel = method_getName(method)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">let</span> selName = sel_getName(sel)</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">            <span class="keyword">let</span> argumentNum = method_getNumberOfArguments(method)</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"selName:"</span> + <span class="string">"\(String.fromCString(selName))---&gt;"</span> + <span class="string">"\(Int(argumentNum))"</span>)<span class="comment">//"个返回值")</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">var</span> point:<span class="type">Int8</span> = <span class="number">0</span></span><br><span class="line">            <span class="keyword">let</span> argument = method_getReturnType(method, &amp;point, <span class="type">Int</span>(argumentNum))</span><br><span class="line"><span class="comment">//            print(argument)</span></span><br><span class="line">            <span class="keyword">let</span> str = <span class="type">String</span>.fromCString(&amp;point)</span><br><span class="line">            <span class="built_in">print</span>(str)</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+<h5 id="swizzle-交换selector"><a href="#swizzle-交换selector" class="headerlink" title="swizzle 交换selector"></a>swizzle 交换selector</h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *  分类的目的：实现两个方法实现的交换，调用原有方法，有现有方法(自己实现方法)的实现。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">@interface <span class="type">NSObject</span> (<span class="type">MethodSwizzling</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *  交换对象方法</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *  @param origSelector    原有方法</span></span><br><span class="line"><span class="comment"> *  @param swizzleSelector 现有方法(自己实现方法)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">+ (void)yz_swizzleInstanceSelector:(<span class="type">SEL</span>)origSelector</span><br><span class="line">                   swizzleSelector:(<span class="type">SEL</span>)swizzleSelector;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *  交换类方法</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *  @param origSelector    原有方法</span></span><br><span class="line"><span class="comment"> *  @param swizzleSelector 现有方法(自己实现方法)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">+ (void)yz_swizzleClassSelector:(<span class="type">SEL</span>)origSelector</span><br><span class="line">                swizzleSelector:(<span class="type">SEL</span>)swizzleSelector;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation <span class="type">NSObject</span> (<span class="type">MethodSwizzling</span>)</span><br><span class="line"></span><br><span class="line">+ (void)yz_swizzleInstanceSelector:(<span class="type">SEL</span>)origSelector</span><br><span class="line">                   swizzleSelector:(<span class="type">SEL</span>)swizzleSelector &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 获取原有方法</span></span><br><span class="line">    <span class="type">Method</span> origMethod = class_getInstanceMethod(<span class="keyword">self</span>,</span><br><span class="line">                                                origSelector);</span><br><span class="line">    <span class="comment">// 获取交换方法</span></span><br><span class="line">    <span class="type">Method</span> swizzleMethod = class_getInstanceMethod(<span class="keyword">self</span>,</span><br><span class="line">                                                   swizzleSelector);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 注意：不能直接交换方法实现，需要判断原有方法是否存在,存在才能交换</span></span><br><span class="line">    <span class="comment">// 如何判断？添加原有方法，如果成功，表示原有方法不存在，失败，表示原有方法存在</span></span><br><span class="line">    <span class="comment">// 原有方法可能没有实现，所以这里添加方法实现，用自己方法实现</span></span><br><span class="line">    <span class="comment">// 这样做的好处：方法不存在，直接把自己方法的实现作为原有方法的实现，调用原有方法，就会来到当前方法的实现</span></span><br><span class="line">    <span class="type">BOOL</span> isAdd = class_addMethod(<span class="keyword">self</span>, origSelector, method_getImplementation(swizzleMethod), method_getTypeEncoding(swizzleMethod));</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (!isAdd) &#123; <span class="comment">// 添加方法失败，表示原有方法存在，直接替换</span></span><br><span class="line">        method_exchangeImplementations(origMethod, swizzleMethod);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        class_replaceMethod(<span class="keyword">self</span>, swizzleSelector, method_getImplementation(origMethod), method_getTypeEncoding(origMethod));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (void)yz_swizzleClassSelector:(<span class="type">SEL</span>)origSelector swizzleSelector:(<span class="type">SEL</span>)swizzleSelector</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 获取原有方法</span></span><br><span class="line">    <span class="type">Method</span> origMethod = class_getClassMethod(<span class="keyword">self</span>,</span><br><span class="line">                                             origSelector);</span><br><span class="line">    <span class="comment">// 获取交换方法</span></span><br><span class="line">    <span class="type">Method</span> swizzleMethod = class_getClassMethod(<span class="keyword">self</span>,</span><br><span class="line">                                                swizzleSelector);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 添加原有方法实现为当前方法实现</span></span><br><span class="line">    <span class="type">BOOL</span> isAdd = class_addMethod(<span class="keyword">self</span>, origSelector, method_getImplementation(swizzleMethod), method_getTypeEncoding(swizzleMethod));</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (!isAdd) &#123; <span class="comment">// 添加方法失败，原有方法存在，直接替换</span></span><br><span class="line">        method_exchangeImplementations(origMethod, swizzleMethod);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>// Singleton<br><code>`</code>swift</p>
+<p>func show() {</p>
+<pre><code>print(&quot;这里是即将要推迟&quot;)
+</code></pre><p>}</p>
+<p>func test() {</p>
+<pre><code>defer {
+    show()
+}
+
+if str.characters.count &gt;= 2 {
+
+    print(&quot;跳出该方法的执行&quot;)
+    return
+}
+</code></pre><p>}</p>
+<p>final class single:NSObject {</p>
+<pre><code>static let shared = single()
+private override init(){}
+
+func getName() {
+
+    print(&quot;getName&quot;);
+}
+</code></pre><p>}</p>
+<p>test()<br>single.shared.getName()</p>
+<p>final class Single4: NSObject {<br>    static var shared: Single4 {<br>        struct Static {<br>            static let instance: Single4 = Single4()<br>        }<br>        return Static.instance<br>    }<br>    private override init() {}<br>}</p>
+<p>final class Single3:NSObject {</p>
+<pre><code> class func shared() -&gt; Single3 {
+
+    struct sta {
+        static let instance:Single3 = Single3();
+    }
+    return sta.instance
+}
+
+func getname() {
+
+}
+</code></pre><p>}<br>Single3.shared().getname()</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://Alexzzn.github.io/2018/07/18/iOS/runtime/" title="" target="_blank" rel="external">https://Alexzzn.github.io/2018/07/18/iOS/runtime/</a>
+    </li>
+    
+    
+  </ul>
+</blockquote>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2018/07/18/iOS/swift3 协议/" title="(no title)"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2018/07/18/Web/Mac工具/" title="(no title)"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+  
+    
+    
+    
+        <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+    
+    
+    
+        
+
+
+    
+    
+        
+    
+    
+
+
+
+</body>
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  <meta name=referrer content=never>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Hexo</title>
+  <meta name="description" content="本文翻译自苹果的文档，有删减，也有添加自己的理解部分。 如果有Block语法不懂的，可以参考fuckingblocksyntax，里面对于Block 为了方便对比，下面的代码我假设是写在ViewController子类中的 1、第一部分 //定义和使用Block，1234567891011121314151617181920212223- ( void )testBlock &amp;#123;    [">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyBlog">
+<meta property="og:url" content="https://Alexzzn.github.io/2018/07/18/iOS/Block_OC_2/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="本文翻译自苹果的文档，有删减，也有添加自己的理解部分。 如果有Block语法不懂的，可以参考fuckingblocksyntax，里面对于Block 为了方便对比，下面的代码我假设是写在ViewController子类中的 1、第一部分 //定义和使用Block，1234567891011121314151617181920212223- ( void )testBlock &amp;#123;    [">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-18T07:07:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MyBlog">
+<meta name="twitter:description" content="本文翻译自苹果的文档，有删减，也有添加自己的理解部分。 如果有Block语法不懂的，可以参考fuckingblocksyntax，里面对于Block 为了方便对比，下面的代码我假设是写在ViewController子类中的 1、第一部分 //定义和使用Block，1234567891011121314151617181920212223- ( void )testBlock &amp;#123;    [">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://Alexzzn.github.io/2018/07/18/iOS/Block_OC_2/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="MyBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <!-- font-awesome CSS -->
+  <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+    
+    
+
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav">
+        
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">96</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/银行卡文档/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/Block_OC_1/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/WKWebView/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/Web/phpѧϰ1/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/Web/ESLint配置/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-iOS/Block_OC_2" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/07/18/iOS/Block_OC_2/" class="article-date">
+	  <time datetime="2018-07-18T07:07:56.000Z" itemprop="datePublished">2018-07-18</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/07/18/iOS/Block_OC_2/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <p>本文翻译自苹果的文档，有删减，也有添加自己的理解部分。</p>
+<p>如果有Block语法不懂的，可以参考fuckingblocksyntax，里面对于Block</p>
+<p>为了方便对比，下面的代码我假设是写在ViewController子类中的</p>
+<p>1、第一部分</p>
+<p>//定义和使用Block，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">- ( void )testBlock &#123;</span><br><span class="line"></span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    //（1）定义无参无返回值的Block</span><br><span class="line">    void (^printBlock)() = ^()&#123;</span><br><span class="line">        printf ( &quot;no number&quot; );</span><br><span class="line">    &#125;;</span><br><span class="line">    printBlock();</span><br><span class="line">    printBlock(9);</span><br><span class="line">    int mutiplier = 7;</span><br><span class="line">    //（3）定义名为myBlock的代码块，返回值类型为int</span><br><span class="line">    int (^myBlock)( int ) = ^( int num)&#123;</span><br><span class="line">        return num*mutiplier;</span><br><span class="line">    &#125;;</span><br><span class="line">    //使用定义的myBlock</span><br><span class="line">    int newMutiplier = myBlock(3);</span><br><span class="line">    printf ( &quot;newMutiplier is %d&quot; ,myBlock(3));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//（2）定义一个有参数，没有返回值的Block</span><br><span class="line">void (^printNumBlock)( int ) = ^( int num)&#123;</span><br><span class="line">    printf ( &quot;int number is %d&quot; ,num);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>（1）在类中，定义一个Block变量，就像定义一个函数；</p>
+<p>（2）Block可以定义在方法内部，也可以定义在方法外部；</p>
+<p>（3）只有调用Block时候，才会执行其{}体内的代码；</p>
+<p>（PS：关于第（2）条，定义在方法外部的Block，其实就是文件级别的全局变量）</p>
+<p>那么在类中定义一个Block，特别是在-viewDidLoad方法体内定义一个Block到底有什么意义呢？我表示这时候只把它当做私有函数就可以了。我之前说过，Block其实就相当于代理，那么这时候我该怎样将其与代理类比以了解呢。这时候我可以这样说：本类中的Block就相当于类自己服从某个协议，然后让自己代理自己去做某个事情。很拗口吧？看看下面的代码，</p>
+<p>// 定义一个协议<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">@<span class="class"><span class="keyword">protocol</span> <span class="title">ViewControllerDelegate</span></span></span><br><span class="line"><span class="class">- ( <span class="title">void</span> )<span class="title">selfDelegateMethod</span>;</span></span><br><span class="line"><span class="class">  @<span class="title">end</span></span></span><br><span class="line"><span class="class">  //本类实现这个协议<span class="title">ViewControllerDelegate</span></span></span><br><span class="line"><span class="class">  @<span class="title">interface</span> <span class="title">ViewController</span> ()</span></span><br><span class="line"><span class="class">  @<span class="title">property</span> (<span class="title">nonatomic</span>, <span class="title">assign</span>) <span class="title">id</span>  <span class="title">delegate</span>;</span></span><br><span class="line"><span class="class">  @<span class="title">end</span></span></span><br><span class="line"><span class="class">  //接着在-<span class="title">viewDidLoad</span>中的代码如下，</span></span><br><span class="line"><span class="class">- ( <span class="title">void</span> )<span class="title">viewDidLoad</span> </span>&#123;</span><br><span class="line">  	[<span class="keyword">super</span> viewDidLoad];</span><br><span class="line">  	<span class="comment">// Do any additional setup after loading the view from its nib.</span></span><br><span class="line">  	<span class="keyword">self</span>.delegate = <span class="keyword">self</span>;</span><br><span class="line">  	<span class="keyword">if</span> 		(<span class="keyword">self</span>.delegate &amp;&amp; [<span class="keyword">self</span>.delegate respondsToSelector:@selector(selfDelegateMethod)]) &#123;</span><br><span class="line">  		[<span class="keyword">self</span>.delegate selfDelegateMethod];</span><br><span class="line">  	&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">###pragma mark - <span class="type">ViewControllerDelegate</span> method</span><br><span class="line"><span class="comment">//实现协议中的方法</span></span><br><span class="line">- ( void )selfDelegateMethod &#123;</span><br><span class="line">  <span class="type">NSLog</span>(@ <span class="string">"自己委托自己实现的方法"</span> );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>  看出这种写法的奇葩地方了吗？自己委托自己去实现某个方法，而不是委托别的类去实现某个方法。本类中定义的一个Block其实就是闲的蛋疼，委托自己去字做某件事情，实际的意义不大，所以你很少看见别人的代码直接在类中定义Block然后使用的，Block很多的用处是跨越两个类来使用的，比如作为property属性或者作为方法的参数，这样就能跨越两个类了。</p>
+<p>2、第二部分</p>
+<p>__block关键字的使用</p>
+<p>在Block的{}体内，是不可以对外面的变量进行更改的，比如下面的语句，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- ( void )viewDidLoad</span><br><span class="line">  &#123;</span><br><span class="line">  //将Block定义在方法内部</span><br><span class="line">  __block int x = 100;</span><br><span class="line">  void (^sumXAndYBlock)( int ) = ^( int y)&#123;</span><br><span class="line">  		x = x+y;</span><br><span class="line">  		printf ( &quot;new x value is %d&quot; ,x);</span><br><span class="line">  	&#125;;</span><br><span class="line">  	sumXAndYBlock(50);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>3、第三部分：Block作为property属性实现页面之间传值</p>
+<p>需求：在ViewController中，点击Button，push到下一个页面NextViewController，在NextViewController的输入框TextField中输入一串字符，返回的时候，在ViewController的Label上面显示文字内容，</p>
+<p>（1）第一种方法：首先看看通过“协议/代理”是怎么实现两个页面之间传值的吧，</p>
+<p>//NextViewController是push进入的第二个页面<br>//NextViewController.h 文件<br>//定义一个协议，前一个页面ViewController要服从该协议，并且实现协议中的方法<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">  @<span class="class"><span class="keyword">protocol</span> <span class="title">NextViewControllerDelegate</span> </span></span><br><span class="line"><span class="class">  - ( <span class="title">void</span> )<span class="title">passTextValue</span>:(<span class="title">NSString</span> *)<span class="title">tfText</span>;</span></span><br><span class="line"><span class="class">  @<span class="title">end</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">  @<span class="title">interface</span> <span class="title">NextViewController</span> : <span class="title">UIViewController</span></span></span><br><span class="line"><span class="class">  @<span class="title">property</span> (<span class="title">nonatomic</span>, <span class="title">assign</span>) <span class="title">id</span>  <span class="title">delegate</span>;</span></span><br><span class="line"><span class="class">  @<span class="title">end</span></span></span><br><span class="line"><span class="class">  //<span class="title">NextViewController</span>.<span class="title">m</span> 文件</span></span><br><span class="line"><span class="class">  //点击<span class="title">Button</span>返回前一个<span class="title">ViewController</span>页面</span></span><br><span class="line"><span class="class">- (<span class="title">IBAction</span>)<span class="title">popBtnClicked</span>:(<span class="title">id</span>)<span class="title">sender</span> </span>&#123;</span><br><span class="line">  		<span class="keyword">if</span> 	(<span class="keyword">self</span>.delegate &amp;&amp; [<span class="keyword">self</span>.delegate respondsToSelector:@selector(passTextValue:)]) &#123;</span><br><span class="line">  <span class="comment">//self.inputTF是该页面中的TextField输入框</span></span><br><span class="line">  		[<span class="keyword">self</span>.delegate passTextValue:<span class="keyword">self</span>.inputTF.text];</span><br><span class="line">  &#125;</span><br><span class="line">  		[<span class="keyword">self</span>.navigationController popViewControllerAnimated:<span class="type">YES</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  接下来我们在看看<span class="type">ViewController</span>文件中的内容，</span><br><span class="line">  <span class="comment">//ViewController.m 文件</span></span><br><span class="line">  @interface <span class="type">ViewController</span> ()</span><br><span class="line">  @property (strong, nonatomic) <span class="type">IBOutlet</span> <span class="type">UILabel</span> *nextVCInfoLabel;</span><br><span class="line">  @end</span><br><span class="line">  <span class="comment">//点击Button进入下一个NextViewController页面</span></span><br><span class="line">- (<span class="type">IBAction</span>)btnClicked:(id)sender</span><br><span class="line">  &#123;</span><br><span class="line">  	<span class="type">NextViewController</span> *nextVC = [[<span class="type">NextViewController</span> alloc] initWithNibName:@ <span class="string">"NextViewController"</span> bundle:<span class="literal">nil</span>];</span><br><span class="line">  		nextVC.delegate = <span class="keyword">self</span>; <span class="comment">//设置代理</span></span><br><span class="line">  		[<span class="keyword">self</span>.navigationController pushViewController:nextVC animated:<span class="type">YES</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//实现协议NextViewControllerDelegate中的方法</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#pragma mark - NextViewControllerDelegate method</span><br><span class="line">- ( void )passTextValue:(NSString *)tfText</span><br><span class="line">  &#123;</span><br><span class="line">  //self.nextVCInfoLabel是显示NextViewController传递过来的字符串Label对象</span><br><span class="line">  self.nextVCInfoLabel.text = tfText;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>（2）第二种方法：使用Block作为property，实现两个页面之间传值，</p>
+<pre><code>先看看NextViewController文件中的内容，
+</code></pre><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//NextViewController.h 文件</span></span><br><span class="line">@interface <span class="type">NextViewController</span> : <span class="type">UIViewController</span></span><br><span class="line">@property (nonatomic, copy)  void (^<span class="type">NextViewControllerBlock</span>)(<span class="type">NSString</span> *tfText);</span><br><span class="line">@end</span><br><span class="line"><span class="comment">//NextViewContorller.m 文件</span></span><br><span class="line">- (<span class="type">IBAction</span>)popBtnClicked:(id)sender &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">self</span>.<span class="type">NextViewControllerBlock</span>) &#123;</span><br><span class="line">  <span class="keyword">self</span>.<span class="type">NextViewControllerBlock</span>(<span class="keyword">self</span>.inputTF.text);</span><br><span class="line">  &#125;</span><br><span class="line">  [<span class="keyword">self</span>.navigationController popViewControllerAnimated:<span class="type">YES</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  再来看看<span class="type">ViewController</span>文件中的内容，</span><br><span class="line">- (<span class="type">IBAction</span>)btnClicked:(id)sender</span><br><span class="line">  &#123;</span><br><span class="line">  <span class="type">NextViewController</span> *nextVC = [[<span class="type">NextViewController</span> alloc] initWithNibName:@ <span class="string">"NextViewController"</span> bundle:<span class="literal">nil</span>];</span><br><span class="line">  nextVC.<span class="type">NextViewControllerBlock</span> = ^(<span class="type">NSString</span> *tfText)&#123;</span><br><span class="line">  [<span class="keyword">self</span> resetLabel:tfText];</span><br><span class="line">  &#125;;</span><br><span class="line">  [<span class="keyword">self</span>.navigationController pushViewController:nextVC animated:<span class="type">YES</span>];</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">####pragma mark - NextViewControllerBlock method</span><br><span class="line">- ( void )resetLabel:(NSString *)textStr</span><br><span class="line">  &#123;</span><br><span class="line">  		self.nextVCInfoLabel.text = textStr;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>  好了就这么多代码，可以使用Block来实现两个页面之间传值的目的，实际上就是取代了Delegate的功能。</p>
+<p>另外，博客中的代码Sample Code可以再Github下载，如果因为Github被墙了，可以在终端使用git clone + 完整链接，即可克隆项目到本地。</p>
+<p>Github中的代码，可以开启两种调试模式，你需要在项目的配置文件BlockSamp-Prefix.pch中注释或者解注释下面的代码，</p>
+<p>####define Debug_BlcokPassValueEnable<br>即可开启两种调试的方式，如果注释了上面的语句就是使用Delegate进行调试；否则使用Block进行调试。</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://Alexzzn.github.io/2018/07/18/iOS/Block_OC_2/" title="" target="_blank" rel="external">https://Alexzzn.github.io/2018/07/18/iOS/Block_OC_2/</a>
+    </li>
+    
+    
+  </ul>
+</blockquote>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2018/07/18/Web/简单shell脚本/" title="(no title)"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2018/07/18/Web/Flexbox 布局/" title="(no title)"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+  
+    
+    
+    
+        <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+    
+    
+    
+        
+
+
+    
+    
+        
+    
+    
+
+
+
+</body>
+</html>

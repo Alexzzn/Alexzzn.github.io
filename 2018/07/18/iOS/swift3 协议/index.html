@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  <meta name=referrer content=never>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Hexo</title>
+  <meta name="description" content="//: Playground - noun: a place where people can play`swiftimport UIKit var str = “Hello, playground”class Person { let name: String init(name: String) { self.name = name } var classes: Classess?  dein">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyBlog">
+<meta property="og:url" content="https://Alexzzn.github.io/2018/07/18/iOS/swift3 协议/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="//: Playground - noun: a place where people can play`swiftimport UIKit var str = “Hello, playground”class Person { let name: String init(name: String) { self.name = name } var classes: Classess?  dein">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-18T07:07:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MyBlog">
+<meta name="twitter:description" content="//: Playground - noun: a place where people can play`swiftimport UIKit var str = “Hello, playground”class Person { let name: String init(name: String) { self.name = name } var classes: Classess?  dein">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://Alexzzn.github.io/2018/07/18/iOS/swift3 协议/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="MyBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <!-- font-awesome CSS -->
+  <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+    
+    
+
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav">
+        
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">96</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/银行卡文档/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/Block_OC_1/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/WKWebView/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/Web/phpѧϰ1/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/Web/ESLint配置/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-iOS/swift3 协议" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/07/18/iOS/swift3 协议/" class="article-date">
+	  <time datetime="2018-07-18T07:07:54.000Z" itemprop="datePublished">2018-07-18</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/07/18/iOS/swift3 协议/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <h5 id="Playground-noun-a-place-where-people-can-play"><a href="#Playground-noun-a-place-where-people-can-play" class="headerlink" title="//: Playground - noun: a place where people can play"></a>//: Playground - noun: a place where people can play</h5><p><code>`</code>swift<br>import UIKit</p>
+<p>var str = “Hello, playground”<br>class Person {</p>
+<pre><code>let name: String
+init(name: String) { self.name = name }
+var classes: Classess?
+
+deinit { print(&quot;\(name) is being deinitialized&quot;) }
+</code></pre><p>}</p>
+<p>class Classess {</p>
+<pre><code>let no: String
+init(no: String) { self.no = no }
+weak var member: Person?
+
+deinit { print(&quot;Apartment \(no) is being deinitialized&quot;) }
+</code></pre><p>}</p>
+<p>let p1 = Person.init(name: “zhanshan”)<br>let c1 = Classess.init(no: “111”)</p>
+<p>p1.classes = c1<br>c1.member = p1</p>
+<p>print(p1.classes ?? “”)<br>print(c1.member ?? “”)<br>extension Double {</p>
+<pre><code>var km:Double { return self*888}
+</code></pre><p>}</p>
+<p>let d1:Double = 2<br>d1.km</p>
+<p>//<br>protocol SomeProtocol {</p>
+<pre><code>var value1: String { get set }
+var value2: String { get }
+static var value3:String { get }
+
+//异变方法
+mutating func getName()
+</code></pre><p>}<br>//<br>protocol TwoProtocol {</p>
+<p>}<br>//多承载<br>protocol AllProtocol: SomeProtocol, TwoProtocol {</p>
+<pre><code>//定义属性别名
+associatedtype DefineType
+var weight:DefineType { get }
+</code></pre><p>}</p>
+<p>//结构体继承协议<br>struct Toprotocol:SomeProtocol {</p>
+<pre><code>mutating internal func getName() {
+
+    self.value1 = &quot;edit&quot;
+}
+
+internal var value1: String
+internal var value2: String
+internal static var value3: String = &quot;value3&quot;
+var value4:String
+</code></pre><p>}</p>
+<p>var struct1 = Toprotocol.init(value1: “value1”, value2: “value2”, value4: “value4”)</p>
+<p>var struct2:Toprotocol = struct1<br>struct2.value2 = “2”</p>
+<p>//定义别名类型<br>struct MobilePhone:AllProtocol {</p>
+<pre><code>typealias DefineType = Double
+
+internal var weight: Double
+mutating internal func getName() {
+    value2 = &quot;changed&quot;
+}
+
+internal static var value3: String = &quot;&quot;
+
+internal var value2: String
+internal var value1: String
+</code></pre><p>}</p>
+<p>let mobile1 = MobilePhone.DefineType()<br>var mobile2 = MobilePhone.init(weight: 25, value2: “value2”, value1: “value1”)<br>mobile2.getName()</p>
+<p>//Swift标准库协议</p>
+<p>//1, 比较相关的协议<br>struct Student1:Equatable {</p>
+<pre><code>var math:Int
+var english:Int
+
+static func == (lhs: Student1, rhs: Student1) -&gt; Bool {
+
+    return lhs.english == rhs.english &amp;&amp; lhs.math == rhs.math
+}
+</code></pre><p>}<br>//Student遵守Equatable<br>let s1 = Student1.init(math: 20, english: 30)<br>let s2 = Student1.init(math: 20, english: 40)<br>let isTrue1  = s1 == s2</p>
+<p>//2, 自定义比较协议<br>public protocol ZZNCompareable {</p>
+<p>   static func &lt; (lhs:Self,rhs:Self) -&gt;Bool<br>}</p>
+<p>struct Student2:ZZNCompareable {</p>
+<pre><code>var studentName1:String
+var studentName2:String
+
+//重载 &lt; 运算符
+static func &lt; (lhs:Student2,rhs:Student2) -&gt;Bool {
+
+    return lhs.studentName1 == rhs.studentName2
+}
+
+//重载 &lt;= 运算符
+static func &lt;= (lhs:Student2,rhs:Student2) -&gt;Bool {
+
+    return lhs.studentName1 == rhs.studentName2
+}
+
+//重载 &gt; 运算符
+static func &gt; (lhs:Student2,rhs:Student2) -&gt;Bool {
+
+    return lhs.studentName1 == rhs.studentName2
+}
+//重载 &gt;= 运算符
+static func &gt;= (lhs:Student2,rhs:Student2) -&gt;Bool {
+
+    return lhs.studentName1 == rhs.studentName2
+}
+</code></pre><p>}</p>
+<p>let ss2 = Student2.init(studentName1: “zz”, studentName2: “zz”)<br>let ss22 = Student2.init(studentName1: “zz”, studentName2: “zw”)<br>ss2 &lt; ss22</p>
+<p>//<br>struct Student3: Comparable {</p>
+<pre><code>var math: Int
+var english: Int
+
+//重载 &lt; 运算符
+static func &lt; (lhs:Student3,rhs:Student3) -&gt;Bool {
+
+    return (lhs.math + lhs.english) &lt; (rhs.math + rhs.english)
+}
+
+//重载 &lt;= 运算符
+static func &lt;= (lhs:Student3,rhs:Student3) -&gt;Bool {
+
+    return (lhs.math + lhs.english) &lt;= (rhs.math + rhs.english)
+}
+
+//重载 &gt; 运算符
+static func &gt; (lhs:Student3,rhs:Student3) -&gt;Bool {
+
+    return (lhs.math + lhs.english) &gt; (rhs.math + rhs.english)
+}
+//重载 &gt;= 运算符
+static func &gt;= (lhs:Student3,rhs:Student3) -&gt;Bool {
+
+    return (lhs.math + lhs.english) &gt;= (rhs.math + rhs.english)
+}
+//重载 == 运算符
+static func == (lhs:Student3,rhs:Student3) -&gt;Bool {
+
+    return (lhs.math + lhs.english) == (rhs.math + rhs.english)
+}
+</code></pre><p>}</p>
+<p>let s3_left = Student3(math: 80, english: 60)<br>let s3_right = Student3(math: 70, english: 90)<br>s3_left &gt; s3_right</p>
+<p>//—–<br>//枚举继承协议<br>protocol NetServiceProtocol {</p>
+<pre><code>var netName:String { get }//只需实现get
+mutating func change()//外部修改enum 枚举值
+</code></pre><p>}</p>
+<p>enum NetServiceType:NetServiceProtocol {</p>
+<pre><code>case union(String)
+case mobile(String)
+case telecom(String)
+
+mutating func change() {
+
+    self = .mobile(&quot;mobile&quot;)
+
+}
+
+var netName: String {
+
+    get {
+
+        return NetServiceType.mobile(&quot;mobile&quot;).netName
+    }
+}
+</code></pre><p>}</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://Alexzzn.github.io/2018/07/18/iOS/swift3 协议/" title="" target="_blank" rel="external">https://Alexzzn.github.io/2018/07/18/iOS/swift3 协议/</a>
+    </li>
+    
+    
+  </ul>
+</blockquote>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2018/07/18/Web/Flexbox 布局/" title="(no title)"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2018/07/18/iOS/runtime/" title="(no title)"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+  
+    
+    
+    
+        <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+    
+    
+    
+        
+
+
+    
+    
+        
+    
+    
+
+
+
+</body>
+</html>

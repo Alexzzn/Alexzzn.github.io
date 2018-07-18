@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  <meta name=referrer content=never>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Hexo</title>
+  <meta name="description" content="Day11234567891011121314151617181920212223242526272829303132333435//php配置(apache)1，httpd.conf 中添加PHPIniDir &quot;php语言包所在的目录&quot;2，站点的核心：            1，ServerName 站点名称            2，DocumentRoot 站点真实目录3，目录访问权限：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyBlog">
+<meta property="og:url" content="https://Alexzzn.github.io/2018/07/18/Web/phpѧϰ1/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="Day11234567891011121314151617181920212223242526272829303132333435//php配置(apache)1，httpd.conf 中添加PHPIniDir &quot;php语言包所在的目录&quot;2，站点的核心：            1，ServerName 站点名称            2，DocumentRoot 站点真实目录3，目录访问权限：">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-18T07:07:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MyBlog">
+<meta name="twitter:description" content="Day11234567891011121314151617181920212223242526272829303132333435//php配置(apache)1，httpd.conf 中添加PHPIniDir &quot;php语言包所在的目录&quot;2，站点的核心：            1，ServerName 站点名称            2，DocumentRoot 站点真实目录3，目录访问权限：">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://Alexzzn.github.io/2018/07/18/Web/phpѧϰ1/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="MyBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <!-- font-awesome CSS -->
+  <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+    
+    
+
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav">
+        
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">96</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/银行卡文档/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/Block_OC_1/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/WKWebView/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/Web/phpѧϰ1/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/Web/ESLint配置/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Web/phpѧϰ1" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/07/18/Web/phpѧϰ1/" class="article-date">
+	  <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/07/18/Web/phpѧϰ1/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <ul>
+<li><h2 id="Day1"><a href="#Day1" class="headerlink" title="Day1"></a>Day1</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//php配置(apache)</span></span><br><span class="line"></span><br><span class="line"><span class="number">1</span>，httpd.conf 中添加</span><br><span class="line">PHPIniDir <span class="string">"php语言包所在的目录"</span></span><br><span class="line"><span class="number">2</span>，站点的核心：</span><br><span class="line">            <span class="number">1</span>，ServerName 站点名称</span><br><span class="line">            <span class="number">2</span>，DocumentRoot 站点真实目录</span><br><span class="line"><span class="number">3</span>，目录访问权限：</span><br><span class="line">    &lt;Directory <span class="string">"要设置权限的物理路径"</span>&gt;</span><br><span class="line">        Options Index <span class="comment">#设置目录可显示“文件列表”</span></span><br><span class="line">        Order  Deny,Allow <span class="comment">#先拒绝后允许或先允许后拒绝，不管哪个顺序，都是是后者覆盖前者</span></span><br><span class="line">        Allow  from  All</span><br><span class="line"> </span><br><span class="line">        <span class="comment">#在文件夹中设定权限</span></span><br><span class="line">        AllowOverride  all</span><br><span class="line">        </span><br><span class="line">    &lt;/Directory&gt;</span><br><span class="line"><span class="number">4</span>，分布式访问式权限</span><br><span class="line">    目录访问权限中的“分布式权限”：</span><br><span class="line">        一个站点的任何一个文件夹，都可以对其进行“单独权限设置”：</span><br><span class="line">            <span class="number">1</span>，需要在该文件夹中放入一个特殊名字的文件：  .htaccess</span><br><span class="line">            <span class="number">2</span>，该文件夹的内容，几乎可以跟Directory中的设置一样</span><br><span class="line">            <span class="number">3</span>，该文件中的设置，优先于Directory中的设置，即如果有同样设置项但值不同，以.htaccess中的为准；</span><br><span class="line">            <span class="number">4</span>，.htaccess中的设置项，无需重启apache，就可以立即生效。</span><br><span class="line"><span class="number">5</span>，多站点配置：</span><br><span class="line">    <span class="number">1</span>，在http.conf中，打开虚拟主机配置文件：apache安装位置/conf/extra/httpd-vhosts.conf</span><br><span class="line">    <span class="number">2</span>，格式：</span><br><span class="line">        &lt;VirtualHost&gt;</span><br><span class="line">        ServerName ....</span><br><span class="line">        DocumentRoot  .....</span><br><span class="line">        &lt;Directory  .....&gt;</span><br><span class="line">         </span><br><span class="line">        &lt;/Directory&gt;</span><br><span class="line">        &lt;/VirtualHost&gt;</span><br><span class="line">    <span class="number">3</span>，ServerAlias  别名<span class="number">1</span>  别名<span class="number">2</span> 写在ServerName并列的位置。</span><br></pre></td></tr></table></figure>
+</li>
+<li><h2 id="Day2"><a href="#Day2" class="headerlink" title="Day2"></a>Day2</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>,Php 书写短格式，在php.ini中打开short_open_tag = ON;</span><br><span class="line"><span class="number">2</span>,Php 书写特性</span><br><span class="line">        <span class="number">1</span>，变量区分大小写</span><br><span class="line">        <span class="number">2</span>，常量通常也区分，可设置不区分</span><br><span class="line">        <span class="number">3</span>，函数名，（<span class="keyword">if</span> <span class="keyword">for</span> <span class="keyword">return</span> ...）</span><br><span class="line">        <span class="number">4</span>, 分号 结束</span><br><span class="line"><span class="number">3</span>，变量</span><br><span class="line">    <span class="number">1</span>，值传递</span><br><span class="line">        $ver1 = <span class="number">1</span>; $ver2 = $ver1; </span><br><span class="line">    <span class="number">2</span>，引用传递</span><br><span class="line">        $ver1 = <span class="number">1</span>; $ver2 = &amp; $ver1;</span><br><span class="line">    <span class="number">3</span>，可变变量</span><br><span class="line">        $ver1 = <span class="string">"ver2"</span>;</span><br><span class="line">        $ver2 = <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">echo</span> $$ver2;</span><br><span class="line">    <span class="number">4</span>, 预定义变量：</span><br><span class="line">        $_GET;$_POST;$_REQUSET;$_SERVER;_GLOBALS</span><br><span class="line">        <span class="number">1</span>，均为数组</span><br><span class="line">        <span class="number">2</span>，系统定义与维护</span><br><span class="line">        <span class="number">3</span>，超全局作用域</span><br><span class="line">        <span class="number">4</span>，不同情景具有不同的值</span><br><span class="line">        </span><br><span class="line">            :$_POST;$_GET;表单提交 </span><br><span class="line">                <span class="comment">//提交get表单有 5种形式；</span></span><br><span class="line">                <span class="number">1</span>,  &lt;from action = <span class="string">"xx.php method = "</span>get<span class="string">"&gt;</span></span><br><span class="line"><span class="string">                        &lt;input type = "</span>text<span class="string">" name = "</span>data1<span class="string">"/&gt;</span></span><br><span class="line"><span class="string">                        &lt;input type = "</span>text<span class="string">" name = "</span>data2<span class="string">"/&gt;</span></span><br><span class="line"><span class="string">                        &lt;input type = "</span>submit name = <span class="string">"submit"</span>/&gt;</span><br><span class="line">                    &lt;/from&gt;</span><br><span class="line">                <span class="number">2</span>, &lt;a href = <span class="string">"xxx.php?data1 = data1 &amp; data2 = data2"</span>&gt;链接传递&lt;/a&gt;    </span><br><span class="line">                <span class="number">3</span>,  &lt;script&gt;</span><br><span class="line">                        location.href = <span class="string">"xxx.php?data1=data1 &amp; data2 = data2"</span></span><br><span class="line">                    &lt;/script&gt;</span><br><span class="line">                <span class="number">4</span>, &lt;script&gt;</span><br><span class="line">                        location.assign = <span class="string">"xxx.php?data1=data1 &amp; data2 = data2"</span></span><br><span class="line">                    &lt;/script&gt;</span><br><span class="line">                <span class="number">5</span>,</span><br><span class="line">                    <span class="comment">//header("location:xxx.php")</span></span><br><span class="line">                    <span class="comment">//header("location:xxx.php? data1 = "data1" &amp; data2 = "data2")</span></span><br><span class="line">            :$_REQUEST;</span><br><span class="line">                为$_POST,$_GET合集:如果变量名相同时，后者覆盖前者</span><br><span class="line">                </span><br><span class="line">            :$_SERVER;</span><br><span class="line">                <span class="number">1</span>,$_SERVER[<span class="string">'REMOTE_ADDR'</span>]:获取访问者的IP地址</span><br><span class="line">                <span class="number">2</span>,$_SERVER[<span class="string">'SERVER_ADDR'</span>]:获取访问者的ip地址</span><br><span class="line">                <span class="number">3</span>,$_SERVER[<span class="string">'SERVER_NAME'</span>]:获取服务器NAME(servername)</span><br><span class="line">                <span class="number">4</span>,$_SERVER[<span class="string">'DOCUMENT_ROOT'</span>];获取站点的真实物理地址，其实就是站点设置中的documentroot</span><br><span class="line"></span><br><span class="line">                <span class="number">5</span>,$_SERVER[<span class="string">'PHP_SELF'</span>];获取当前网页地址</span><br><span class="line">                <span class="number">6</span>,$_SERVER[<span class="string">'SCRIPT_FILENAME'</span>];获取当前网页地址物理路径</span><br><span class="line">                <span class="number">7</span>,$_SERVER[<span class="string">'QUERY_STRING'</span>];获取当前网页地址中的所有get数据</span><br><span class="line">            :$_GLOBALS:全局变量</span><br><span class="line">            </span><br><span class="line">    <span class="number">4</span>，常量：常量相对于变量来说，其中储存的数据不会改变的标识符。</span><br><span class="line">            </span><br><span class="line">            <span class="number">1</span>,define(<span class="string">"VERSION"</span>,<span class="string">"1.0"</span>)</span><br><span class="line">            <span class="number">2</span>,<span class="keyword">const</span> version = <span class="string">"1.0"</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment">//取值</span></span><br><span class="line">            $a = VERSION;  $a = constant(<span class="string">"VERSION"</span>); </span><br><span class="line">            </span><br><span class="line">            区别:</span><br><span class="line">            </span><br><span class="line">                <span class="number">1</span>，使用形式不同。</span><br><span class="line">                <span class="number">2</span>，可变程度不同（不可改变和销毁）</span><br><span class="line">                <span class="number">3</span>，全局作用域</span><br><span class="line">                <span class="number">4</span>，只能储存标量类型(bool,float,int,string)</span><br><span class="line">                </span><br><span class="line">            判断:</span><br><span class="line">            </span><br><span class="line">                <span class="number">1</span>，defined(<span class="string">"VERSION"</span>) 是否定义</span><br><span class="line">            </span><br><span class="line">            预定义常量:</span><br><span class="line">                M_PI:圆周率的常量值</span><br><span class="line">                PHP_OS:php运行所在的操作系统</span><br><span class="line">                PHP_VERSION:版本号</span><br><span class="line">                PHP_INT_MAX:最大的整数值</span><br><span class="line">                PHP_EOL:换行符</span><br><span class="line">            魔术变量:</span><br><span class="line">                <span class="keyword">__FILE__</span>    <span class="comment">//当前文件的完整路径</span></span><br><span class="line">                <span class="keyword">__DIR__</span>     <span class="comment">//当前文件所在的目录</span></span><br><span class="line">                <span class="keyword">__LINE__</span>    <span class="comment">//当前文件的行号</span></span><br><span class="line"></span><br><span class="line">    <span class="number">5</span>,数据类型:</span><br><span class="line">        </span><br><span class="line">        <span class="number">1</span>,基本类型</span><br><span class="line">            </span><br><span class="line">            整数类型:int.integer</span><br><span class="line">            浮点数类型:float</span><br><span class="line">            字符串类型:string</span><br><span class="line">            布尔类型:bool,boolean</span><br><span class="line">        <span class="number">2</span>,复合类型</span><br><span class="line">            </span><br><span class="line">            数组:<span class="keyword">array</span></span><br><span class="line">            对象:object</span><br><span class="line">        <span class="number">3</span>，特殊类型</span><br><span class="line">            </span><br><span class="line">            空类型:<span class="keyword">null</span></span><br><span class="line">            资源类型resource</span><br><span class="line">            </span><br><span class="line">        <span class="number">4</span>，整数类型</span><br><span class="line">            $v = <span class="number">123</span>;   <span class="comment">//10 dec</span></span><br><span class="line">            $v = <span class="number">0123</span>;  <span class="comment">//8 oct</span></span><br><span class="line">            $v = <span class="number">0x123</span>; <span class="comment">//16 hex</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment">//十进制转化：</span></span><br><span class="line">                decbin(),decoct(),dechex()  <span class="comment">// 2,8 16</span></span><br><span class="line">        <span class="number">5</span>, 浮点</span><br><span class="line">            <span class="comment">//精度为3位比较</span></span><br><span class="line">            <span class="keyword">if</span> (round($v/<span class="number">3</span> * <span class="number">1000</span>) == round(<span class="number">2.7</span>*<span class="number">1000</span>)) &#123; &#125;;</span><br><span class="line">        <span class="number">6</span>，字符串</span><br><span class="line">            $str = &lt;&lt;&lt; <span class="string">"a"</span> Hello World <span class="string">"a"</span>; </span><br><span class="line">            </span><br><span class="line">            •	var_dump()：用于输出变量的“完整信息”，几乎只用于调试代码。</span><br><span class="line">            •	getType($变量名)：获取该变量的类型名字，返回的是一个表示该类型名字的字符串，比如：“string”，“bool”，“double”，“int”</span><br><span class="line">            •	setType($变量名，“目标类型”)：将该变量强制改变为目标类型；</span><br><span class="line">            •	<span class="keyword">isset</span>(), <span class="keyword">empty</span>(), <span class="keyword">unset</span>();</span><br><span class="line">            </span><br><span class="line">            •   比较 <span class="string">"=="</span>(模糊比较) <span class="string">"==="</span>(精确比较)</span><br></pre></td></tr></table></figure>
+</li>
+<li><h2 id="Day3"><a href="#Day3" class="headerlink" title="Day3"></a>Day3</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>，运算符</span><br><span class="line">    </span><br><span class="line">    <span class="number">1</span>，逻辑运算  &amp;&amp;(与), ||(或), !(非)</span><br><span class="line">    <span class="number">2</span>, 字符串拼接 . <span class="string">'将两个字符串连接并类型转换'</span></span><br><span class="line">    <span class="number">3</span>，赋值运算符 : <span class="string">'+='</span> ,<span class="string">'-='</span>,<span class="string">'*'</span></span><br><span class="line"><span class="number">2</span>,条件运算</span><br><span class="line">    <span class="number">1</span>, Bool ?  v2 : v3;</span><br><span class="line"><span class="number">3</span>,位运算符</span><br><span class="line">    <span class="number">1</span>,<span class="string">'&amp;'</span>(位与) <span class="string">'|'</span>(位或) <span class="string">'~'</span>(位取反) <span class="string">'^'</span>(位异或) <span class="string">'&lt;&lt;'</span>(左移动)</span><br><span class="line">    </span><br><span class="line"><span class="number">4</span>,原码，反码，补码，</span><br><span class="line">      </span><br><span class="line">      <span class="string">'反码'</span>:  正数的反码是起原码本身，负数的反码是</span><br><span class="line">      其符号位不变，其它位取反</span><br><span class="line">      <span class="string">'补码'</span>:  正数等于本身，负数：符号位不变，其它位取反后加＋<span class="number">1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h2 id="Day6"><a href="#Day6" class="headerlink" title="Day6"></a>Day6</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>,函数</span><br><span class="line"></span><br><span class="line">    <span class="number">1</span>，参数:</span><br><span class="line">    </span><br><span class="line">        <span class="number">1</span>: func_get_args();<span class="comment">//获取实参数据列表，成为一个数组</span></span><br><span class="line">        <span class="number">2</span>: func_get_arg($i);<span class="comment">//获取第$i个实参数据，$i从0开始算起；</span></span><br><span class="line">        <span class="number">3</span>：func_num_args();<span class="comment">//获取实参的数量（个数）</span></span><br><span class="line">        </span><br><span class="line">    <span class="number">2</span>,匿名函数:</span><br><span class="line">        </span><br><span class="line">        <span class="number">1</span>;</span><br><span class="line">        $func1 = <span class="function"><span class="keyword">function</span><span class="params">($str)</span>:<span class="title">String</span></span>&#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"匿名函数"</span>;</span><br><span class="line">            <span class="keyword">return</span> strtoupper($str);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        $func1(<span class="string">"Hello"</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="number">2</span>:</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">func1</span><span class="params">($x,$y,$z)</span>:<span class="title">int</span> </span>&#123;</span><br><span class="line">            </span><br><span class="line">            retrun $x + $y + $z($x + $y);</span><br><span class="line">        &#125;</span><br><span class="line">        $f1 = <span class="function"><span class="keyword">function</span><span class="params">($v1,$v2)</span>:<span class="title">int</span> </span>&#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">return</span> $v1 + $v2;</span><br><span class="line">        &#125;</span><br><span class="line">        func1(<span class="number">1</span>,<span class="number">2</span>,$f1(<span class="number">1</span>,<span class="number">2</span>));</span><br><span class="line">    <span class="number">3</span>,作用域：</span><br><span class="line">        <span class="number">1</span>,要点</span><br><span class="line">            <span class="number">1</span>，全局范围不能访问局部变量</span><br><span class="line">            <span class="number">2</span>，局部范围不能访问全局变量；</span><br><span class="line">            <span class="number">3</span>，函数内部的变量（局部变量），通常在函数调用执行结束后，被“销毁”。</span><br><span class="line">            <span class="number">4</span>，局部静态变量，在函数调用结束后不被销毁；</span><br><span class="line">        <span class="number">2</span>，局部操作全局变量</span><br><span class="line">        </span><br><span class="line">            <span class="number">1</span>，使用<span class="keyword">global</span>关键字实现 :<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123; <span class="keyword">global</span> $v1;</span><br><span class="line">                $v1 = <span class="number">66</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="number">2</span>，使用$GLOBALS超全局变量来实现 <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                $GLOBAILS[<span class="string">'v1'</span>] = <span class="number">66</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="number">3</span>,函数相关的系统函数操作</span><br><span class="line">            • function_exists()：判断函数是否被定义过。其中使用的参数为“函数名”</span><br><span class="line">    <span class="number">4</span>,其他常用系统函数:</span><br><span class="line">        • 字符串函数：</span><br><span class="line">            <span class="number">1</span>: 输出与格式化：<span class="keyword">echo</span> , <span class="keyword">print</span>, printf, print_r, var_dump.</span><br><span class="line">            <span class="number">2</span>: 字符串去除与填充：trim, ltrim, rtrim, str_pad</span><br><span class="line">            <span class="number">3</span>: 字符串连接与分割：implode, join， explode, str_split</span><br><span class="line">            <span class="number">4</span>: 字符串截取：substr, strchr, strrchr,</span><br><span class="line">            <span class="number">5</span>: 字符串替换：str_replace, substr_replace</span><br><span class="line">            <span class="number">6</span>: 字符串长度与位置： strlen, strpos, strrpos,</span><br><span class="line">            <span class="number">7</span>: 字符转换：strtolower, strtoupper, lcfirst, ucfirst, ucwords</span><br><span class="line">            <span class="number">8</span>: 特殊字符处理：nl2br, addslashes, htmlspecialchars, htmlspecialchars_decode,</span><br><span class="line">            </span><br><span class="line">    <span class="number">5.</span>递归函数:</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">factorial</span><span class="params">($n)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> ($n == <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> $n * factorial($n - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h2 id="Day7"><a href="#Day7" class="headerlink" title="Day7"></a>Day7</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">  <span class="number">1</span>,数组基础</span><br><span class="line"></span><br><span class="line">  	<span class="number">1</span>, each()函数的使用</span><br><span class="line"></span><br><span class="line">  		<span class="number">1</span>,<span class="keyword">foreach</span>($arr <span class="keyword">as</span> $key=&gt;$value) &#123;</span><br><span class="line"></span><br><span class="line">  		&#125;</span><br><span class="line"></span><br><span class="line">  		<span class="number">2</span>,<span class="keyword">while</span>( <span class="keyword">list</span>($key,$value) = each($arr) ) &#123;</span><br><span class="line"></span><br><span class="line">  		&#125;</span><br><span class="line"></span><br><span class="line">  		<span class="number">3</span>,each()函数的作用：先取得一个数组的“当前单元”的下标和值（并放入一个数组），然后将指针移到下一个单元。</span><br><span class="line">            </span><br><span class="line">      <span class="number">4</span>,常用数组相关函数</span><br><span class="line">        </span><br><span class="line">        	<span class="number">1</span>，count()，key()，range()，asort()</span><br><span class="line">        	</span><br><span class="line">  ``` </span><br><span class="line">- <span class="comment">## Day8</span></span><br></pre></td></tr></table></figure>
+<p>  1,MYSQL</p>
+<pre><code>`
+1，连接sql
+
+    mysql -h 0.0.0.0 -u root  -p 或 mysql --host=服务器地址 --user=用户名 --port=端口 --password
+
+2，数据库的备份和恢复：
+
+    1，mysqldump -h &apos;ip&apos; -u &apos;name&apos; -p &apos;databaseName&apos; &gt; &apos;文件名&apos;
+    2, mysql  -h localhost  -u root -p &apos;databaseName&apos; &lt; 文件名&apos;
+
+3,  创建数据库 
+
+    create database dbTest charset utf8 collate utf_general_ci;
+4，删除数据库
+
+    drop database if exists databaseName;
+
+    //修改
+        alter database database_name charset utf8
+5,表操作
+    1,创建表
+        create table table_name111 (
+            id int auto_increment,
+            user_name varchar(20) not null,
+            f1 float,f2 double,f3 time, f4 text,
+            f5 decimal(10,3),
+
+            primary key(id),
+            unique(user_name)
+        );
+    2,外键索引
+        //创建tab1
+        create table class_info (
+
+            id int auto_increment,
+            class_name varchar(20) not null,
+            stu_count float,
+
+            primary key(id),
+            unique key(class_name)
+
+        );
+
+        //创建tab2
+        create table student_info (
+
+            id int auto_increment,
+            class_id int,
+
+            user_name varchar(20),
+            email varchar (50),
+            age int,
+
+            primary key(id),
+            unique key(user_name),
+            foreign key (class_id) references class_info(id)
+        );
+
+        //
+        主键约束：形式： primary key ( 字段名);
+        含义（作用）：使该设定字段的值可以用于“唯一确定一行数据”，其实就是“主键”的意思。
+
+        唯一约束：形式： unique   key ( 字段名);
+        含义（作用）：使该设定字段的值具有“唯一性”，自然也是可区分的。
+
+        外键约束：形式： foreign key ( 字段名)  references  其他表名(对应其他表中的字段名) ;
+        含义（作用）：使该设定字段的值，必须在其谁定的对应表中的对应字段中已经有该值了。
+
+        非空约束： 形式： not  null，其实就是设定一个字段时写的那个“not null”属性。
+        这个约束只能写在字段属性上；
+
+        默认约束： 形式： default  XX值；其实就是设定一个字段时写的那个“default  默认值”属性
+        这个约束只能写在字段属性上；
+
+        检查约束： 形式： check（某种判断语句），比如：
+        create  table  tab1 (
+            age  tinyint,
+            check  (age&gt;=0 and age &lt;100) /*这就是检查约束*/
+        )
+
+    6，常用关键字
+        1，表选项就是，创建一个表的时候，对该表的整体设定，主要有如下几个：
+            charset = 要使用的字符编码，
+            engine = 要使用的存储引擎（也叫表类型），
+            auto_increment = 设定当前表的自增长字段的初始值，默认是1
+            comment = ‘该表的一些说明文字’
+
+    7，表操作
+        1，修改表
+            1，添加字段：alter table table_name add column all_age int;
+            2，修改字段: alter table tableName change column old_key_word new_key_wrod int;
+            3，删除字段: alter table table_name drop column key_word
+            4，添加普通索引: alter table table_name add key(id_key)
+            5，添加唯一约束:alter table 表名 add unique key (字段名1[，字段名2,...])
+            6，添加主键索引(约束)：alter table 表名 add primary key (字段名1[，字段名2,...])；
+            7，修改表明:alter  table  旧表名   rename  [to] 新表名；
+            8，删除表：drop  table  【if  exists】 表名；
+        2,
+            • 显示当前数据库中的所有表: show tables；
+            • 显示某表的结构: desc 表名； 或：describe 表名；
+            • 显示某表的创建语句：show create table 表名；
+            • 重命名表：rename table 旧表名 to 新表名；
+            • 从已有表复制表结构：create table [if not exists] 新表名 like 原表名;
+        3,
+            扩展php中操作mysql数据的几个函数：
+            $n1 = mysql_num_rows(结果集);    //获得该结果集的数据行数；
+            $n2 = mysql_num_fields(结果集);    //获得该结果集的数据列数；
+            $name = mysql_field_name(结果集, $i );    //获得结果集的第i个字段的名字！i从0开始算起
+    8,视图（view）定义语句
+
+        语法形式：
+            create  view  视图名 【（字段名1，字段名2，字段名3，....）】   as   select语句；
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://Alexzzn.github.io/2018/07/18/Web/phpѧϰ1/" title="" target="_blank" rel="external">https://Alexzzn.github.io/2018/07/18/Web/phpѧϰ1/</a>
+    </li>
+    
+    
+  </ul>
+</blockquote>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2018/07/18/iOS/WKWebView/" title="(no title)"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2018/07/18/Web/ESLint配置/" title="(no title)"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+  
+    
+    
+    
+        <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+    
+    
+    
+        
+
+
+    
+    
+        
+    
+    
+
+
+
+</body>
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  <meta name=referrer content=never>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Hexo</title>
+  <meta name="description" content="1，pod安装更改源 cocoapods卸载与安装的各种坑http://www.cnblogs.com/hankkk/p/5703050.html  1，pod 安装源过慢1234pod repo remove masterpod repo add master https://git.coding.net/CocoaPods/Specs.gitgit clone https://git.codi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyBlog">
+<meta property="og:url" content="https://Alexzzn.github.io/2018/07/18/iOS/iOS开发笔记/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="1，pod安装更改源 cocoapods卸载与安装的各种坑http://www.cnblogs.com/hankkk/p/5703050.html  1，pod 安装源过慢1234pod repo remove masterpod repo add master https://git.coding.net/CocoaPods/Specs.gitgit clone https://git.codi">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-18T07:07:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MyBlog">
+<meta name="twitter:description" content="1，pod安装更改源 cocoapods卸载与安装的各种坑http://www.cnblogs.com/hankkk/p/5703050.html  1，pod 安装源过慢1234pod repo remove masterpod repo add master https://git.coding.net/CocoaPods/Specs.gitgit clone https://git.codi">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://Alexzzn.github.io/2018/07/18/iOS/iOS开发笔记/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="MyBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <!-- font-awesome CSS -->
+  <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+    
+    
+
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav">
+        
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">96</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/银行卡文档/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/Block_OC_1/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/iOS/WKWebView/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/Web/phpѧϰ1/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/07/18/Web/ESLint配置/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-07-18T07:07:58.000Z" itemprop="datePublished">2018-07-18</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-iOS/iOS开发笔记" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/07/18/iOS/iOS开发笔记/" class="article-date">
+	  <time datetime="2018-07-18T07:07:56.000Z" itemprop="datePublished">2018-07-18</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/07/18/iOS/iOS开发笔记/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <p>1，pod安装更改源</p>
+<p>cocoapods卸载与安装的各种坑<br><a href="http://www.cnblogs.com/hankkk/p/5703050.html" target="_blank" rel="noopener">http://www.cnblogs.com/hankkk/p/5703050.html</a></p>
+<blockquote>
+<p>1，pod 安装源过慢<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pod repo remove master</span><br><span class="line">pod repo add master https:<span class="comment">//git.coding.net/CocoaPods/Specs.git</span></span><br><span class="line">git clone https:<span class="comment">//git.coding.net/CocoaPods/Specs.git ~/.cocoapods/repos/master</span></span><br><span class="line">pod repo update</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>iOS开发－关闭/收起键盘方法总结<br>前言：作为IOS开发人员，需要经常和表单打交道。因此我对收起键盘的方法作了下总结，IOS收起键盘有三种方法（如果有其它收起键盘的方法请在留言区指错）。</p>
+<p>收起键盘的方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">1、点击Return按扭时收起键盘</span><br><span class="line"></span><br><span class="line">- (BOOL)textFieldShouldReturn: (UITextField *)textField</span><br><span class="line">&#123;</span><br><span class="line">    return [textField resignFirstResponder];</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">2、点击背景View收起键盘（你的View必须是继承于UIControl）</span><br><span class="line"></span><br><span class="line">[self.view endEditing:YES];</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">3、你可以在任何地方加上这句话，可以用来统一收起键盘</span><br><span class="line"></span><br><span class="line">[[[UIApplication sharedApplication] keyWindow] endEditing:YES];</span><br><span class="line">这个方法是我不久前碰到的，觉得有用，就记下来了。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">4. 还有一个方法是直接发送 resignFirstResponder 消息：</span><br><span class="line"></span><br><span class="line">[[UIApplication sharedApplication] sendAction: @selector(resignFirstResponder) to:nil from:nil forEvent:nil];</span><br></pre></td></tr></table></figure></p>
+<p>3.Swift 中的指针使用<br><a href="https://onevcat.com/2015/01/swift-pointer/" target="_blank" rel="noopener">https://onevcat.com/2015/01/swift-pointer/</a></p>
+<p>Apple 期望在 Swift 中指针能够尽量减少登场几率，因此在 Swift 中指针被映射为了一个泛型类型，并且还比较抽象。这在一定程度上造成了在 Swift 中指针使用的困难，特别是对那些并不熟悉指针，也没有多少指针操作经验的开发者 (包括我自己也是) 来说，在 Swift 中使用指针确实是一个挑战。在这篇文章里，我希望能从最基本的使用开始，总结一下在 Swift 中使用指针的一些常见方式和场景。这篇文章假定你至少知道指针是什么，如果对指针本身的概念不太清楚的话，可以先看看这篇五分钟 C 指针教程 (或者它的中文版本)，应该会很有帮助。</p>
+<p>初步</p>
+<p>在 Swift 中，指针都使用一个特殊的类型来表示，那就是 UnsafePointer<t>。遵循了 Cocoa 的一贯不可变原则，UnsafePointer<t> 也是不可变的。当然对应地，它还有一个可变变体，UnsafeMutablePointer<t>。绝大部分时间里，C 中的指针都会被以这两种类型引入到 Swift 中：C 中 const 修饰的指针对应 UnsafePointer (最常见的应该就是 C 字符串的 const char * 了)，而其他可变的指针则对应 UnsafeMutablePointer。除此之外，Swift 中存在表示一组连续数据指针的 UnsafeBufferPointer<t>，表示非完整结构的不透明指针 COpaquePointer 等等。另外你可能已经注意到了，能够确定指向内容的指针类型都是泛型的 struct，我们可以通过这个泛型来对指针指向的类型进行约束以提供一定安全性。</t></t></t></t></p>
+<p>对于一个 UnsafePointer<t> 类型，我们可以通过 memory 属性对其进行取值，如果这个指针是可变的 UnsafeMutablePointer<t> 类型，我们还可以通过 memory 对它进行赋值。比如我们想要写一个利用指针直接操作内存的计数器的话，可以这么做：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">func incrementor(ptr: UnsafeMutablePointer&lt;Int&gt;) &#123;</span><br><span class="line">    ptr.memory += 1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var a = 10</span><br><span class="line">incrementor(&amp;a)</span><br><span class="line"></span><br><span class="line">a  // 11</span><br></pre></td></tr></table></figure></t></t></p>
+<p>这里和 C 的指针使用类似，我们通过在变量名前面加上 &amp; 符号就可以将指向这个变量的指针传递到接受指针作为参数的方法中去。在上面的 incrementor 中我们通过直接操作 memory 属性改变了指针指向的内容。</p>
+<p>与这种做法类似的是使用 Swift 的 inout 关键字。我们在将变量传入 inout 参数的函数时，同样也使用 &amp; 符号表示地址。不过区别是在函数体内部我们不需要处理指针类型，而是可以对参数直接进行操作。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">func incrementor1(inout num: Int) &#123;</span><br><span class="line">    num += 1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var b = 10</span><br><span class="line">incrementor1(&amp;b)</span><br><span class="line"></span><br><span class="line">b  // 11</span><br></pre></td></tr></table></figure></p>
+<p>虽然 &amp; 在参数传递时表示的意义和 C 中一样，是某个“变量的地址”，但是在 Swift 中我们没有办法直接通过这个符号获取一个 UnsafePointer 的实例。需要注意这一点和 C 有所不同：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 无法编译</span><br><span class="line">let a = 100</span><br><span class="line">let b = &amp;a</span><br><span class="line">指针初始化和内存管理</span><br></pre></td></tr></table></figure></p>
+<p>在 Swift 中不能直接取到现有对象的地址，我们还是可以创建新的 UnsafeMutablePointer 对象。与 Swift 中其他对象的自动内存管理不同，对于指针的管理，是需要我们手动进行内存的申请和释放的。一个 UnsafeMutablePointer 的内存有三种可能状态：</p>
+<p>内存没有被分配，这意味着这是一个 null 指针，或者是之前已经释放过<br>内存进行了分配，但是值还没有被初始化<br>内存进行了分配，并且值已经被初始化<br>其中只有第三种状态下的指针是可以保证正常使用的。UnsafeMutablePointer 的初始化方法 (init) 完成的都是从其他类型转换到 UnsafeMutablePointer 的工作。我们如果想要新建一个指针，需要做的是使用 alloc: 这个类方法。该方法接受一个 num: Int 作为参数，将向系统申请 num 个数的对应泛型类型的内存。下面的代码申请了一个 Int 大小的内存，并返回指向这块内存的指针：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">var intPtr = UnsafeMutablePointer&lt;Int&gt;.alloc(1)</span><br><span class="line">// &quot;UnsafeMutablePointer(0x7FD3A8E00060)&quot;</span><br><span class="line">接下来应该做的是对这个指针的内容进行初始化，我们可以使用 initialize: 方法来完成初始化：</span><br><span class="line"></span><br><span class="line">intPtr.initialize(10)</span><br><span class="line">// intPtr.memory 为 10</span><br><span class="line">在完成初始化后，我们就可以通过 memory 来操作指针指向的内存值了。</span><br><span class="line"></span><br><span class="line">在使用之后，我们最好尽快释放指针指向的内容和指针本身。与 initialize: 配对使用的 destroy 用来销毁指针指向的对象，而与 alloc: 对应的 dealloc: 用来释放之前申请的内存。它们都应该被配对使用：</span><br><span class="line"></span><br><span class="line">intPtr.destroy()</span><br><span class="line">intPtr.dealloc(1)</span><br><span class="line">intPtr = nil</span><br><span class="line">注意其实在这里对于 Int 这样的在 C 中映射为 int 的 “平凡值” 来说，destroy 并不是必要的，因为这些值被分配在常量段上。但是对于像类的对象或者结构体实例来说，如果不保证初始化和摧毁配对的话，是会出现内存泄露的。所以没有特殊考虑的话，不论内存中到底是什么，保证 initialize: 和 destroy 配对会是一个好习惯。</span><br><span class="line">指向数组的指针</span><br><span class="line"></span><br><span class="line">在 Swift 中将一个数组作为参数传递到 C API 时，Swift 已经帮助我们完成了转换，这在 Apple 的官方博客中有个很好的例子：</span><br><span class="line"></span><br><span class="line">import Accelerate</span><br><span class="line"></span><br><span class="line">let a: [Float] = [1, 2, 3, 4]</span><br><span class="line">let b: [Float] = [0.5, 0.25, 0.125, 0.0625]</span><br><span class="line">var result: [Float] = [0, 0, 0, 0]</span><br><span class="line"></span><br><span class="line">vDSP_vadd(a, 1, b, 1, &amp;result, 1, 4)</span><br><span class="line"></span><br><span class="line">// result now contains [1.5, 2.25, 3.125, 4.0625]</span><br><span class="line">对于一般的接受 const 数组的 C API，其要求的类型为 UnsafePointer，而非 const 的数组则对应 UnsafeMutablePointer。使用时，对于 const 的参数，我们直接将 Swift 数组传入 (上例中的 a 和 b)；而对于可变的数组，在前面加上 &amp; 后传入即可 (上例中的 result)。</span><br><span class="line"></span><br><span class="line">对于传参，Swift 进行了简化，使用起来非常方便。但是如果我们想要使用指针来像之前用 memory 的方式直接操作数组的话，就需要借助一个特殊的类型：UnsafeMutableBufferPointer。Buffer Pointer 是一段连续的内存的指针，通常用来表达像是数组或者字典这样的集合类型。</span><br><span class="line"></span><br><span class="line">var array = [1, 2, 3, 4, 5]</span><br><span class="line">var arrayPtr = UnsafeMutableBufferPointer&lt;Int&gt;(start: &amp;array, count: array.count)</span><br><span class="line">// baseAddress 是第一个元素的指针</span><br><span class="line">var basePtr = arrayPtr.baseAddress as UnsafeMutablePointer&lt;Int&gt;</span><br><span class="line"></span><br><span class="line">basePtr.memory // 1</span><br><span class="line">basePtr.memory = 10</span><br><span class="line">basePtr.memory // 10</span><br><span class="line"></span><br><span class="line">//下一个元素</span><br><span class="line">var nextPtr = basePtr.successor()</span><br><span class="line">nextPtr.memory // 2</span><br><span class="line">指针操作和转换</span><br><span class="line"></span><br><span class="line">withUnsafePointer</span><br><span class="line">上面我们说过，在 Swift 中不能像 C 里那样使用 &amp; 符号直接获取地址来进行操作。如果我们想对某个变量进行指针操作，我们可以借助 withUnsafePointer 这个辅助方法。这个方法接受两个参数，第一个是 inout 的任意类型，第二个是一个闭包。Swift 会将第一个输入转换为指针，然后将这个转换后的 Unsafe 的指针作为参数，去调用闭包。使用起来大概是这个样子：</span><br><span class="line"></span><br><span class="line">var test = 10</span><br><span class="line">test = withUnsafeMutablePointer(&amp;test, &#123; (ptr: UnsafeMutablePointer&lt;Int&gt;) -&gt; Int in</span><br><span class="line">    ptr.memory += 1</span><br><span class="line">    return ptr.memory</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">test // 11</span><br></pre></td></tr></table></figure></p>
+<p>这里其实我们做了和文章一开始的 incrementor 相同的事情，区别在于不需要通过方法的调用来将值转换为指针。这么做的好处对于那些只会执行一次的指针操作来说是显而易见的，可以将“我们就是想对这个指针做点事儿”这个意图表达得更加清晰明确。</p>
+<p>unsafeBitCast<br>unsafeBitCast 是非常危险的操作，它会将一个指针指向的内存强制按位转换为目标的类型。因为这种转换是在 Swift 的类型管理之外进行的，因此编译器无法确保得到的类型是否确实正确，你必须明确地知道你在做什么。比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let arr = NSArray(object: &quot;meow&quot;)</span><br><span class="line">let str = unsafeBitCast(CFArrayGetValueAtIndex(arr, 0), CFString.self)</span><br><span class="line">str // “meow”</span><br></pre></td></tr></table></figure></p>
+<p>因为 NSArray 是可以存放任意 NSObject 对象的，当我们在使用 CFArrayGetValueAtIndex 从中取值的时候，得到的结果将是一个 UnsafePointer<void>。由于我们很明白其中存放的是 String 对象，因此可以直接将其强制转换为 CFString。</void></p>
+<p>关于 unsafeBitCast 一种更常见的使用场景是不同类型的指针之间进行转换。因为指针本身所占用的的大小是一定的，所以指针的类型进行转换是不会出什么致命问题的。这在与一些 C API 协作时会很常见。比如有很多 C API 要求的输入是 void *，对应到 Swift 中为 UnsafePointer<void>。我们可以通过下面这样的方式将任意指针转换为 UnsafePointer。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var count = 100</span><br><span class="line">var voidPtr = withUnsafePointer(&amp;count, &#123; (a: UnsafePointer&lt;Int&gt;) -&gt; UnsafePointer&lt;Void&gt; in</span><br><span class="line">    return unsafeBitCast(a, UnsafePointer&lt;Void&gt;.self)</span><br><span class="line">&#125;)</span><br><span class="line">// voidPtr 是 UnsafePointer&lt;Void&gt;。相当于 C 中的 void *</span><br><span class="line"></span><br><span class="line">// 转换回 UnsafePointer&lt;Int&gt;</span><br><span class="line">var intPtr = unsafeBitCast(voidPtr, UnsafePointer&lt;Int&gt;.self)</span><br><span class="line">intPtr.memory //100</span><br></pre></td></tr></table></figure></void></p>
+<p><a href="http://www.cocoachina.com/bbs/read.php?tid=307641" target="_blank" rel="noopener">http://www.cocoachina.com/bbs/read.php?tid=307641</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//swfit oc 宏定义兼容写法</span><br><span class="line">extern NSString * const kPOPLayerBackgroundColor;</span><br><span class="line">extern NSString * const kPOPLayerBounds;</span><br><span class="line">extern NSString * const kPOPLayerCornerRadius;</span><br><span class="line">`</span><br></pre></td></tr></table></figure></p>
+<h4 id="nav"><a href="#nav" class="headerlink" title="nav"></a>nav</h4><p><code>`</code><br>关于nav过渡的解决方案：RTRootNavigationController，细节原理可参考 JTNavigationController</p>
+<p><a href="https://github.com/rickytan/RTRootNavigationController" target="_blank" rel="noopener">https://github.com/rickytan/RTRootNavigationController</a><br><a href="https://github.com/roodkcab/HHNavigationController" target="_blank" rel="noopener">https://github.com/roodkcab/HHNavigationController</a><br><a href="https://github.com/DanisFabric" target="_blank" rel="noopener">https://github.com/DanisFabric</a></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://Alexzzn.github.io/2018/07/18/iOS/iOS开发笔记/" title="" target="_blank" rel="external">https://Alexzzn.github.io/2018/07/18/iOS/iOS开发笔记/</a>
+    </li>
+    
+    
+  </ul>
+</blockquote>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2018/07/18/iOS/webviewTojs/" title="(no title)"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2018/07/18/iOS/rac5ѧϰ/" title="(no title)"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+  
+    
+    
+    
+        <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+    
+    
+    
+        
+
+
+    
+    
+        
+    
+    
+
+
+
+</body>
+</html>
