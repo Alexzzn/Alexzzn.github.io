@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="我的博客分享"><title>mysql | MyBlog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.1"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">mysql</h1><a id="logo" href="/.">MyBlog</a><p class="description">博客</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">mysql</h1><div class="post-meta">Jul 19, 2018<span> | </span><span class="category"><a href="/categories/Web/">Web</a></span></div><div class="post-content"><p><code>`</code>php<br>方法1： 用SET PASSWORD命令</p>
+<p>　　mysql -u root<br>　　mysql&gt; SET PASSWORD FOR ‘root‘@’localhost’ = PASSWORD(‘newpass’);<br>　　<br>　　<br>方法2：用mysqladmin</p>
+<p>　　mysqladmin -u root password “newpass”</p>
+<p>　　如果root已经设置过密码，采用如下方法
+　　</p>
+<p>　　mysqladmin -u root password oldpass “newpass”<br>　　<br>方法3 :UPDATE直接编辑user表</p>
+<p>　　mysql -u root</p>
+<p>　　mysql&gt; use mysql;</p>
+<p>　　mysql&gt; UPDATE user SET Password = PASSWORD(‘newpass’) WHERE user = ‘root’;</p>
+<p>　　mysql&gt; FLUSH PRIVILEGES;<br>　　<br>　&lt;&lt;　在丢失root密码的时候，可以这样</p>
+<p>　　mysqld_safe –skip-grant-tables&amp;</p>
+<p>　　mysql -u root mysql</p>
+<p>　　mysql&gt; UPDATE user SET password=PASSWORD(“new password”) WHERE user=’root’;</p>
+<p>　　mysql&gt; FLUSH PRIVILEGES;<br>　　<br>4, <strong>mac mysql error You must reset your password using ALTER USER statement before executing this statement.</strong><br>    step 1: SET PASSWORD = PASSWORD(‘your new password’);</p>
+<pre><code>step 2: ALTER USER &apos;root&apos;@&apos;localhost&apos; PASSWORD EXPIRE NEVER;
+
+step 3: flush privileges;
+</code></pre><p>5.修改密码强度检测：</p>
+<pre><code>validate_password_length：密码最小长度。
+
+validate_password_mixed_case_count：密码至少要包含的小写字母个数和大写字母个数。
+
+validate_password_number_count：密码至少要包含的数字个数。
+
+validate_password_policy：密码强度检查等级，0/LOW、1/MEDIUM、2/STRONG。
+
+validate_password_special_char_count：密码至少要包含的特殊字符数。
+
+--&gt;
+set golbal set global validate_password_mixed_case_count=0;
+</code></pre><ol start="6">
+<li>查看数据库位置<br> show variables like ‘%datadir%’;
+　　</li>
+</ol>
+</div><div class="tags"></div><div class="post-nav"><a class="next" href="/2018/07/19/Server/字符串/">字符串</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="https://Alexzzn.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Server/">Server</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统相关/">系统相关</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/19/Web/mysql/">mysql</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/19/Server/字符串/">字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/19/Web/mysql基本语句/">mysql基本语句</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/java注解/">java注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/地图定位/">地图定位</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/tableview/">tableview</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/swift4/">swift4</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/pod 错误问题/">pod 错误问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/BASH小结/">BASH小结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/WKWebView/">WKWebView</a></li></ul></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">MyBlog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.1" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.1" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.1"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.1"></script></div></body></html>
