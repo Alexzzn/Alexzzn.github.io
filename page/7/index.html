@@ -107,7 +107,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/swift4 包管理/" data-id="cjjs94x1400469t53x37pe78s" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/swift4 包管理/" data-id="cjjsawxfv00391m53hz7ul1fe" class="article-share-link">分享</a>
       
       
       
@@ -151,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Server/django基础/" data-id="cjjs94wz100109t53z36vuooz" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Server/django基础/" data-id="cjjsawxdw00081m53w7vgbqvs" class="article-share-link">分享</a>
       
       
       
@@ -228,7 +228,7 @@ def __new__(cls, *args, **kwargs):
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Server/Python_2/" data-id="cjjs94wyz000v9t53nc75orri" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Server/Python_2/" data-id="cjjsawxds00051m53rx7kr8m7" class="article-share-link">分享</a>
       
       
       
@@ -274,7 +274,7 @@ def __new__(cls, *args, **kwargs):
 
 $ source ~/.bash_profile
 </code></pre><h4 id="3、-测试是否安装正常"><a href="#3、-测试是否安装正常" class="headerlink" title="3、 测试是否安装正常"></a>3、 测试是否安装正常</h4><pre><code>$ rvm -v
-</code></pre><p>如果出现rvm（版本号）……..<a href="mailto:&#x77;&#97;&#x79;&#110;&#x65;&#x73;&#x73;&#x65;&#103;&#x75;&#x69;&#x6e;&#x40;&#x67;&#109;&#97;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;" target="_blank" rel="noopener">&#x77;&#97;&#x79;&#110;&#x65;&#x73;&#x73;&#x65;&#103;&#x75;&#x69;&#x6e;&#x40;&#x67;&#109;&#97;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;</a>……基本就算是安装RVM成功了。</p>
+</code></pre><p>如果出现rvm（版本号）……..<a href="mailto:&#119;&#97;&#x79;&#x6e;&#x65;&#115;&#x73;&#101;&#103;&#117;&#105;&#x6e;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#111;&#x6d;" target="_blank" rel="noopener">&#119;&#97;&#x79;&#x6e;&#x65;&#115;&#x73;&#101;&#103;&#117;&#105;&#x6e;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#111;&#x6d;</a>……基本就算是安装RVM成功了。</p>
 <p>二、使用RVM升级Ruby</p>
 <h5 id="1、查看当前ruby版本"><a href="#1、查看当前ruby版本" class="headerlink" title="1、查看当前ruby版本"></a>1、查看当前ruby版本</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ruby -v</span><br></pre></td></tr></table></figure>
 <p>这一步会显示出来当前ruby的版本</p>
@@ -285,69 +285,7 @@ $ source ~/.bash_profile
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Server/ruby 升级/" data-id="cjjs94wz400159t53fdhjxy2m" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
- 
-
-
-  
-    <article id="post-Server/ssh相关知识" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/Server/ssh相关知识/" class="article-date">
-  <time datetime="2018-07-18T09:57:16.430Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Server/">Server</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/Server/ssh相关知识/">ssh相关知识</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <ul>
-<li><p>基本用法</p>
-<blockquote>
-<p>ssh user@host</p>
-<p>ssh -p 2222 user@host 指定端口</p>
-<p>主要原理:<br>（1）远程主机收到用户的登录请求，把自己的公钥发给用户。（2）用户使用这个公钥，将登录密码加密后，发送回来。（3）远程主机用自己的私钥，解密登录密码，如果密码正确，就同意用户登录。</p>
-</blockquote>
-</li>
-<li><p>远程登录</p>
-<blockquote>
-<p>ssh-gen 生成公私钥 <figure class="highlight plain"><figcaption><span>-t rsa -m email@qq.com ```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; </span><br><span class="line">&gt; copy公钥到host   ```ssh-copy-id user@host``` 对应目录```/etc/ssh/sshd_config</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p>如何修改失败，可修改.ssh/authorized_keys文件收到添加</p>
-</blockquote>
-<p><a href="http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" target="_blank" rel="noopener">详细介绍</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Server/ssh相关知识/" data-id="cjjs94wz500179t53ow6mdjqt" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Server/ruby 升级/" data-id="cjjsawxe2000c1m53y0u5x1m3" class="article-share-link">分享</a>
       
       
       
@@ -493,7 +431,144 @@ name = property(getName,setName)
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Server/python基本(字符串，函数，单例，属性)用法/" data-id="cjjs94wz200129t53lmh2unpv" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Server/python基本(字符串，函数，单例，属性)用法/" data-id="cjjsawxdy00091m53oh6bkhri" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
+    <article id="post-Server/ssh相关知识" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/18/Server/ssh相关知识/" class="article-date">
+  <time datetime="2018-07-18T09:57:16.430Z" itemprop="datePublished">2018-07-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Server/">Server</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/18/Server/ssh相关知识/">ssh相关知识</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <ul>
+<li><p>基本用法</p>
+<blockquote>
+<p>ssh user@host</p>
+<p>ssh -p 2222 user@host 指定端口</p>
+<p>主要原理:<br>（1）远程主机收到用户的登录请求，把自己的公钥发给用户。（2）用户使用这个公钥，将登录密码加密后，发送回来。（3）远程主机用自己的私钥，解密登录密码，如果密码正确，就同意用户登录。</p>
+</blockquote>
+</li>
+<li><p>远程登录</p>
+<blockquote>
+<p>ssh-gen 生成公私钥 <figure class="highlight plain"><figcaption><span>-t rsa -m email@qq.com ```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; </span><br><span class="line">&gt; copy公钥到host   ```ssh-copy-id user@host``` 对应目录```/etc/ssh/sshd_config</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>如何修改失败，可修改.ssh/authorized_keys文件收到添加</p>
+</blockquote>
+<p><a href="http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" target="_blank" rel="noopener">详细介绍</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Server/ssh相关知识/" data-id="cjjsawxe1000b1m530q1t8aqh" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
+    <article id="post-Server/linux命令要点" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/18/Server/linux命令要点/" class="article-date">
+  <time datetime="2018-07-18T09:57:16.429Z" itemprop="datePublished">2018-07-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Server/">Server</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/18/Server/linux命令要点/">linux命令要点</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p><code>`</code><br>管道：ls -al | more<br>查找：grep -n “hello” hello.txt<br>软链接：ln name name2<br>硬链接：ln -s name name2<br>查找：<br>    find /User/zzn -name “<em>file</em>“<br>    find /User/zzn -size +100M<br>    find /User/zzn -size +100M -size +1G<br>归档管理:<br>    //.tar<br>    tar -cvf test.tar <em>.py -C /User/zzn<br>    tar -xvf test.tar<br>    //.tar.gz<br>    tar -zcvf test.tar.gz </em>.py<br>    tar -zxvf test.tar<br>    //.tar.bz2<br>    tar -jcvf test.tar.gz <em>.py<br>    tar -jxvf test.tar<br>    //zip<br>    zip test.zip </em>.py<br>    unzip test.zip -d /User/zzn<br>进程信息:<br>    ps -aux //运行的程序<br>    kill -9 pid<br>    top<br>    htop<br>系统相关:<br>    shutdown -h 20:20<br>    reboot<br>    df -h //磁盘查询<br>    du -h //当前目录占用查询<br>用户相关:<br>    sudo useradd -m name1     //创建家目录<br>    su - name1                //切换家目录<br>    sudo passwd name1<br>    userdel -r name<br>    sudo -s                 //切换到root用户</p>
+<pre><code>groupadd
+groupdel
+
+//默认账户添加系统组(ubuntu)
+sudo usermod -a -G sudo name1
+sudo useradd -a -g adm name1
+//修改文件的所有者
+chown name1
+chgrp group1
+//文件权限
+-rwx rwx r-x
+文件拥有者权限 文件组权限 访客权限
+x-&gt;对于目录可进入 对于文件为可执行（.shell）
+//改变文件权限
+chmod u=rw,g=r,o=r file.txt
+chmod 641 file.txt
+</code></pre><p> vim编辑器:</p>
+<pre><code>O行首插入 o行末插入
+i光标前插入 I行首插入
+a光标末插入 A行末插入
+
+yy:复制 光标所在的这一行 4+yy复制4行
+p：粘贴
+dd：删除
+hjkl 控制光标移动
+u：撤销
+ctrl + r 反撤销
+G：回到代码的最后一行
+gg：回到代码的第一行
+R：替换光标后面的字符
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Server/linux命令要点/" data-id="cjjsawxdv00071m53r4ddldtw" class="article-share-link">分享</a>
       
       
       
@@ -571,82 +646,7 @@ while 1:
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Server/Python_1/" data-id="cjjs94wyy000t9t53rwyet1j8" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
- 
-
-
-  
-    <article id="post-Server/linux命令要点" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/Server/linux命令要点/" class="article-date">
-  <time datetime="2018-07-18T09:57:16.429Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Server/">Server</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/Server/linux命令要点/">linux命令要点</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <p><code>`</code><br>管道：ls -al | more<br>查找：grep -n “hello” hello.txt<br>软链接：ln name name2<br>硬链接：ln -s name name2<br>查找：<br>    find /User/zzn -name “<em>file</em>“<br>    find /User/zzn -size +100M<br>    find /User/zzn -size +100M -size +1G<br>归档管理:<br>    //.tar<br>    tar -cvf test.tar <em>.py -C /User/zzn<br>    tar -xvf test.tar<br>    //.tar.gz<br>    tar -zcvf test.tar.gz </em>.py<br>    tar -zxvf test.tar<br>    //.tar.bz2<br>    tar -jcvf test.tar.gz <em>.py<br>    tar -jxvf test.tar<br>    //zip<br>    zip test.zip </em>.py<br>    unzip test.zip -d /User/zzn<br>进程信息:<br>    ps -aux //运行的程序<br>    kill -9 pid<br>    top<br>    htop<br>系统相关:<br>    shutdown -h 20:20<br>    reboot<br>    df -h //磁盘查询<br>    du -h //当前目录占用查询<br>用户相关:<br>    sudo useradd -m name1     //创建家目录<br>    su - name1                //切换家目录<br>    sudo passwd name1<br>    userdel -r name<br>    sudo -s                 //切换到root用户</p>
-<pre><code>groupadd
-groupdel
-
-//默认账户添加系统组(ubuntu)
-sudo usermod -a -G sudo name1
-sudo useradd -a -g adm name1
-//修改文件的所有者
-chown name1
-chgrp group1
-//文件权限
--rwx rwx r-x
-文件拥有者权限 文件组权限 访客权限
-x-&gt;对于目录可进入 对于文件为可执行（.shell）
-//改变文件权限
-chmod u=rw,g=r,o=r file.txt
-chmod 641 file.txt
-</code></pre><p> vim编辑器:</p>
-<pre><code>O行首插入 o行末插入
-i光标前插入 I行首插入
-a光标末插入 A行末插入
-
-yy:复制 光标所在的这一行 4+yy复制4行
-p：粘贴
-dd：删除
-hjkl 控制光标移动
-u：撤销
-ctrl + r 反撤销
-G：回到代码的最后一行
-gg：回到代码的第一行
-R：替换光标后面的字符
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Server/linux命令要点/" data-id="cjjs94wz0000y9t53isks4s0h" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Server/Python_1/" data-id="cjjsawxdr00041m53yz70y0pr" class="article-share-link">分享</a>
       
       
       
@@ -700,7 +700,7 @@ R：替换光标后面的字符
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Web/php学习2/" data-id="cjjs94wzr00259t53woewi348" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Web/php学习2/" data-id="cjjsawxeh00161m53h6viai8b" class="article-share-link">分享</a>
       
       
       
@@ -787,7 +787,7 @@ R：替换光标后面的字符
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Web/Mac工具/" data-id="cjjs94wza001g9t53u5ml0wtg" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Web/Mac工具/" data-id="cjjsawxe7000m1m53xt8xco1a" class="article-share-link">分享</a>
       
       
       

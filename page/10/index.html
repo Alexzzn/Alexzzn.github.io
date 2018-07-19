@@ -73,14 +73,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-iOS/swift3 协议" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Server/python高级用法(装饰器，迭代器，生成器，闭包)" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/07/18/iOS/swift3 协议/" class="article-date">
+    <a href="/2018/07/18/Server/python高级用法(装饰器，迭代器，生成器，闭包)/" class="article-date">
   <time datetime="2018-07-18T07:07:54.000Z" itemprop="datePublished">2018-07-18</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/iOS/">iOS</a>
+    <a class="article-category-link" href="/categories/Server/">Server</a>
   </div>
 
   </div>
@@ -91,7 +91,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/iOS/swift3 协议/">swift3 协议</a>
+      <a class="article-title" href="/2018/07/18/Server/python高级用法(装饰器，迭代器，生成器，闭包)/">python高级用法(装饰器，迭代器，生成器，闭包)</a>
     </h1>
   
 
@@ -101,168 +101,36 @@
       
         <!-- Table of Contents -->
         
-        <p><code>`</code>swift<br>import UIKit</p>
-<p>var str = “Hello, playground”<br>class Person {</p>
-<pre><code>let name: String
-init(name: String) { self.name = name }
-var classes: Classess?
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> types</span><br><span class="line"><span class="comment"># 生成器</span></span><br><span class="line">a = [x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">5</span>)]</span><br><span class="line">b = (x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">5</span>))</span><br><span class="line">print(a,b)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> b:</span><br><span class="line">    print(<span class="string">"迭代器："</span>,i)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义迭代器</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">creatNum</span><span class="params">(num = <span class="number">5</span>)</span>:</span></span><br><span class="line">    a,b = <span class="number">0</span>,<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(num):</span><br><span class="line">        <span class="keyword">yield</span> b</span><br><span class="line">        a,b = b,a+b</span><br><span class="line"></span><br><span class="line">val1 = creatNum(<span class="number">5</span>)</span><br><span class="line"><span class="comment"># print(next(val1))</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> val1:</span><br><span class="line">    print(<span class="string">"自定义迭代器："</span>,i)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 迭代器 判断</span></span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line">isR = isinstance(a, collections.Iterator)</span><br><span class="line">isR1 = isinstance(iter(a), collections.Iterator)</span><br><span class="line">print(isR,isR1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 闭包</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">colsure</span><span class="params">(a,b,func)</span>:</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">"---"</span>)</span><br><span class="line">    c = a + b</span><br><span class="line">    func(c)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">exc_func</span><span class="params">(num)</span>:</span></span><br><span class="line">    print(<span class="string">"执行函数"</span>,num)</span><br><span class="line"></span><br><span class="line">colsure(<span class="number">1</span>,<span class="number">2</span>,exc_func)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">check</span><span class="params">(func)</span>:</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">"校验中。。。。"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">True</span>:</span><br><span class="line"></span><br><span class="line">            func()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">return</span>  inner()</span><br><span class="line"></span><br><span class="line"><span class="meta">@check</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">exec1</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"执行操作"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 多个装饰器</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">makeBold</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapperd</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"&lt;b&gt;"</span> + func() + <span class="string">"&lt;/b&gt;"</span></span><br><span class="line">    <span class="keyword">return</span> wrapperd <span class="comment">#返回函数的指针</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">makeItaic</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapperd</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"&lt;i&gt;"</span> + func() + <span class="string">"&lt;/i&gt;"</span></span><br><span class="line">    <span class="keyword">return</span> wrapperd</span><br><span class="line"></span><br><span class="line"><span class="meta">@makeBold</span></span><br><span class="line"><span class="meta">@makeItaic</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printHello</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"hello,world"</span></span><br><span class="line">val2 = printHello()</span><br><span class="line">print(val2)</span><br><span class="line"><span class="comment"># 通用装饰器</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">common_check</span><span class="params">(func)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func_exc</span><span class="params">(*args,**kwargs)</span>:</span></span><br><span class="line">        print(<span class="string">"记录日志。。。"</span>)</span><br><span class="line">        ret = func(*args,**kwargs)</span><br><span class="line">        <span class="keyword">return</span>  ret</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> func_exc</span><br><span class="line"><span class="meta">@common_check</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    print(a,b)</span><br><span class="line">    <span class="keyword">return</span>  a + b</span><br><span class="line"></span><br><span class="line">print(test(<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 带有参数的装饰器</span></span><br><span class="line"><span class="comment"># 先执行 参数 -&gt; 在执行装饰函数</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">checkArgs</span><span class="params">(arg)</span> :</span></span><br><span class="line">    print(arg)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">common_check</span><span class="params">(func)</span> :</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">func_exc</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">            print(<span class="string">"记录日志。。。"</span>)</span><br><span class="line">            <span class="keyword">if</span> args == <span class="keyword">None</span>:</span><br><span class="line">                ret = func(*args, **kwargs)</span><br><span class="line">                <span class="keyword">return</span> ret</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                ret = func(*args, **kwargs)</span><br><span class="line">                <span class="keyword">return</span> ret+arg</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> func_exc</span><br><span class="line">    <span class="keyword">return</span> common_check</span><br><span class="line"></span><br><span class="line"><span class="meta">@checkArgs("alex")</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test1</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    print(a,b)</span><br><span class="line">    <span class="keyword">return</span>  a + b</span><br><span class="line">print(test1(<span class="string">"1"</span>,<span class="string">"2"</span>))</span><br><span class="line">print(globals())</span><br><span class="line">print(locals())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 动态添加 类属性 属性 对象方法</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span><span class="params">()</span> :</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"><span class="comment">#绑定 对象方法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">address</span><span class="params">(self)</span>:</span></span><br><span class="line">    print(<span class="string">"hangzhou"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#绑定静态方法</span></span><br><span class="line"><span class="meta">@staticmethod</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">country</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"china"</span>)</span><br><span class="line"><span class="meta">@classmethod</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">area</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"asian"</span>)</span><br><span class="line"></span><br><span class="line">p1 = Person()</span><br><span class="line">p1.age = <span class="number">10</span></span><br><span class="line">Person.names = <span class="string">"zhangshan"</span></span><br><span class="line"></span><br><span class="line">Person.counory = country</span><br><span class="line">Person.area = area</span><br><span class="line">p1.address = types.MethodType(address,p1)</span><br><span class="line"></span><br><span class="line">p1.address()</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">int_max</span><span class="params">(bits, signed)</span>:</span></span><br><span class="line">    bits = bits - <span class="number">1</span> <span class="keyword">if</span> signed <span class="keyword">else</span> bits <span class="comment">#条件限制</span></span><br><span class="line">    print(bits)</span><br><span class="line">int_max(<span class="number">8</span>,<span class="keyword">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#slots</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bird</span>:</span></span><br><span class="line">    __slots__ = (<span class="string">"name"</span>,<span class="string">"age"</span>)</span><br><span class="line">b = Bird()</span><br><span class="line">b.name = <span class="string">"zhanshan"</span></span><br><span class="line">b.age = <span class="number">19</span></span><br><span class="line"><span class="comment"># b.add = ""</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 类的装饰器</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">decorate</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,func)</span>:</span></span><br><span class="line">        print(<span class="string">"初始化"</span>)</span><br><span class="line">        self.__func = func</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">        print(<span class="string">"装饰器的功能"</span>)</span><br><span class="line">        self.__func()</span><br><span class="line"></span><br><span class="line"><span class="meta">@decorate</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_dec</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"desc"</span>)</span><br><span class="line">test_dec()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>原类<br><code>`</code></p>
+</blockquote>
+<h1 id="原类"><a href="#原类" class="headerlink" title="原类"></a>原类</h1><p>person = type(“Person2”, (), {“num”: 0})<br>print(person)</p>
+<h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><p>def  func3(self):<br>    print(“绑定原类 方法”)<br>p3 = type(“Person3”, (object,), {“name”: “cat”})<br>p3.func3 = types.MethodType(func3, p3)</p>
+<p>p3.func3()</p>
+<h1 id="自定义-类"><a href="#自定义-类" class="headerlink" title="自定义 类"></a>自定义 类</h1><p>class PrefixMetaclass(type):</p>
+<pre><code>def __new__(cls, name, bases, attrs):
+    # 给所有属性和方法前面加上前缀 my_
+    _attrs = ((&apos;my_&apos; + name, value) for name, value in attrs.items())
 
-deinit { print(&quot;\(name) is being deinitialized&quot;) }
-</code></pre><p>}</p>
-<p>class Classess {</p>
-<pre><code>let no: String
-init(no: String) { self.no = no }
-weak var member: Person?
+    _attrs = dict((name, value) for name, value in _attrs)  # 转化为字典
+    _attrs[&apos;echo&apos;] = lambda self, phrase: phrase  # 增加了一个 echo 方法
 
-deinit { print(&quot;Apartment \(no) is being deinitialized&quot;) }
-</code></pre><p>}</p>
-<p>let p1 = Person.init(name: “zhanshan”)<br>let c1 = Classess.init(no: “111”)</p>
-<p>p1.classes = c1<br>c1.member = p1</p>
-<p>print(p1.classes ?? “”)<br>print(c1.member ?? “”)<br>extension Double {</p>
-<pre><code>var km:Double { return self*888}
-</code></pre><p>}</p>
-<p>let d1:Double = 2<br>d1.km</p>
-<p>//<br>protocol SomeProtocol {</p>
-<pre><code>var value1: String { get set }
-var value2: String { get }
-static var value3:String { get }
-
-//异变方法
-mutating func getName()
-</code></pre><p>}<br>//<br>protocol TwoProtocol {</p>
-<p>}<br>//多承载<br>protocol AllProtocol: SomeProtocol, TwoProtocol {</p>
-<pre><code>//定义属性别名
-associatedtype DefineType
-var weight:DefineType { get }
-</code></pre><p>}</p>
-<p>//结构体继承协议<br>struct Toprotocol:SomeProtocol {</p>
-<pre><code>mutating internal func getName() {
-
-    self.value1 = &quot;edit&quot;
-}
-
-internal var value1: String
-internal var value2: String
-internal static var value3: String = &quot;value3&quot;
-var value4:String
-</code></pre><p>}</p>
-<p>var struct1 = Toprotocol.init(value1: “value1”, value2: “value2”, value4: “value4”)</p>
-<p>var struct2:Toprotocol = struct1<br>struct2.value2 = “2”</p>
-<p>//定义别名类型<br>struct MobilePhone:AllProtocol {</p>
-<pre><code>typealias DefineType = Double
-
-internal var weight: Double
-mutating internal func getName() {
-    value2 = &quot;changed&quot;
-}
-
-internal static var value3: String = &quot;&quot;
-
-internal var value2: String
-internal var value1: String
-</code></pre><p>}</p>
-<p>let mobile1 = MobilePhone.DefineType()<br>var mobile2 = MobilePhone.init(weight: 25, value2: “value2”, value1: “value1”)<br>mobile2.getName()</p>
-<p>//Swift标准库协议</p>
-<p>//1, 比较相关的协议<br>struct Student1:Equatable {</p>
-<pre><code>var math:Int
-var english:Int
-
-static func == (lhs: Student1, rhs: Student1) -&gt; Bool {
-
-    return lhs.english == rhs.english &amp;&amp; lhs.math == rhs.math
-}
-</code></pre><p>}<br>//Student遵守Equatable<br>let s1 = Student1.init(math: 20, english: 30)<br>let s2 = Student1.init(math: 20, english: 40)<br>let isTrue1  = s1 == s2</p>
-<p>//2, 自定义比较协议<br>public protocol ZZNCompareable {</p>
-<p>   static func &lt; (lhs:Self,rhs:Self) -&gt;Bool<br>}</p>
-<p>struct Student2:ZZNCompareable {</p>
-<pre><code>var studentName1:String
-var studentName2:String
-
-//重载 &lt; 运算符
-static func &lt; (lhs:Student2,rhs:Student2) -&gt;Bool {
-
-    return lhs.studentName1 == rhs.studentName2
-}
-
-//重载 &lt;= 运算符
-static func &lt;= (lhs:Student2,rhs:Student2) -&gt;Bool {
-
-    return lhs.studentName1 == rhs.studentName2
-}
-
-//重载 &gt; 运算符
-static func &gt; (lhs:Student2,rhs:Student2) -&gt;Bool {
-
-    return lhs.studentName1 == rhs.studentName2
-}
-//重载 &gt;= 运算符
-static func &gt;= (lhs:Student2,rhs:Student2) -&gt;Bool {
-
-    return lhs.studentName1 == rhs.studentName2
-}
-</code></pre><p>}</p>
-<p>let ss2 = Student2.init(studentName1: “zz”, studentName2: “zz”)<br>let ss22 = Student2.init(studentName1: “zz”, studentName2: “zw”)<br>ss2 &lt; ss22</p>
-<p>//<br>struct Student3: Comparable {</p>
-<pre><code>var math: Int
-var english: Int
-
-//重载 &lt; 运算符
-static func &lt; (lhs:Student3,rhs:Student3) -&gt;Bool {
-
-    return (lhs.math + lhs.english) &lt; (rhs.math + rhs.english)
-}
-
-//重载 &lt;= 运算符
-static func &lt;= (lhs:Student3,rhs:Student3) -&gt;Bool {
-
-    return (lhs.math + lhs.english) &lt;= (rhs.math + rhs.english)
-}
-
-//重载 &gt; 运算符
-static func &gt; (lhs:Student3,rhs:Student3) -&gt;Bool {
-
-    return (lhs.math + lhs.english) &gt; (rhs.math + rhs.english)
-}
-//重载 &gt;= 运算符
-static func &gt;= (lhs:Student3,rhs:Student3) -&gt;Bool {
-
-    return (lhs.math + lhs.english) &gt;= (rhs.math + rhs.english)
-}
-//重载 == 运算符
-static func == (lhs:Student3,rhs:Student3) -&gt;Bool {
-
-    return (lhs.math + lhs.english) == (rhs.math + rhs.english)
-}
-</code></pre><p>}</p>
-<p>let s3_left = Student3(math: 80, english: 60)<br>let s3_right = Student3(math: 70, english: 90)<br>s3_left &gt; s3_right</p>
-<p>//—–<br>//枚举继承协议<br>protocol NetServiceProtocol {</p>
-<pre><code>var netName:String { get }//只需实现get
-mutating func change()//外部修改enum 枚举值
-</code></pre><p>}</p>
-<p>enum NetServiceType:NetServiceProtocol {</p>
-<pre><code>case union(String)
-case mobile(String)
-case telecom(String)
-
-mutating func change() {
-
-    self = .mobile(&quot;mobile&quot;)
-
-}
-
-var netName: String {
-
-    get {
-
-        return NetServiceType.mobile(&quot;mobile&quot;).netName
-    }
-}
-</code></pre><p>}</p>
+    return type.__new__(cls, name, bases, _attrs)  # 返回创建后的类
+</code></pre><p>class Foo(metaclass=PrefixMetaclass):</p>
+<pre><code># __metaclass__ = creatClass #python2
+bar = &quot;bar&quot;
+</code></pre><p>f1 = Foo()<br>print(f1.echo(“dd”))<br>print(hasattr(Foo,”my_bar”))</p>
+<p>#</p>
+<p>#偏函数<br>def showargs(*args, **wargs):<br>    print(args)<br>    print(wargs)<br>p1 = functools.partial(showargs,1,2,3)<br>p1()</p>
+<p>#warps 装饰器（不影响原有函数的 说明文档）<br>import functools<br>def check2(func):<br>    “check2”<br>    @functools.wraps(func)<br>    def warp():<br>        “warp”<br>        print(“装饰器”)<br>        func()<br>    return warp</p>
+<p>@check2<br>def function2():<br>    “function2–help”<br>    print(“function2”)</p>
+<h1 id="function2"><a href="#function2" class="headerlink" title="function2()"></a>function2()</h1><h1 id="print-help-function2"><a href="#print-help-function2" class="headerlink" title="print(help(function2))"></a>print(help(function2))</h1><p>print(function2.<strong>doc</strong>)</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/swift3 协议/" data-id="cjjs94x1200429t534ims0d73" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Server/python高级用法(装饰器，迭代器，生成器，闭包)/" data-id="cjjsawxe5000h1m533brwu27r" class="article-share-link">分享</a>
       
       
       
@@ -329,7 +197,7 @@ id data = @{ @&quot;greetingFromObjC&quot;: @&quot;这是Native&quot; };
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/WebviewBridge小结/" data-id="cjjs94x0p003m9t53jnwyj5hs" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/WebviewBridge小结/" data-id="cjjsawxfl002p1m53tiepvcqn" class="article-share-link">分享</a>
       
       
       
@@ -401,7 +269,7 @@ android:layout_width=&quot;match_parent&quot;&gt;
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Android/drawlayout/" data-id="cjjs94wyi00099t530rivaaeb" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Android/drawlayout/" data-id="cjjsawxgg004m1m535a9269iz" class="article-share-link">分享</a>
       
       
       
@@ -484,7 +352,7 @@ android:layout_width=&quot;match_parent&quot;&gt;
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/mdtest/" data-id="cjjs94x0s003q9t53mlh4xc12" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/mdtest/" data-id="cjjsawxfr00311m53r54m5hl9" class="article-share-link">分享</a>
       
       
       
@@ -533,7 +401,7 @@ android:layout_width=&quot;match_parent&quot;&gt;
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/17/hello-world/" data-id="cjjs94wx100009t53ojc8qvq7" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/17/hello-world/" data-id="cjjsawxct00001m53k9wfg0jm" class="article-share-link">分享</a>
       
       
       

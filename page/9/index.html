@@ -73,51 +73,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Web/web相关" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/Web/web相关/" class="article-date">
-  <time datetime="2018-07-18T09:53:42.895Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Web/">Web</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/Web/web相关/">web相关</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <p><code>`</code><br>1.nginx<br>安装后，NGINX的网站目录位于：<br>/usr/share/nginx/html<br>NGINX的配置文件位于：<br>/etc/nginx/nginx.conf<br>启动：service nginx start</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Web/web相关/" data-id="cjjs94wzy002d9t53k83np9zf" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
- 
-
-
-  
     <article id="post-Web/数据库备份mysql" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/07/18/Web/数据库备份mysql/" class="article-date">
@@ -213,7 +168,125 @@ mysqldump -h127.0.0.1 -uroot -ppass myweb | mysql --host=***.***.***.*** -u数�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Web/数据库备份mysql/" data-id="cjjs94x00002h9t53o40qf8e5" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Web/数据库备份mysql/" data-id="cjjsawxeo001i1m530f3zv2dc" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
+    <article id="post-Web/web相关" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/18/Web/web相关/" class="article-date">
+  <time datetime="2018-07-18T09:53:42.895Z" itemprop="datePublished">2018-07-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web/">Web</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/18/Web/web相关/">web相关</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p><code>`</code><br>1.nginx<br>安装后，NGINX的网站目录位于：<br>/usr/share/nginx/html<br>NGINX的配置文件位于：<br>/etc/nginx/nginx.conf<br>启动：service nginx start</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Web/web相关/" data-id="cjjsawxen001g1m538wk8oypy" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
+    <article id="post-Web/singleTon" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/18/Web/singleTon/" class="article-date">
+  <time datetime="2018-07-18T09:53:42.894Z" itemprop="datePublished">2018-07-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web/">Web</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/18/Web/singleTon/">singleTon</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p><code>`</code>java<br>public class Helper {</p>
+<pre><code> private static Helper instance = new Helper();  
+ private Helper (){}
+
+ public static Helper getInstance() {  
+     if (instance == null) {  
+         instance = new Helper();  
+      } 
+      return instance;  
+  }
+
+ void getName() {
+
+     System.out.println(&quot;getName&quot;);
+ }
+
+ private static class Singleton{
+
+     private static Helper singleton = new Helper();     
+ }
+
+public static Helper getInstance2() {
+
+    return Singleton.singleton;
+}
+
+static Helper shared = getInstance2();
+</code></pre><p>}</p>
+<p>class Person {<br>    public Person() {<br>        // TODO Auto-generated constructor stub<br>        Helper.shared.getName();<br>    }<br>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Web/singleTon/" data-id="cjjsawxej001a1m53xm60lddg" class="article-share-link">分享</a>
       
       
       
@@ -297,80 +370,7 @@ mysqldump -h127.0.0.1 -uroot -ppass myweb | mysql --host=***.***.***.*** -u数�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Web/Promise小结 js/" data-id="cjjs94wze001n9t53cvul4x52" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
- 
-
-
-  
-    <article id="post-Web/singleTon" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/Web/singleTon/" class="article-date">
-  <time datetime="2018-07-18T09:53:42.894Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Web/">Web</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/Web/singleTon/">singleTon</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <p><code>`</code>java<br>public class Helper {</p>
-<pre><code> private static Helper instance = new Helper();  
- private Helper (){}
-
- public static Helper getInstance() {  
-     if (instance == null) {  
-         instance = new Helper();  
-      } 
-      return instance;  
-  }
-
- void getName() {
-
-     System.out.println(&quot;getName&quot;);
- }
-
- private static class Singleton{
-
-     private static Helper singleton = new Helper();     
- }
-
-public static Helper getInstance2() {
-
-    return Singleton.singleton;
-}
-
-static Helper shared = getInstance2();
-</code></pre><p>}</p>
-<p>class Person {<br>    public Person() {<br>        // TODO Auto-generated constructor stub<br>        Helper.shared.getName();<br>    }<br>}</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Web/singleTon/" data-id="cjjs94wzu00299t53sqpsaat5" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Web/Promise小结 js/" data-id="cjjsawxea000s1m53a3andu9e" class="article-share-link">分享</a>
       
       
       
@@ -539,7 +539,7 @@ static Helper shared = getInstance2();
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Web/php学习1/" data-id="cjjs94x29005g9t5398gddkzv" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Web/php学习1/" data-id="cjjsawxf2001t1m53ef4n6m3r" class="article-share-link">分享</a>
       
       
       
@@ -586,7 +586,85 @@ static Helper shared = getInstance2();
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Web/jquery/" data-id="cjjs94wzj001v9t536w14vhfe" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Web/jquery/" data-id="cjjsawxee00101m53hue2950k" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
+    <article id="post-Web/简单shell脚本" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/18/Web/简单shell脚本/" class="article-date">
+  <time datetime="2018-07-18T07:07:56.000Z" itemprop="datePublished">2018-07-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web/">Web</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/18/Web/简单shell脚本/">简单shell脚本</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p><code>`</code><br>    //获取输入<br>    echo “Input you name”<br>    read NAME<br>    echo “Hello,$NAME”<br>    //变量<br>    var1 = “value1”<br>    var2 = var1<br>    //<br>    for skill in Java C++<br>    do<br>        echo ‘i am good at ${skill} Script’<br>    done</p>
+<h1 id="bash常用-判断"><a href="#bash常用-判断" class="headerlink" title="bash常用 判断"></a>bash常用 判断</h1><h1 id="1）判断表达式"><a href="#1）判断表达式" class="headerlink" title="　　1）判断表达式"></a>　　1）判断表达式</h1><h1 id="if-test-表达式为真"><a href="#if-test-表达式为真" class="headerlink" title="　　if test  (表达式为真)"></a>　　if test  (表达式为真)</h1><h1 id="if-test-表达式为假"><a href="#if-test-表达式为假" class="headerlink" title="　　if test !表达式为假"></a>　　if test !表达式为假</h1><h1 id="test-表达式1-–a-表达式2-两个表达式都为真"><a href="#test-表达式1-–a-表达式2-两个表达式都为真" class="headerlink" title="　　test 表达式1 –a 表达式2                  两个表达式都为真"></a>　　test 表达式1 –a 表达式2                  两个表达式都为真</h1><h1 id="test-表达式1-–o-表达式2-两个表达式有一个为真"><a href="#test-表达式1-–o-表达式2-两个表达式有一个为真" class="headerlink" title="　　test 表达式1 –o 表达式2                 两个表达式有一个为真"></a>　　test 表达式1 –o 表达式2                 两个表达式有一个为真</h1><h1 id="2）判断字符串"><a href="#2）判断字符串" class="headerlink" title="　　2）判断字符串"></a>　　2）判断字符串</h1><h1 id="test-–n-字符串-字符串的长度非零"><a href="#test-–n-字符串-字符串的长度非零" class="headerlink" title="　　test –n 字符串                                   字符串的长度非零"></a>　　test –n 字符串                                   字符串的长度非零</h1><h1 id="test-–z-字符串-字符串的长度为零"><a href="#test-–z-字符串-字符串的长度为零" class="headerlink" title="　　test –z 字符串                                    字符串的长度为零"></a>　　test –z 字符串                                    字符串的长度为零</h1><h1 id="test-字符串1＝字符串2-字符串相等"><a href="#test-字符串1＝字符串2-字符串相等" class="headerlink" title="　　test 字符串1＝字符串2                    字符串相等"></a>　　test 字符串1＝字符串2                    字符串相等</h1><h1 id="test-字符串1！＝字符串2-字符串不等"><a href="#test-字符串1！＝字符串2-字符串不等" class="headerlink" title="　　test 字符串1！＝字符串2               字符串不等"></a>　　test 字符串1！＝字符串2               字符串不等</h1><h1 id="3）判断整数"><a href="#3）判断整数" class="headerlink" title="　　3）判断整数"></a>　　3）判断整数</h1><h1 id="test-整数1-–eq-整数2-整数相等"><a href="#test-整数1-–eq-整数2-整数相等" class="headerlink" title="　　test 整数1 –eq 整数2                        整数相等"></a>　　test 整数1 –eq 整数2                        整数相等</h1><h1 id="test-整数1-–ge-整数2-整数1大于等于整数2"><a href="#test-整数1-–ge-整数2-整数1大于等于整数2" class="headerlink" title="　　test 整数1 –ge 整数2                        整数1大于等于整数2"></a>　　test 整数1 –ge 整数2                        整数1大于等于整数2</h1><h1 id="test-整数1-–gt-整数2-整数1大于整数2"><a href="#test-整数1-–gt-整数2-整数1大于整数2" class="headerlink" title="　　test 整数1 –gt 整数2                         整数1大于整数2"></a>　　test 整数1 –gt 整数2                         整数1大于整数2</h1><h1 id="test-整数1-–le-整数2-整数1小于等于整数2"><a href="#test-整数1-–le-整数2-整数1小于等于整数2" class="headerlink" title="　　test 整数1 –le 整数2                         整数1小于等于整数2"></a>　　test 整数1 –le 整数2                         整数1小于等于整数2</h1><h1 id="test-整数1-–lt-整数2-整数1小于整数2"><a href="#test-整数1-–lt-整数2-整数1小于整数2" class="headerlink" title="　　test 整数1 –lt 整数2                          整数1小于整数2"></a>　　test 整数1 –lt 整数2                          整数1小于整数2</h1><h1 id="test-整数1-–ne-整数2-整数1不等于整数2"><a href="#test-整数1-–ne-整数2-整数1不等于整数2" class="headerlink" title="　　test 整数1 –ne 整数2                        整数1不等于整数2"></a>　　test 整数1 –ne 整数2                        整数1不等于整数2</h1><h1 id="4）判断文件"><a href="#4）判断文件" class="headerlink" title="　　4）判断文件"></a>　　4）判断文件</h1><h1 id="test-File1-–ef-File2-两个文件具有同样的设备号和i结点号"><a href="#test-File1-–ef-File2-两个文件具有同样的设备号和i结点号" class="headerlink" title="　　test  File1 –ef  File2　　　　　　　　两个文件具有同样的设备号和i结点号"></a>　　test  File1 –ef  File2　　　　　　　　两个文件具有同样的设备号和i结点号</h1><h1 id="test-File1-–nt-File2-文件1比文件2-新"><a href="#test-File1-–nt-File2-文件1比文件2-新" class="headerlink" title="　　test  File1 –nt  File2　　　　　　　　文件1比文件2 新"></a>　　test  File1 –nt  File2　　　　　　　　文件1比文件2 新</h1><h1 id="test-File1-–ot-File2-文件1比文件2-旧"><a href="#test-File1-–ot-File2-文件1比文件2-旧" class="headerlink" title="　　test  File1 –ot  File2　　　　　　　　文件1比文件2 旧"></a>　　test  File1 –ot  File2　　　　　　　　文件1比文件2 旧</h1><h1 id="test-–b-File-文件存在并且是块设备文件"><a href="#test-–b-File-文件存在并且是块设备文件" class="headerlink" title="　　test –b File　　　　　　　　文件存在并且是块设备文件"></a>　　test –b File　　　　　　　　文件存在并且是块设备文件</h1><h1 id="test-–c-File-文件存在并且是字符设备文件"><a href="#test-–c-File-文件存在并且是字符设备文件" class="headerlink" title="　　test –c File　　　　　　　　文件存在并且是字符设备文件"></a>　　test –c File　　　　　　　　文件存在并且是字符设备文件</h1><h1 id="test-–d-File-文件存在并且是目录"><a href="#test-–d-File-文件存在并且是目录" class="headerlink" title="　　test –d File　　　　　　　　文件存在并且是目录"></a>　　test –d File　　　　　　　　文件存在并且是目录</h1><h1 id="test-–e-File-文件存在"><a href="#test-–e-File-文件存在" class="headerlink" title="　　test –e File　　　　　　　　文件存在"></a>　　test –e File　　　　　　　　文件存在</h1><h1 id="test-–f-File-文件存在并且是正规文件"><a href="#test-–f-File-文件存在并且是正规文件" class="headerlink" title="　　test –f File 　　　　　　　　文件存在并且是正规文件"></a>　　test –f File 　　　　　　　　文件存在并且是正规文件</h1><h1 id="test-–g-File-文件存在并且是设置了组ID"><a href="#test-–g-File-文件存在并且是设置了组ID" class="headerlink" title="　　test –g File　　　　　　　　文件存在并且是设置了组ID"></a>　　test –g File　　　　　　　　文件存在并且是设置了组ID</h1><h1 id="test-–G-File-文件存在并且属于有效组ID"><a href="#test-–G-File-文件存在并且属于有效组ID" class="headerlink" title="　　test –G File　　　　　　　　文件存在并且属于有效组ID"></a>　　test –G File　　　　　　　　文件存在并且属于有效组ID</h1><h1 id="test-–h-File-文件存在并且是一个符号链接（同-L）"><a href="#test-–h-File-文件存在并且是一个符号链接（同-L）" class="headerlink" title="　　test –h File　　　　　　　　文件存在并且是一个符号链接（同-L）"></a>　　test –h File　　　　　　　　文件存在并且是一个符号链接（同-L）</h1><h1 id="test-–k-File-文件存在并且设置了sticky位"><a href="#test-–k-File-文件存在并且设置了sticky位" class="headerlink" title="　　test –k File　　　　　　　　文件存在并且设置了sticky位"></a>　　test –k File　　　　　　　　文件存在并且设置了sticky位</h1><h1 id="test-–b-File-文件存在并且是块设备文件-1"><a href="#test-–b-File-文件存在并且是块设备文件-1" class="headerlink" title="　　test –b File　　　　　　　　文件存在并且是块设备文件"></a>　　test –b File　　　　　　　　文件存在并且是块设备文件</h1><h1 id="test-–L-File-文件存在并且是一个符号链接（同-h）"><a href="#test-–L-File-文件存在并且是一个符号链接（同-h）" class="headerlink" title="　　test –L File　　　　　　　　文件存在并且是一个符号链接（同-h）"></a>　　test –L File　　　　　　　　文件存在并且是一个符号链接（同-h）</h1><h1 id="test-–o-File-文件存在并且属于有效用户ID"><a href="#test-–o-File-文件存在并且属于有效用户ID" class="headerlink" title="　　test –o File　　　　　　　　文件存在并且属于有效用户ID"></a>　　test –o File　　　　　　　　文件存在并且属于有效用户ID</h1><h1 id="test-–p-File-文件存在并且是一个命名管道"><a href="#test-–p-File-文件存在并且是一个命名管道" class="headerlink" title="　　test –p File　　　　　　　　文件存在并且是一个命名管道"></a>　　test –p File　　　　　　　　文件存在并且是一个命名管道</h1><h1 id="test-–r-File-文件存在并且可读"><a href="#test-–r-File-文件存在并且可读" class="headerlink" title="　　test –r File　　　　　　　　文件存在并且可读"></a>　　test –r File　　　　　　　　文件存在并且可读</h1><h1 id="test-–s-File-文件存在并且是一个套接字"><a href="#test-–s-File-文件存在并且是一个套接字" class="headerlink" title="　　test –s File　　　　　　　　文件存在并且是一个套接字"></a>　　test –s File　　　　　　　　文件存在并且是一个套接字</h1><h1 id="test-–t-FD-文件描述符是在一个终端打开的"><a href="#test-–t-FD-文件描述符是在一个终端打开的" class="headerlink" title="　　test –t FD　　　　　　　　文件描述符是在一个终端打开的"></a>　　test –t FD　　　　　　　　文件描述符是在一个终端打开的</h1><h1 id="test-–u-File-文件存在并且设置了它的set-user-id位"><a href="#test-–u-File-文件存在并且设置了它的set-user-id位" class="headerlink" title="　　test –u File　　　　　　　　文件存在并且设置了它的set-user-id位"></a>　　test –u File　　　　　　　　文件存在并且设置了它的set-user-id位</h1><h1 id="test-–w-File-文件存在并且可写"><a href="#test-–w-File-文件存在并且可写" class="headerlink" title="　　test –w File　　　　　　　　文件存在并且可写"></a>　　test –w File　　　　　　　　文件存在并且可写</h1><h1 id="test-–x-File-文件存在并且可执行"><a href="#test-–x-File-文件存在并且可执行" class="headerlink" title="　　test –x File　　　　　　　　文件存在并且可执行"></a>　　test –x File　　　　　　　　文件存在并且可执行</h1><p>#!/bin/sh<br>echo “Please input your name”<br>read PERSON<br>echo “Hello,${PERSON}”</p>
+<h1 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h1><p>for loop in java php<br>    do<br>        echo “i am good at $loop Script”<br>    done</p>
+<p>echo $HOME</p>
+<h1 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h1><p>COUNTER=0<br>while [ $COUNTER lt 5 ]<br>do<br>    COUNTER=”expr $COUNTER+1”<br>    COUNTER = COUNTER+1<br>    echo $COUNTER<br>done</p>
+<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>my_array=(A B “C” D)</p>
+<h1 id="相等"><a href="#相等" class="headerlink" title="相等"></a>相等</h1><p>num1=100<br>num2=100<br>if test $[num1] -eq $[num2]<br>then<br>    echo ‘两个数相等！’<br>else<br>    echo ‘两个数不相等！’<br>fi</p>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p>demoFun(){<br>    echo “这是我的第一个 shell 函数!”<br>}<br>echo “—–函数开始执行—–”<br>demoFun<br>echo “—–函数执行完毕—–”</p>
+<h1 id="运算符-说明-举例"><a href="#运算符-说明-举例" class="headerlink" title="# 运算符    说明    举例"></a># 运算符    说明    举例</h1><h1 id="eq-检测两个数是否相等，相等返回-true。-a-eq-b-返回-true。"><a href="#eq-检测两个数是否相等，相等返回-true。-a-eq-b-返回-true。" class="headerlink" title="-eq    检测两个数是否相等，相等返回 true。    [ $a -eq $b ] 返回 true。"></a>-eq    检测两个数是否相等，相等返回 true。    [ $a -eq $b ] 返回 true。</h1><h1 id="ne-检测两个数是否相等，不相等返回-true。-a-ne-b-返回-true。"><a href="#ne-检测两个数是否相等，不相等返回-true。-a-ne-b-返回-true。" class="headerlink" title="-ne    检测两个数是否相等，不相等返回 true。    [ $a -ne $b ] 返回 true。"></a>-ne    检测两个数是否相等，不相等返回 true。    [ $a -ne $b ] 返回 true。</h1><h1 id="gt-检测左边的数是否大于右边的，如果是，则返回-true。-a-gt-b-返回-false。"><a href="#gt-检测左边的数是否大于右边的，如果是，则返回-true。-a-gt-b-返回-false。" class="headerlink" title="-gt    检测左边的数是否大于右边的，如果是，则返回 true。    [ $a -gt $b ] 返回 false。"></a>-gt    检测左边的数是否大于右边的，如果是，则返回 true。    [ $a -gt $b ] 返回 false。</h1><h1 id="lt-检测左边的数是否小于右边的，如果是，则返回-true。-a-lt-b-返回-true。"><a href="#lt-检测左边的数是否小于右边的，如果是，则返回-true。-a-lt-b-返回-true。" class="headerlink" title="-lt    检测左边的数是否小于右边的，如果是，则返回 true。    [ $a -lt $b ] 返回 true。"></a>-lt    检测左边的数是否小于右边的，如果是，则返回 true。    [ $a -lt $b ] 返回 true。</h1><h1 id="ge-检测左边的数是否大等于右边的，如果是，则返回-true。-a-ge-b-返回-false。"><a href="#ge-检测左边的数是否大等于右边的，如果是，则返回-true。-a-ge-b-返回-false。" class="headerlink" title="-ge    检测左边的数是否大等于右边的，如果是，则返回 true。    [ $a -ge $b ] 返回 false。"></a>-ge    检测左边的数是否大等于右边的，如果是，则返回 true。    [ $a -ge $b ] 返回 false。</h1><h1 id="le-检测左边的数是否小于等于右边的，如果是，则返回-true-a-le-b-返回-true。"><a href="#le-检测左边的数是否小于等于右边的，如果是，则返回-true-a-le-b-返回-true。" class="headerlink" title="-le    检测左边的数是否小于等于右边的，如果是，则返回 true    [ $a -le $b ] 返回 true。"></a>-le    检测左边的数是否小于等于右边的，如果是，则返回 true    [ $a -le $b ] 返回 true。</h1><h1 id="1-简单shell模拟登录"><a href="#1-简单shell模拟登录" class="headerlink" title="1,简单shell模拟登录"></a>1,简单shell模拟登录</h1><p>echo -n “login:”<br>read name<br>echo -n “password:”<br>read password</p>
+<p>if [ $name = “root” -a $password = “adc” ];<br>    then</p>
+<pre><code>#statements
+    echo &quot;The Host and password is right&quot;
+else
+    echo &quot;Host or password Error&quot;
+</code></pre><p>fi</p>
+<h1 id="2-比较两个数的大小"><a href="#2-比较两个数的大小" class="headerlink" title="2,比较两个数的大小"></a>2,比较两个数的大小</h1><p>echo “Please enter two number”<br>read a<br>read b<br>if test $a -eq $b ; then</p>
+<pre><code>#statements
+echo &quot;a = b&quot;
+</code></pre><p>else<br>    echo “a != b”<br>fi</p>
+<h1 id="3-查找-root-目录下是否存在该文件"><a href="#3-查找-root-目录下是否存在该文件" class="headerlink" title="3,查找/root/目录下是否存在该文件"></a>3,查找/root/目录下是否存在该文件</h1><p>echo “enter a file name”<br>read file<br>if test -e /root/$file; then<br>    echo “the file exists”<br>else<br>    echo “the file is not exists”<br>fi</p>
+<h1 id="4-给函数传递参数"><a href="#4-给函数传递参数" class="headerlink" title="4.给函数传递参数"></a>4.给函数传递参数</h1><p>func() {<br>    num1=$1<br>    echo “–func–${num}”<br>}<br>func $@</p>
+<h1 id="5-检查端口号是否已启动"><a href="#5-检查端口号是否已启动" class="headerlink" title="5.检查端口号是否已启动"></a>5.检查端口号是否已启动</h1><p>n=1<br>echo “检查3306 mysql 端口”</p>
+<p>while true<br>do<br>        if test $n -gt 20<br>        then<br>                echo “3306服务启动失败”<br>                break<br>        fi</p>
+<pre><code>sleep 5
+n=$(($n+1))
+
+# port=`netstat -antp | grep &quot;localhost:3306&quot;`
+port = `netstat -nat | grep 3306`
+# port = `lsof -i tcp:3306`
+if [ ${#port} -gt 3 ]; then
+        echo &quot;3306服务已经启动&quot;
+        break;
+fi
+</code></pre><p>done</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Web/简单shell脚本/" data-id="cjjsawxep001k1m53cgdvx6nb" class="article-share-link">分享</a>
       
       
       
@@ -689,7 +767,7 @@ var jsParamFunc = function(argument) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/webviewTojs/" data-id="cjjs94x1d004i9t53h0ozchlx" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/webviewTojs/" data-id="cjjsawxg3003p1m5348ww8v4j" class="article-share-link">分享</a>
       
       
       
@@ -701,92 +779,14 @@ var jsParamFunc = function(argument) {
 
 
   
-    <article id="post-Web/简单shell脚本" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS/swift3 协议" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/07/18/Web/简单shell脚本/" class="article-date">
-  <time datetime="2018-07-18T07:07:56.000Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Web/">Web</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/Web/简单shell脚本/">简单shell脚本</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <p><code>`</code><br>    //获取输入<br>    echo “Input you name”<br>    read NAME<br>    echo “Hello,$NAME”<br>    //变量<br>    var1 = “value1”<br>    var2 = var1<br>    //<br>    for skill in Java C++<br>    do<br>        echo ‘i am good at ${skill} Script’<br>    done</p>
-<h1 id="bash常用-判断"><a href="#bash常用-判断" class="headerlink" title="bash常用 判断"></a>bash常用 判断</h1><h1 id="1）判断表达式"><a href="#1）判断表达式" class="headerlink" title="　　1）判断表达式"></a>　　1）判断表达式</h1><h1 id="if-test-表达式为真"><a href="#if-test-表达式为真" class="headerlink" title="　　if test  (表达式为真)"></a>　　if test  (表达式为真)</h1><h1 id="if-test-表达式为假"><a href="#if-test-表达式为假" class="headerlink" title="　　if test !表达式为假"></a>　　if test !表达式为假</h1><h1 id="test-表达式1-–a-表达式2-两个表达式都为真"><a href="#test-表达式1-–a-表达式2-两个表达式都为真" class="headerlink" title="　　test 表达式1 –a 表达式2                  两个表达式都为真"></a>　　test 表达式1 –a 表达式2                  两个表达式都为真</h1><h1 id="test-表达式1-–o-表达式2-两个表达式有一个为真"><a href="#test-表达式1-–o-表达式2-两个表达式有一个为真" class="headerlink" title="　　test 表达式1 –o 表达式2                 两个表达式有一个为真"></a>　　test 表达式1 –o 表达式2                 两个表达式有一个为真</h1><h1 id="2）判断字符串"><a href="#2）判断字符串" class="headerlink" title="　　2）判断字符串"></a>　　2）判断字符串</h1><h1 id="test-–n-字符串-字符串的长度非零"><a href="#test-–n-字符串-字符串的长度非零" class="headerlink" title="　　test –n 字符串                                   字符串的长度非零"></a>　　test –n 字符串                                   字符串的长度非零</h1><h1 id="test-–z-字符串-字符串的长度为零"><a href="#test-–z-字符串-字符串的长度为零" class="headerlink" title="　　test –z 字符串                                    字符串的长度为零"></a>　　test –z 字符串                                    字符串的长度为零</h1><h1 id="test-字符串1＝字符串2-字符串相等"><a href="#test-字符串1＝字符串2-字符串相等" class="headerlink" title="　　test 字符串1＝字符串2                    字符串相等"></a>　　test 字符串1＝字符串2                    字符串相等</h1><h1 id="test-字符串1！＝字符串2-字符串不等"><a href="#test-字符串1！＝字符串2-字符串不等" class="headerlink" title="　　test 字符串1！＝字符串2               字符串不等"></a>　　test 字符串1！＝字符串2               字符串不等</h1><h1 id="3）判断整数"><a href="#3）判断整数" class="headerlink" title="　　3）判断整数"></a>　　3）判断整数</h1><h1 id="test-整数1-–eq-整数2-整数相等"><a href="#test-整数1-–eq-整数2-整数相等" class="headerlink" title="　　test 整数1 –eq 整数2                        整数相等"></a>　　test 整数1 –eq 整数2                        整数相等</h1><h1 id="test-整数1-–ge-整数2-整数1大于等于整数2"><a href="#test-整数1-–ge-整数2-整数1大于等于整数2" class="headerlink" title="　　test 整数1 –ge 整数2                        整数1大于等于整数2"></a>　　test 整数1 –ge 整数2                        整数1大于等于整数2</h1><h1 id="test-整数1-–gt-整数2-整数1大于整数2"><a href="#test-整数1-–gt-整数2-整数1大于整数2" class="headerlink" title="　　test 整数1 –gt 整数2                         整数1大于整数2"></a>　　test 整数1 –gt 整数2                         整数1大于整数2</h1><h1 id="test-整数1-–le-整数2-整数1小于等于整数2"><a href="#test-整数1-–le-整数2-整数1小于等于整数2" class="headerlink" title="　　test 整数1 –le 整数2                         整数1小于等于整数2"></a>　　test 整数1 –le 整数2                         整数1小于等于整数2</h1><h1 id="test-整数1-–lt-整数2-整数1小于整数2"><a href="#test-整数1-–lt-整数2-整数1小于整数2" class="headerlink" title="　　test 整数1 –lt 整数2                          整数1小于整数2"></a>　　test 整数1 –lt 整数2                          整数1小于整数2</h1><h1 id="test-整数1-–ne-整数2-整数1不等于整数2"><a href="#test-整数1-–ne-整数2-整数1不等于整数2" class="headerlink" title="　　test 整数1 –ne 整数2                        整数1不等于整数2"></a>　　test 整数1 –ne 整数2                        整数1不等于整数2</h1><h1 id="4）判断文件"><a href="#4）判断文件" class="headerlink" title="　　4）判断文件"></a>　　4）判断文件</h1><h1 id="test-File1-–ef-File2-两个文件具有同样的设备号和i结点号"><a href="#test-File1-–ef-File2-两个文件具有同样的设备号和i结点号" class="headerlink" title="　　test  File1 –ef  File2　　　　　　　　两个文件具有同样的设备号和i结点号"></a>　　test  File1 –ef  File2　　　　　　　　两个文件具有同样的设备号和i结点号</h1><h1 id="test-File1-–nt-File2-文件1比文件2-新"><a href="#test-File1-–nt-File2-文件1比文件2-新" class="headerlink" title="　　test  File1 –nt  File2　　　　　　　　文件1比文件2 新"></a>　　test  File1 –nt  File2　　　　　　　　文件1比文件2 新</h1><h1 id="test-File1-–ot-File2-文件1比文件2-旧"><a href="#test-File1-–ot-File2-文件1比文件2-旧" class="headerlink" title="　　test  File1 –ot  File2　　　　　　　　文件1比文件2 旧"></a>　　test  File1 –ot  File2　　　　　　　　文件1比文件2 旧</h1><h1 id="test-–b-File-文件存在并且是块设备文件"><a href="#test-–b-File-文件存在并且是块设备文件" class="headerlink" title="　　test –b File　　　　　　　　文件存在并且是块设备文件"></a>　　test –b File　　　　　　　　文件存在并且是块设备文件</h1><h1 id="test-–c-File-文件存在并且是字符设备文件"><a href="#test-–c-File-文件存在并且是字符设备文件" class="headerlink" title="　　test –c File　　　　　　　　文件存在并且是字符设备文件"></a>　　test –c File　　　　　　　　文件存在并且是字符设备文件</h1><h1 id="test-–d-File-文件存在并且是目录"><a href="#test-–d-File-文件存在并且是目录" class="headerlink" title="　　test –d File　　　　　　　　文件存在并且是目录"></a>　　test –d File　　　　　　　　文件存在并且是目录</h1><h1 id="test-–e-File-文件存在"><a href="#test-–e-File-文件存在" class="headerlink" title="　　test –e File　　　　　　　　文件存在"></a>　　test –e File　　　　　　　　文件存在</h1><h1 id="test-–f-File-文件存在并且是正规文件"><a href="#test-–f-File-文件存在并且是正规文件" class="headerlink" title="　　test –f File 　　　　　　　　文件存在并且是正规文件"></a>　　test –f File 　　　　　　　　文件存在并且是正规文件</h1><h1 id="test-–g-File-文件存在并且是设置了组ID"><a href="#test-–g-File-文件存在并且是设置了组ID" class="headerlink" title="　　test –g File　　　　　　　　文件存在并且是设置了组ID"></a>　　test –g File　　　　　　　　文件存在并且是设置了组ID</h1><h1 id="test-–G-File-文件存在并且属于有效组ID"><a href="#test-–G-File-文件存在并且属于有效组ID" class="headerlink" title="　　test –G File　　　　　　　　文件存在并且属于有效组ID"></a>　　test –G File　　　　　　　　文件存在并且属于有效组ID</h1><h1 id="test-–h-File-文件存在并且是一个符号链接（同-L）"><a href="#test-–h-File-文件存在并且是一个符号链接（同-L）" class="headerlink" title="　　test –h File　　　　　　　　文件存在并且是一个符号链接（同-L）"></a>　　test –h File　　　　　　　　文件存在并且是一个符号链接（同-L）</h1><h1 id="test-–k-File-文件存在并且设置了sticky位"><a href="#test-–k-File-文件存在并且设置了sticky位" class="headerlink" title="　　test –k File　　　　　　　　文件存在并且设置了sticky位"></a>　　test –k File　　　　　　　　文件存在并且设置了sticky位</h1><h1 id="test-–b-File-文件存在并且是块设备文件-1"><a href="#test-–b-File-文件存在并且是块设备文件-1" class="headerlink" title="　　test –b File　　　　　　　　文件存在并且是块设备文件"></a>　　test –b File　　　　　　　　文件存在并且是块设备文件</h1><h1 id="test-–L-File-文件存在并且是一个符号链接（同-h）"><a href="#test-–L-File-文件存在并且是一个符号链接（同-h）" class="headerlink" title="　　test –L File　　　　　　　　文件存在并且是一个符号链接（同-h）"></a>　　test –L File　　　　　　　　文件存在并且是一个符号链接（同-h）</h1><h1 id="test-–o-File-文件存在并且属于有效用户ID"><a href="#test-–o-File-文件存在并且属于有效用户ID" class="headerlink" title="　　test –o File　　　　　　　　文件存在并且属于有效用户ID"></a>　　test –o File　　　　　　　　文件存在并且属于有效用户ID</h1><h1 id="test-–p-File-文件存在并且是一个命名管道"><a href="#test-–p-File-文件存在并且是一个命名管道" class="headerlink" title="　　test –p File　　　　　　　　文件存在并且是一个命名管道"></a>　　test –p File　　　　　　　　文件存在并且是一个命名管道</h1><h1 id="test-–r-File-文件存在并且可读"><a href="#test-–r-File-文件存在并且可读" class="headerlink" title="　　test –r File　　　　　　　　文件存在并且可读"></a>　　test –r File　　　　　　　　文件存在并且可读</h1><h1 id="test-–s-File-文件存在并且是一个套接字"><a href="#test-–s-File-文件存在并且是一个套接字" class="headerlink" title="　　test –s File　　　　　　　　文件存在并且是一个套接字"></a>　　test –s File　　　　　　　　文件存在并且是一个套接字</h1><h1 id="test-–t-FD-文件描述符是在一个终端打开的"><a href="#test-–t-FD-文件描述符是在一个终端打开的" class="headerlink" title="　　test –t FD　　　　　　　　文件描述符是在一个终端打开的"></a>　　test –t FD　　　　　　　　文件描述符是在一个终端打开的</h1><h1 id="test-–u-File-文件存在并且设置了它的set-user-id位"><a href="#test-–u-File-文件存在并且设置了它的set-user-id位" class="headerlink" title="　　test –u File　　　　　　　　文件存在并且设置了它的set-user-id位"></a>　　test –u File　　　　　　　　文件存在并且设置了它的set-user-id位</h1><h1 id="test-–w-File-文件存在并且可写"><a href="#test-–w-File-文件存在并且可写" class="headerlink" title="　　test –w File　　　　　　　　文件存在并且可写"></a>　　test –w File　　　　　　　　文件存在并且可写</h1><h1 id="test-–x-File-文件存在并且可执行"><a href="#test-–x-File-文件存在并且可执行" class="headerlink" title="　　test –x File　　　　　　　　文件存在并且可执行"></a>　　test –x File　　　　　　　　文件存在并且可执行</h1><p>#!/bin/sh<br>echo “Please input your name”<br>read PERSON<br>echo “Hello,${PERSON}”</p>
-<h1 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h1><p>for loop in java php<br>    do<br>        echo “i am good at $loop Script”<br>    done</p>
-<p>echo $HOME</p>
-<h1 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h1><p>COUNTER=0<br>while [ $COUNTER lt 5 ]<br>do<br>    COUNTER=”expr $COUNTER+1”<br>    COUNTER = COUNTER+1<br>    echo $COUNTER<br>done</p>
-<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>my_array=(A B “C” D)</p>
-<h1 id="相等"><a href="#相等" class="headerlink" title="相等"></a>相等</h1><p>num1=100<br>num2=100<br>if test $[num1] -eq $[num2]<br>then<br>    echo ‘两个数相等！’<br>else<br>    echo ‘两个数不相等！’<br>fi</p>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p>demoFun(){<br>    echo “这是我的第一个 shell 函数!”<br>}<br>echo “—–函数开始执行—–”<br>demoFun<br>echo “—–函数执行完毕—–”</p>
-<h1 id="运算符-说明-举例"><a href="#运算符-说明-举例" class="headerlink" title="# 运算符    说明    举例"></a># 运算符    说明    举例</h1><h1 id="eq-检测两个数是否相等，相等返回-true。-a-eq-b-返回-true。"><a href="#eq-检测两个数是否相等，相等返回-true。-a-eq-b-返回-true。" class="headerlink" title="-eq    检测两个数是否相等，相等返回 true。    [ $a -eq $b ] 返回 true。"></a>-eq    检测两个数是否相等，相等返回 true。    [ $a -eq $b ] 返回 true。</h1><h1 id="ne-检测两个数是否相等，不相等返回-true。-a-ne-b-返回-true。"><a href="#ne-检测两个数是否相等，不相等返回-true。-a-ne-b-返回-true。" class="headerlink" title="-ne    检测两个数是否相等，不相等返回 true。    [ $a -ne $b ] 返回 true。"></a>-ne    检测两个数是否相等，不相等返回 true。    [ $a -ne $b ] 返回 true。</h1><h1 id="gt-检测左边的数是否大于右边的，如果是，则返回-true。-a-gt-b-返回-false。"><a href="#gt-检测左边的数是否大于右边的，如果是，则返回-true。-a-gt-b-返回-false。" class="headerlink" title="-gt    检测左边的数是否大于右边的，如果是，则返回 true。    [ $a -gt $b ] 返回 false。"></a>-gt    检测左边的数是否大于右边的，如果是，则返回 true。    [ $a -gt $b ] 返回 false。</h1><h1 id="lt-检测左边的数是否小于右边的，如果是，则返回-true。-a-lt-b-返回-true。"><a href="#lt-检测左边的数是否小于右边的，如果是，则返回-true。-a-lt-b-返回-true。" class="headerlink" title="-lt    检测左边的数是否小于右边的，如果是，则返回 true。    [ $a -lt $b ] 返回 true。"></a>-lt    检测左边的数是否小于右边的，如果是，则返回 true。    [ $a -lt $b ] 返回 true。</h1><h1 id="ge-检测左边的数是否大等于右边的，如果是，则返回-true。-a-ge-b-返回-false。"><a href="#ge-检测左边的数是否大等于右边的，如果是，则返回-true。-a-ge-b-返回-false。" class="headerlink" title="-ge    检测左边的数是否大等于右边的，如果是，则返回 true。    [ $a -ge $b ] 返回 false。"></a>-ge    检测左边的数是否大等于右边的，如果是，则返回 true。    [ $a -ge $b ] 返回 false。</h1><h1 id="le-检测左边的数是否小于等于右边的，如果是，则返回-true-a-le-b-返回-true。"><a href="#le-检测左边的数是否小于等于右边的，如果是，则返回-true-a-le-b-返回-true。" class="headerlink" title="-le    检测左边的数是否小于等于右边的，如果是，则返回 true    [ $a -le $b ] 返回 true。"></a>-le    检测左边的数是否小于等于右边的，如果是，则返回 true    [ $a -le $b ] 返回 true。</h1><h1 id="1-简单shell模拟登录"><a href="#1-简单shell模拟登录" class="headerlink" title="1,简单shell模拟登录"></a>1,简单shell模拟登录</h1><p>echo -n “login:”<br>read name<br>echo -n “password:”<br>read password</p>
-<p>if [ $name = “root” -a $password = “adc” ];<br>    then</p>
-<pre><code>#statements
-    echo &quot;The Host and password is right&quot;
-else
-    echo &quot;Host or password Error&quot;
-</code></pre><p>fi</p>
-<h1 id="2-比较两个数的大小"><a href="#2-比较两个数的大小" class="headerlink" title="2,比较两个数的大小"></a>2,比较两个数的大小</h1><p>echo “Please enter two number”<br>read a<br>read b<br>if test $a -eq $b ; then</p>
-<pre><code>#statements
-echo &quot;a = b&quot;
-</code></pre><p>else<br>    echo “a != b”<br>fi</p>
-<h1 id="3-查找-root-目录下是否存在该文件"><a href="#3-查找-root-目录下是否存在该文件" class="headerlink" title="3,查找/root/目录下是否存在该文件"></a>3,查找/root/目录下是否存在该文件</h1><p>echo “enter a file name”<br>read file<br>if test -e /root/$file; then<br>    echo “the file exists”<br>else<br>    echo “the file is not exists”<br>fi</p>
-<h1 id="4-给函数传递参数"><a href="#4-给函数传递参数" class="headerlink" title="4.给函数传递参数"></a>4.给函数传递参数</h1><p>func() {<br>    num1=$1<br>    echo “–func–${num}”<br>}<br>func $@</p>
-<h1 id="5-检查端口号是否已启动"><a href="#5-检查端口号是否已启动" class="headerlink" title="5.检查端口号是否已启动"></a>5.检查端口号是否已启动</h1><p>n=1<br>echo “检查3306 mysql 端口”</p>
-<p>while true<br>do<br>        if test $n -gt 20<br>        then<br>                echo “3306服务启动失败”<br>                break<br>        fi</p>
-<pre><code>sleep 5
-n=$(($n+1))
-
-# port=`netstat -antp | grep &quot;localhost:3306&quot;`
-port = `netstat -nat | grep 3306`
-# port = `lsof -i tcp:3306`
-if [ ${#port} -gt 3 ]; then
-        echo &quot;3306服务已经启动&quot;
-        break;
-fi
-</code></pre><p>done</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Web/简单shell脚本/" data-id="cjjs94wzz002f9t53jk1y63ht" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
- 
-
-
-  
-    <article id="post-Server/python高级用法(装饰器，迭代器，生成器，闭包)" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/Server/python高级用法(装饰器，迭代器，生成器，闭包)/" class="article-date">
+    <a href="/2018/07/18/iOS/swift3 协议/" class="article-date">
   <time datetime="2018-07-18T07:07:54.000Z" itemprop="datePublished">2018-07-18</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Server/">Server</a>
+    <a class="article-category-link" href="/categories/iOS/">iOS</a>
   </div>
 
   </div>
@@ -797,7 +797,7 @@ fi
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/Server/python高级用法(装饰器，迭代器，生成器，闭包)/">python高级用法(装饰器，迭代器，生成器，闭包)</a>
+      <a class="article-title" href="/2018/07/18/iOS/swift3 协议/">swift3 协议</a>
     </h1>
   
 
@@ -807,36 +807,168 @@ fi
       
         <!-- Table of Contents -->
         
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> types</span><br><span class="line"><span class="comment"># 生成器</span></span><br><span class="line">a = [x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">5</span>)]</span><br><span class="line">b = (x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">5</span>))</span><br><span class="line">print(a,b)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> b:</span><br><span class="line">    print(<span class="string">"迭代器："</span>,i)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义迭代器</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">creatNum</span><span class="params">(num = <span class="number">5</span>)</span>:</span></span><br><span class="line">    a,b = <span class="number">0</span>,<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(num):</span><br><span class="line">        <span class="keyword">yield</span> b</span><br><span class="line">        a,b = b,a+b</span><br><span class="line"></span><br><span class="line">val1 = creatNum(<span class="number">5</span>)</span><br><span class="line"><span class="comment"># print(next(val1))</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> val1:</span><br><span class="line">    print(<span class="string">"自定义迭代器："</span>,i)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 迭代器 判断</span></span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line">isR = isinstance(a, collections.Iterator)</span><br><span class="line">isR1 = isinstance(iter(a), collections.Iterator)</span><br><span class="line">print(isR,isR1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 闭包</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">colsure</span><span class="params">(a,b,func)</span>:</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">"---"</span>)</span><br><span class="line">    c = a + b</span><br><span class="line">    func(c)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">exc_func</span><span class="params">(num)</span>:</span></span><br><span class="line">    print(<span class="string">"执行函数"</span>,num)</span><br><span class="line"></span><br><span class="line">colsure(<span class="number">1</span>,<span class="number">2</span>,exc_func)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">check</span><span class="params">(func)</span>:</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">"校验中。。。。"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">True</span>:</span><br><span class="line"></span><br><span class="line">            func()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">return</span>  inner()</span><br><span class="line"></span><br><span class="line"><span class="meta">@check</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">exec1</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"执行操作"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 多个装饰器</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">makeBold</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapperd</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"&lt;b&gt;"</span> + func() + <span class="string">"&lt;/b&gt;"</span></span><br><span class="line">    <span class="keyword">return</span> wrapperd <span class="comment">#返回函数的指针</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">makeItaic</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapperd</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"&lt;i&gt;"</span> + func() + <span class="string">"&lt;/i&gt;"</span></span><br><span class="line">    <span class="keyword">return</span> wrapperd</span><br><span class="line"></span><br><span class="line"><span class="meta">@makeBold</span></span><br><span class="line"><span class="meta">@makeItaic</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printHello</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"hello,world"</span></span><br><span class="line">val2 = printHello()</span><br><span class="line">print(val2)</span><br><span class="line"><span class="comment"># 通用装饰器</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">common_check</span><span class="params">(func)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func_exc</span><span class="params">(*args,**kwargs)</span>:</span></span><br><span class="line">        print(<span class="string">"记录日志。。。"</span>)</span><br><span class="line">        ret = func(*args,**kwargs)</span><br><span class="line">        <span class="keyword">return</span>  ret</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> func_exc</span><br><span class="line"><span class="meta">@common_check</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    print(a,b)</span><br><span class="line">    <span class="keyword">return</span>  a + b</span><br><span class="line"></span><br><span class="line">print(test(<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 带有参数的装饰器</span></span><br><span class="line"><span class="comment"># 先执行 参数 -&gt; 在执行装饰函数</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">checkArgs</span><span class="params">(arg)</span> :</span></span><br><span class="line">    print(arg)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">common_check</span><span class="params">(func)</span> :</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">func_exc</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">            print(<span class="string">"记录日志。。。"</span>)</span><br><span class="line">            <span class="keyword">if</span> args == <span class="keyword">None</span>:</span><br><span class="line">                ret = func(*args, **kwargs)</span><br><span class="line">                <span class="keyword">return</span> ret</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                ret = func(*args, **kwargs)</span><br><span class="line">                <span class="keyword">return</span> ret+arg</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> func_exc</span><br><span class="line">    <span class="keyword">return</span> common_check</span><br><span class="line"></span><br><span class="line"><span class="meta">@checkArgs("alex")</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test1</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    print(a,b)</span><br><span class="line">    <span class="keyword">return</span>  a + b</span><br><span class="line">print(test1(<span class="string">"1"</span>,<span class="string">"2"</span>))</span><br><span class="line">print(globals())</span><br><span class="line">print(locals())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 动态添加 类属性 属性 对象方法</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span><span class="params">()</span> :</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"><span class="comment">#绑定 对象方法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">address</span><span class="params">(self)</span>:</span></span><br><span class="line">    print(<span class="string">"hangzhou"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#绑定静态方法</span></span><br><span class="line"><span class="meta">@staticmethod</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">country</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"china"</span>)</span><br><span class="line"><span class="meta">@classmethod</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">area</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"asian"</span>)</span><br><span class="line"></span><br><span class="line">p1 = Person()</span><br><span class="line">p1.age = <span class="number">10</span></span><br><span class="line">Person.names = <span class="string">"zhangshan"</span></span><br><span class="line"></span><br><span class="line">Person.counory = country</span><br><span class="line">Person.area = area</span><br><span class="line">p1.address = types.MethodType(address,p1)</span><br><span class="line"></span><br><span class="line">p1.address()</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">int_max</span><span class="params">(bits, signed)</span>:</span></span><br><span class="line">    bits = bits - <span class="number">1</span> <span class="keyword">if</span> signed <span class="keyword">else</span> bits <span class="comment">#条件限制</span></span><br><span class="line">    print(bits)</span><br><span class="line">int_max(<span class="number">8</span>,<span class="keyword">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#slots</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bird</span>:</span></span><br><span class="line">    __slots__ = (<span class="string">"name"</span>,<span class="string">"age"</span>)</span><br><span class="line">b = Bird()</span><br><span class="line">b.name = <span class="string">"zhanshan"</span></span><br><span class="line">b.age = <span class="number">19</span></span><br><span class="line"><span class="comment"># b.add = ""</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 类的装饰器</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">decorate</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,func)</span>:</span></span><br><span class="line">        print(<span class="string">"初始化"</span>)</span><br><span class="line">        self.__func = func</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">        print(<span class="string">"装饰器的功能"</span>)</span><br><span class="line">        self.__func()</span><br><span class="line"></span><br><span class="line"><span class="meta">@decorate</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_dec</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"desc"</span>)</span><br><span class="line">test_dec()</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>原类<br><code>`</code></p>
-</blockquote>
-<h1 id="原类"><a href="#原类" class="headerlink" title="原类"></a>原类</h1><p>person = type(“Person2”, (), {“num”: 0})<br>print(person)</p>
-<h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><p>def  func3(self):<br>    print(“绑定原类 方法”)<br>p3 = type(“Person3”, (object,), {“name”: “cat”})<br>p3.func3 = types.MethodType(func3, p3)</p>
-<p>p3.func3()</p>
-<h1 id="自定义-类"><a href="#自定义-类" class="headerlink" title="自定义 类"></a>自定义 类</h1><p>class PrefixMetaclass(type):</p>
-<pre><code>def __new__(cls, name, bases, attrs):
-    # 给所有属性和方法前面加上前缀 my_
-    _attrs = ((&apos;my_&apos; + name, value) for name, value in attrs.items())
+        <p><code>`</code>swift<br>import UIKit</p>
+<p>var str = “Hello, playground”<br>class Person {</p>
+<pre><code>let name: String
+init(name: String) { self.name = name }
+var classes: Classess?
 
-    _attrs = dict((name, value) for name, value in _attrs)  # 转化为字典
-    _attrs[&apos;echo&apos;] = lambda self, phrase: phrase  # 增加了一个 echo 方法
+deinit { print(&quot;\(name) is being deinitialized&quot;) }
+</code></pre><p>}</p>
+<p>class Classess {</p>
+<pre><code>let no: String
+init(no: String) { self.no = no }
+weak var member: Person?
 
-    return type.__new__(cls, name, bases, _attrs)  # 返回创建后的类
-</code></pre><p>class Foo(metaclass=PrefixMetaclass):</p>
-<pre><code># __metaclass__ = creatClass #python2
-bar = &quot;bar&quot;
-</code></pre><p>f1 = Foo()<br>print(f1.echo(“dd”))<br>print(hasattr(Foo,”my_bar”))</p>
-<p>#</p>
-<p>#偏函数<br>def showargs(*args, **wargs):<br>    print(args)<br>    print(wargs)<br>p1 = functools.partial(showargs,1,2,3)<br>p1()</p>
-<p>#warps 装饰器（不影响原有函数的 说明文档）<br>import functools<br>def check2(func):<br>    “check2”<br>    @functools.wraps(func)<br>    def warp():<br>        “warp”<br>        print(“装饰器”)<br>        func()<br>    return warp</p>
-<p>@check2<br>def function2():<br>    “function2–help”<br>    print(“function2”)</p>
-<h1 id="function2"><a href="#function2" class="headerlink" title="function2()"></a>function2()</h1><h1 id="print-help-function2"><a href="#print-help-function2" class="headerlink" title="print(help(function2))"></a>print(help(function2))</h1><p>print(function2.<strong>doc</strong>)</p>
+deinit { print(&quot;Apartment \(no) is being deinitialized&quot;) }
+</code></pre><p>}</p>
+<p>let p1 = Person.init(name: “zhanshan”)<br>let c1 = Classess.init(no: “111”)</p>
+<p>p1.classes = c1<br>c1.member = p1</p>
+<p>print(p1.classes ?? “”)<br>print(c1.member ?? “”)<br>extension Double {</p>
+<pre><code>var km:Double { return self*888}
+</code></pre><p>}</p>
+<p>let d1:Double = 2<br>d1.km</p>
+<p>//<br>protocol SomeProtocol {</p>
+<pre><code>var value1: String { get set }
+var value2: String { get }
+static var value3:String { get }
+
+//异变方法
+mutating func getName()
+</code></pre><p>}<br>//<br>protocol TwoProtocol {</p>
+<p>}<br>//多承载<br>protocol AllProtocol: SomeProtocol, TwoProtocol {</p>
+<pre><code>//定义属性别名
+associatedtype DefineType
+var weight:DefineType { get }
+</code></pre><p>}</p>
+<p>//结构体继承协议<br>struct Toprotocol:SomeProtocol {</p>
+<pre><code>mutating internal func getName() {
+
+    self.value1 = &quot;edit&quot;
+}
+
+internal var value1: String
+internal var value2: String
+internal static var value3: String = &quot;value3&quot;
+var value4:String
+</code></pre><p>}</p>
+<p>var struct1 = Toprotocol.init(value1: “value1”, value2: “value2”, value4: “value4”)</p>
+<p>var struct2:Toprotocol = struct1<br>struct2.value2 = “2”</p>
+<p>//定义别名类型<br>struct MobilePhone:AllProtocol {</p>
+<pre><code>typealias DefineType = Double
+
+internal var weight: Double
+mutating internal func getName() {
+    value2 = &quot;changed&quot;
+}
+
+internal static var value3: String = &quot;&quot;
+
+internal var value2: String
+internal var value1: String
+</code></pre><p>}</p>
+<p>let mobile1 = MobilePhone.DefineType()<br>var mobile2 = MobilePhone.init(weight: 25, value2: “value2”, value1: “value1”)<br>mobile2.getName()</p>
+<p>//Swift标准库协议</p>
+<p>//1, 比较相关的协议<br>struct Student1:Equatable {</p>
+<pre><code>var math:Int
+var english:Int
+
+static func == (lhs: Student1, rhs: Student1) -&gt; Bool {
+
+    return lhs.english == rhs.english &amp;&amp; lhs.math == rhs.math
+}
+</code></pre><p>}<br>//Student遵守Equatable<br>let s1 = Student1.init(math: 20, english: 30)<br>let s2 = Student1.init(math: 20, english: 40)<br>let isTrue1  = s1 == s2</p>
+<p>//2, 自定义比较协议<br>public protocol ZZNCompareable {</p>
+<p>   static func &lt; (lhs:Self,rhs:Self) -&gt;Bool<br>}</p>
+<p>struct Student2:ZZNCompareable {</p>
+<pre><code>var studentName1:String
+var studentName2:String
+
+//重载 &lt; 运算符
+static func &lt; (lhs:Student2,rhs:Student2) -&gt;Bool {
+
+    return lhs.studentName1 == rhs.studentName2
+}
+
+//重载 &lt;= 运算符
+static func &lt;= (lhs:Student2,rhs:Student2) -&gt;Bool {
+
+    return lhs.studentName1 == rhs.studentName2
+}
+
+//重载 &gt; 运算符
+static func &gt; (lhs:Student2,rhs:Student2) -&gt;Bool {
+
+    return lhs.studentName1 == rhs.studentName2
+}
+//重载 &gt;= 运算符
+static func &gt;= (lhs:Student2,rhs:Student2) -&gt;Bool {
+
+    return lhs.studentName1 == rhs.studentName2
+}
+</code></pre><p>}</p>
+<p>let ss2 = Student2.init(studentName1: “zz”, studentName2: “zz”)<br>let ss22 = Student2.init(studentName1: “zz”, studentName2: “zw”)<br>ss2 &lt; ss22</p>
+<p>//<br>struct Student3: Comparable {</p>
+<pre><code>var math: Int
+var english: Int
+
+//重载 &lt; 运算符
+static func &lt; (lhs:Student3,rhs:Student3) -&gt;Bool {
+
+    return (lhs.math + lhs.english) &lt; (rhs.math + rhs.english)
+}
+
+//重载 &lt;= 运算符
+static func &lt;= (lhs:Student3,rhs:Student3) -&gt;Bool {
+
+    return (lhs.math + lhs.english) &lt;= (rhs.math + rhs.english)
+}
+
+//重载 &gt; 运算符
+static func &gt; (lhs:Student3,rhs:Student3) -&gt;Bool {
+
+    return (lhs.math + lhs.english) &gt; (rhs.math + rhs.english)
+}
+//重载 &gt;= 运算符
+static func &gt;= (lhs:Student3,rhs:Student3) -&gt;Bool {
+
+    return (lhs.math + lhs.english) &gt;= (rhs.math + rhs.english)
+}
+//重载 == 运算符
+static func == (lhs:Student3,rhs:Student3) -&gt;Bool {
+
+    return (lhs.math + lhs.english) == (rhs.math + rhs.english)
+}
+</code></pre><p>}</p>
+<p>let s3_left = Student3(math: 80, english: 60)<br>let s3_right = Student3(math: 70, english: 90)<br>s3_left &gt; s3_right</p>
+<p>//—–<br>//枚举继承协议<br>protocol NetServiceProtocol {</p>
+<pre><code>var netName:String { get }//只需实现get
+mutating func change()//外部修改enum 枚举值
+</code></pre><p>}</p>
+<p>enum NetServiceType:NetServiceProtocol {</p>
+<pre><code>case union(String)
+case mobile(String)
+case telecom(String)
+
+mutating func change() {
+
+    self = .mobile(&quot;mobile&quot;)
+
+}
+
+var netName: String {
+
+    get {
+
+        return NetServiceType.mobile(&quot;mobile&quot;).netName
+    }
+}
+</code></pre><p>}</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Server/python高级用法(装饰器，迭代器，生成器，闭包)/" data-id="cjjs94wz6001a9t53lcjchlbt" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/swift3 协议/" data-id="cjjsawxfw003b1m53l90rsgv6" class="article-share-link">分享</a>
       
       
       
@@ -921,7 +1053,7 @@ func getname() {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/runtime/" data-id="cjjs94x1300449t533ar5l28q" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/runtime/" data-id="cjjsawxfu00371m53o92vcoko" class="article-share-link">分享</a>
       
       
       
