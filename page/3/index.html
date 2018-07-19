@@ -73,9 +73,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Android/js交互" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Android/java8" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/07/18/Android/js交互/" class="article-date">
+    <a href="/2018/07/18/Android/java8/" class="article-date">
   <time datetime="2018-07-18T10:08:32.069Z" itemprop="datePublished">2018-07-18</time>
 </a>
     
@@ -91,7 +91,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/Android/js交互/">js交互</a>
+      <a class="article-title" href="/2018/07/18/Android/java8/">java8</a>
     </h1>
   
 
@@ -101,13 +101,140 @@
       
         <!-- Table of Contents -->
         
-        <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main6Activity</span> : <span class="type">AppCompatActivity</span></span>() &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">var</span> contentWebView: WebView? = <span class="literal">null</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@SuppressLint(<span class="meta-string">"JavascriptInterface"</span>)</span></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState)</span><br><span class="line">        setContentView(R.layout.activity_main6)</span><br><span class="line">        contentWebView = findViewById(R.id.webview) <span class="keyword">as</span> WebView</span><br><span class="line">        contentWebView?.setBackgroundColor(Color.CYAN)</span><br><span class="line">        <span class="comment">// 启用javascript</span></span><br><span class="line">        contentWebView!!.settings.javaScriptEnabled = <span class="literal">true</span></span><br><span class="line">        <span class="comment">// 从assets目录下面的加载html</span></span><br><span class="line">        contentWebView!!.loadUrl(<span class="string">"file:///android_asset/web.html"</span>)</span><br><span class="line">        contentWebView!!.addJavascriptInterface(<span class="keyword">this</span><span class="symbol">@Main6Activity</span>, <span class="string">"android"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//无参调用Js点击</span></span><br><span class="line">        findViewById(R.id.bt1).setOnClickListener &#123;</span><br><span class="line">            <span class="comment">// 无参数调用</span></span><br><span class="line">            contentWebView!!.loadUrl(<span class="string">"javascript:javacalljs()"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//有参调用Js点击</span></span><br><span class="line">        findViewById(R.id.btn2).setOnClickListener &#123;</span><br><span class="line">            <span class="comment">// 传递参数调用</span></span><br><span class="line">            contentWebView!!.loadUrl(<span class="string">"javascript:javacalljswith("</span> + <span class="string">"'http://blog.csdn.net/Leejizhou'"</span> + <span class="string">")"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//由于安全原因 需要加 @JavascriptInterface</span></span><br><span class="line">    <span class="meta">@JavascriptInterface</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">startFunction</span><span class="params">()</span></span> &#123;</span><br><span class="line"></span><br><span class="line">        runOnUiThread &#123; Toast.makeText(<span class="keyword">this</span><span class="symbol">@Main6Activity</span>, <span class="string">"show"</span>, Toast.LENGTH_SHORT).show() &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@JavascriptInterface</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">startFunction</span><span class="params">(text: <span class="type">String</span>)</span></span> &#123;</span><br><span class="line">        runOnUiThread &#123; AlertDialog.Builder(<span class="keyword">this</span><span class="symbol">@Main6Activity</span>).setMessage(text).show() &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>`</code>html<br>&lt;!DOCTYPE html&gt;</p>
-<html><br><head><br>    <title>js 交互</title><br>    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"><br>    <script type="text/javascript"><br><br>    function javacalljs(){<br>         document.getElementById(“content”).innerHTML =<br>             “&lt;br>JAVA”;<br>    }<br><br>    function javacalljswith(arg){<br>         document.getElementById(“content”).innerHTML =<br>             (“&lt;br>“+arg);<br>    }<br></script><br></head><br><body><br><br><h1><div id="content">js to navtive </div></h1><br><br><br><input type="button" value="执行native方法无参" onclick="window.android.startFunction()"><br><br><br><input type="button" value="执行native方法有参" onclick="window.android.startFunction('http://blog.csdn.net/Leejizhou')"><br><br></body><br></html>
+        <p><code>`</code>java<br>import com.sun.istack.internal.Nullable;<br>import com.sun.xml.internal.xsom.impl.scd.Iterators;<br>import java.time.LocalDate;<br>import java.util.*;<br>import java.util.function.Supplier;<br>import java.util.stream.Stream;</p>
+<p>import static java.util.Optional.ofNullable;</p>
+<p>interface Success {<br>    void succ(String string);<br>}<br>interface Fail {<br>    void fail(String string);<br>}</p>
+<p>public class Main {</p>
+<pre><code>static String test(@Nullable String a) {
+
+    Optional&lt;String&gt; optb = Optional.ofNullable(a);
+    String realValue = optb.orElse(&quot;NULL&quot;);
+
+    return realValue;
+}
+
+public static void main(String[] args) {
+
+    String str = test(null);
+    System.out.println(str);
+
+    JavaBeans javaBeans = new JavaBeans();
+    javaBeans.request((succ)-&gt;{
+
+        System.out.println(succ);
+    },(fail)-&gt;{
+        System.out.println(fail);
+    });
+
+    String[] listStr = {&quot;1&quot;,&quot;2&quot;,&quot;3&quot;};
+    Arrays.sort(listStr,String::compareToIgnoreCase);
+    System.out.println(&quot;Hello World!&quot;);
+
+    List&lt;String&gt; strings = new ArrayList&lt;String&gt;();
+    Collections.addAll(strings,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;);
+    //
+</code></pre><p>//        Person person = new Person();<br>//        String[] stringArray = {“1”,”2”};<br>//<br>////        Collections.sort(stringArray, (Comparator<string>) (o1, o2) -&gt; 0);<br>//        Collections.reverse(strings);<br>        Collections.sort(strings, (o1,o2)-&gt;{</string></p>
+<pre><code>    int code = o1.hashCode();
+    return 2;
+});
+//Stream是元素的集合
+System.out.println(strings);
+strings.stream().filter(value-&gt;{
+
+    if ( value.isEmpty() == true) {
+        return  false;
+    }
+    return true;
+}).map(strs -&gt;{
+
+    return strs+&quot;map&quot;;
+}).forEach(JavaBeans::setName);
+
+//用 Collectors 来进行 reduction 操作
+</code></pre><p>//        Map&lt;Integer,List<person>&gt; personGroups =</person></p>
+<pre><code>//自定义Supplier
+Stream&lt;Person&gt; streamPerson = Stream.generate(new Supplier&lt;Person&gt;() {
+
+
+    @Override
+    public Person get() {
+
+        Random seed = new Random();
+        Integer randomInt = seed.nextInt(100);
+        return new Person(&quot;名字&quot; + randomInt.toString(),randomInt.toString());
+    }
+}).limit(10);
+
+streamPerson.forEach(person -&gt; {
+
+    System.out.println(&quot;Supplier::person-&gt;&quot;+person.name+ &quot;:&quot; + person.age);
+});
+
+
+//自生成 10 个随机整数
+Random seed = new Random();
+</code></pre><p>//        int random = seed.nextInt(10);<br>        Supplier<integer> random = seed::nextInt;</integer></p>
+<pre><code>    Stream.generate(random).limit(10).forEach(value-&gt;{
+        System.out.println(&quot;我是随机数：：&quot;+value.toString());
+    });
+}
+//
+class PersonSupplier implements Supplier&lt;Person&gt; {
+
+    private int index = 0;
+    private Random random = new Random();
+
+    @Override
+    public Person get() {
+        Integer randomInt = random.nextInt();
+        randomInt.toString();
+        Stream ss = Stream.generate(random::doubles);
+        return new Person(randomInt.toString(),&quot;11&quot;);
+    }
+}
+</code></pre><p>}</p>
+<p>//<br>class JavaBeans implements TestNew {</p>
+<pre><code>public String string = &quot;test&quot;;
+
+static public int test() {
+    return 0;
+}
+static void setName(String name) {
+
+    System.out.println(name);
+}
+
+
+//
+void request(@Nullable Success success,@Nullable Fail fail) {
+
+    if (true) {
+
+        success.succ(&quot;闭包回掉：succ&quot;);
+    } else {
+
+        fail.fail(&quot;闭包回掉：fail&quot;);
+    }
+}
+
+@Override
+public void testInterface() {
+    //
+}
+</code></pre><p>}<br>interface TestNew {</p>
+<pre><code>void testInterface();
+</code></pre><p>}<br>//<br>class Person {<br>    //<br>    public enum Sex{<br>        MALE,FEMALE<br>    }<br>    String name;<br>    String age;</p>
+<pre><code>Person(String name,String age) {
+
+    this.name = name;
+    this.age = age;
+}
+</code></pre><p>}</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Android/js交互/" data-id="cjjs8z6hw000f6p53xuyeav17" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Android/java8/" data-id="cjjs94wyg00089t531627gjns" class="article-share-link">分享</a>
       
       
       
@@ -245,7 +372,7 @@ MyRxJava() {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Android/RxJava/" data-id="cjjs8z6hl00046p535lz776tt" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Android/RxJava/" data-id="cjjs94wyc00059t53tl08c0ip" class="article-share-link">分享</a>
       
       
       
@@ -319,7 +446,7 @@ MyRxJava() {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Android/内部类/" data-id="cjjs8z6i2000r6p530o0l3azk" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Android/内部类/" data-id="cjjs94wyv000p9t537oo4vrma" class="article-share-link">分享</a>
       
       
       
@@ -368,7 +495,7 @@ MyRxJava() {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Android/笔记/" data-id="cjjs8z6i1000p6p5360zcssbk" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Android/笔记/" data-id="cjjs94wyx000r9t53npoy650r" class="article-share-link">分享</a>
       
       
       
@@ -462,7 +589,7 @@ var age:String? = null
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Android/data绑定 kotlin/" data-id="cjjs8z6hm00056p53zvkjtb8e" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Android/data绑定 kotlin/" data-id="cjjs94wya00049t53wes22nir" class="article-share-link">分享</a>
       
       
       
@@ -507,7 +634,7 @@ var age:String? = null
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Android/主题相关/" data-id="cjjs8z6i0000n6p53prff5qu7" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Android/主题相关/" data-id="cjjs94wyu000n9t53mlz3ogu1" class="article-share-link">分享</a>
       
       
       
@@ -615,7 +742,7 @@ for (i = 0; i &lt; n; ++i) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/编程/常用n2排序算法/" data-id="cjjs8z6kb00516p535uppi92x" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/编程/常用n2排序算法/" data-id="cjjs94x1p00539t53gxel6gpb" class="article-share-link">分享</a>
       
       
       
@@ -717,7 +844,7 @@ return 0;
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/编程/常用nlogn排序算法/" data-id="cjjs8z6kc00536p53soasvq3s" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/编程/常用nlogn排序算法/" data-id="cjjs94x1n00509t53fsyckfje" class="article-share-link">分享</a>
       
       
       
@@ -782,7 +909,7 @@ return 0;
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/编程/常用算法/" data-id="cjjs8z6kd00556p53mv6md4s8" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/编程/常用算法/" data-id="cjjs94x1p00559t53sc9qwg91" class="article-share-link">分享</a>
       
       
       
@@ -828,7 +955,7 @@ return 0;
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/编程/CPlus知识点/" data-id="cjjs8z6ka004y6p53pe0kgwzg" class="article-share-link">分享</a>
+      <a data-url="https://Alexzzn.github.io/2018/07/18/编程/CPlus知识点/" data-id="cjjs94x1n004y9t53q9zrsmn0" class="article-share-link">分享</a>
       
       
       
