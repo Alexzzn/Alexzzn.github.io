@@ -1,11 +1,85 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
+
+
+
   
-  <title>MyBlog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我的博客分享">
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="我的博客分享">
 <meta property="og:type" content="website">
 <meta property="og:title" content="MyBlog">
 <meta property="og:url" content="https://Alexzzn.github.io/page/7/index.html">
@@ -15,183 +89,527 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MyBlog">
 <meta name="twitter:description" content="我的博客分享">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://Alexzzn.github.io/page/7/"/>
+
+
+
+
+
+  <title>MyBlog</title>
   
-    <link rel="alternate" href="/atom.xml" title="MyBlog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
+
+
+
+
+
+
+
 
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    
-    <div id="header-inner" class="inner">
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://Alexzzn.github.io"></form>
-      </div>
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">首页</a>
-        
-          <a class="main-nav-link" href="/archives">归档</a>
-        
-          <a class="main-nav-link" href="/about">关于</a>
-        
-      </nav>
-      
-    </div>
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">MyBlog</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">博客</a>
-        </h2>
-      
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-iOS/swift4 包管理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/iOS/swift4 包管理/" class="article-date">
-  <time datetime="2018-07-18T09:57:26.458Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/iOS/">iOS</a>
-  </div>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/iOS/swift4 包管理/">swift4 包管理</a>
-    </h1>
+  
+    
   
 
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">MyBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://Alexzzn.github.io/2018/07/18/iOS/swift4 包管理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzn">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/18/iOS/swift4 包管理/" itemprop="url">swift4 包管理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T17:57:26+08:00">
+                2018-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <!-- Table of Contents -->
+      
+
+      
         
-        <h4 id="Swift-Package-Manager"><a href="#Swift-Package-Manager" class="headerlink" title="Swift Package Manager"></a>Swift Package Manager</h4><h5 id="Linux-swift-安装"><a href="#Linux-swift-安装" class="headerlink" title="Linux swift 安装"></a>Linux swift 安装</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 1， 安装clang编译器</span><br><span class="line">sudo apt-get install clang</span><br><span class="line">// 2， 直接指定目录</span><br><span class="line">export PATH=/path/to/Swift/usr/bin:&quot;$&#123;PATH&#125;&quot;</span><br></pre></td></tr></table></figure>
+          
+            <h4 id="Swift-Package-Manager"><a href="#Swift-Package-Manager" class="headerlink" title="Swift Package Manager"></a>Swift Package Manager</h4><h5 id="Linux-swift-安装"><a href="#Linux-swift-安装" class="headerlink" title="Linux swift 安装"></a>Linux swift 安装</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 1， 安装clang编译器</span><br><span class="line">sudo apt-get install clang</span><br><span class="line">// 2， 直接指定目录</span><br><span class="line">export PATH=/path/to/Swift/usr/bin:&quot;$&#123;PATH&#125;&quot;</span><br></pre></td></tr></table></figure>
 <h5 id="创建包命令"><a href="#创建包命令" class="headerlink" title="创建包命令"></a>创建包命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">// 创建目录名</span><br><span class="line">mkdir MyApp</span><br><span class="line">// 创建包</span><br><span class="line">swift package init</span><br><span class="line">// </span><br><span class="line">├── Package.swift</span><br><span class="line">├── README.md</span><br><span class="line">├── Sources</span><br><span class="line">│   └── MyApp</span><br><span class="line">│       └── MyApp.swift</span><br><span class="line">└── Tests</span><br><span class="line">    ├── LinuxMain.swift</span><br><span class="line">    └── MyAppTests</span><br><span class="line">        └── MyAppTests.swift</span><br><span class="line">// 编译包</span><br><span class="line">swift build</span><br><span class="line">// 实时编译(main)运行</span><br><span class="line">swift package init --type executable</span><br><span class="line">// 运行</span><br><span class="line">swift run MyApp</span><br><span class="line">// 导出xcode工程</span><br><span class="line">swift package generate-xcodeproj</span><br></pre></td></tr></table></figure>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/swift4 包管理/" data-id="cjjsawxfv00391m53hz7ul1fe" class="article-share-link">分享</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
       
       
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
- 
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-Server/django基础" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/Server/django基础/" class="article-date">
-  <time datetime="2018-07-18T09:57:16.435Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Server/">Server</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://Alexzzn.github.io/2018/07/18/Server/django基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzn">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
     
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/Server/django基础/">django基础</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/18/Server/django基础/" itemprop="url">django基础</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T17:57:16+08:00">
+                2018-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Server/" itemprop="url" rel="index">
+                    <span itemprop="name">Server</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <!-- Table of Contents -->
+      
+
+      
         
+          
+            
+          
         
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Server/django基础/" data-id="cjjsawxdw00081m53w7vgbqvs" class="article-share-link">分享</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
       
       
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
- 
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-Server/Python_2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/Server/Python_2/" class="article-date">
-  <time datetime="2018-07-18T09:57:16.434Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Server/">Server</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://Alexzzn.github.io/2018/07/18/Server/Python_2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzn">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
     
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/Server/Python_2/">Python_2</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/18/Server/Python_2/" itemprop="url">Python_2</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T17:57:16+08:00">
+                2018-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Server/" itemprop="url" rel="index">
+                    <span itemprop="name">Server</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <!-- Table of Contents -->
+      
+
+      
         
-        <p><code>`</code>python</p>
+          
+            <p><code>`</code>python</p>
 <p>class Person():<br>    sex  = ‘male’<br>    name = ‘lishi’</p>
 <pre><code>def __init__(self,name,age,weight):
     self.name = name
@@ -225,56 +643,153 @@ def __new__(cls, *args, **kwargs):
     #.__new__(cls,*args,**kwargs)
 </code></pre><p>person2 = ChinaPerson(‘Zhanshan’,18,60,’china’)</p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Server/Python_2/" data-id="cjjsawxds00051m53rx7kr8m7" class="article-share-link">分享</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
       
       
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
- 
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-Server/ruby 升级" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/Server/ruby 升级/" class="article-date">
-  <time datetime="2018-07-18T09:57:16.432Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Server/">Server</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://Alexzzn.github.io/2018/07/18/Server/ruby 升级/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzn">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
     
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/Server/ruby 升级/">ruby 升级</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/18/Server/ruby 升级/" itemprop="url">ruby 升级</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T17:57:16+08:00">
+                2018-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Server/" itemprop="url" rel="index">
+                    <span itemprop="name">Server</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <!-- Table of Contents -->
+      
+
+      
         
-        <p>#1、  RVM安装</p>
+          
+            <p>#1、  RVM安装</p>
 <pre><code>$ curl -L get.rvm.io | bash -s stable
 </code></pre><h4 id="2、-之后就是等待一段时间之后，就可以安装成功了，使用以下命令来验证"><a href="#2、-之后就是等待一段时间之后，就可以安装成功了，使用以下命令来验证" class="headerlink" title="2、  之后就是等待一段时间之后，就可以安装成功了，使用以下命令来验证"></a>2、  之后就是等待一段时间之后，就可以安装成功了，使用以下命令来验证</h4><pre><code>$ source ~/.bashrc
 
 $ source ~/.bash_profile
 </code></pre><h4 id="3、-测试是否安装正常"><a href="#3、-测试是否安装正常" class="headerlink" title="3、 测试是否安装正常"></a>3、 测试是否安装正常</h4><pre><code>$ rvm -v
-</code></pre><p>如果出现rvm（版本号）……..<a href="mailto:&#119;&#97;&#x79;&#x6e;&#x65;&#115;&#x73;&#101;&#103;&#117;&#105;&#x6e;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#111;&#x6d;" target="_blank" rel="noopener">&#119;&#97;&#x79;&#x6e;&#x65;&#115;&#x73;&#101;&#103;&#117;&#105;&#x6e;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#111;&#x6d;</a>……基本就算是安装RVM成功了。</p>
+</code></pre><p>如果出现rvm（版本号）……..<a href="mailto:&#x77;&#97;&#121;&#110;&#101;&#x73;&#x73;&#x65;&#103;&#117;&#105;&#x6e;&#x40;&#x67;&#x6d;&#97;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;" target="_blank" rel="noopener">&#x77;&#97;&#121;&#110;&#101;&#x73;&#x73;&#x65;&#103;&#117;&#105;&#x6e;&#x40;&#x67;&#x6d;&#97;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;</a>……基本就算是安装RVM成功了。</p>
 <p>二、使用RVM升级Ruby</p>
 <h5 id="1、查看当前ruby版本"><a href="#1、查看当前ruby版本" class="headerlink" title="1、查看当前ruby版本"></a>1、查看当前ruby版本</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ruby -v</span><br></pre></td></tr></table></figure>
 <p>这一步会显示出来当前ruby的版本</p>
@@ -282,50 +797,147 @@ $ source ~/.bash_profile
 <p>稍等一下，会出现很多平台不同的ruby的版本，我因为是需要2.2.2以上的版本，所以直接安装2.2.4版本</p>
 <h5 id="3、安装ruby-2-2-4"><a href="#3、安装ruby-2-2-4" class="headerlink" title="3、安装ruby 2.2.4"></a>3、安装ruby 2.2.4</h5><p><code>`</code><br>$ rvm install 2.2.4</p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Server/ruby 升级/" data-id="cjjsawxe2000c1m53y0u5x1m3" class="article-share-link">分享</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
       
       
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
- 
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-Server/python基本(字符串，函数，单例，属性)用法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/Server/python基本(字符串，函数，单例，属性)用法/" class="article-date">
-  <time datetime="2018-07-18T09:57:16.430Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Server/">Server</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://Alexzzn.github.io/2018/07/18/Server/python基本(字符串，函数，单例，属性)用法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzn">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
     
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/Server/python基本(字符串，函数，单例，属性)用法/">python基本(字符串，函数，单例，属性)用法</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/18/Server/python基本(字符串，函数，单例，属性)用法/" itemprop="url">python基本(字符串，函数，单例，属性)用法</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T17:57:16+08:00">
+                2018-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Server/" itemprop="url" rel="index">
+                    <span itemprop="name">Server</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <!-- Table of Contents -->
+      
+
+      
         
-        <p><code>`</code>python<br>import os</p>
+          
+            <p><code>`</code>python<br>import os</p>
 <h1 id="终端录入"><a href="#终端录入" class="headerlink" title="终端录入"></a>终端录入</h1><p>i = input(“ 请输入数字：”)<br>inputNum = int(i)</p>
 <p>while inputNum &gt; 0:</p>
 <pre><code>inputNum -= 1
@@ -428,50 +1040,147 @@ def money(self,newValue):
 name = property(getName,setName)
 </code></pre><p>v = Values()<br>v.name = “zhanshan” #property 用法1 组织自定义 set，get方法<br>v.money = “100”     #声明 get set 方法<br>print(v.name,v.money)</p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Server/python基本(字符串，函数，单例，属性)用法/" data-id="cjjsawxdy00091m53oh6bkhri" class="article-share-link">分享</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
       
       
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
- 
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-Server/ssh相关知识" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/Server/ssh相关知识/" class="article-date">
-  <time datetime="2018-07-18T09:57:16.430Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Server/">Server</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://Alexzzn.github.io/2018/07/18/Server/ssh相关知识/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzn">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
     
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/Server/ssh相关知识/">ssh相关知识</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/18/Server/ssh相关知识/" itemprop="url">ssh相关知识</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T17:57:16+08:00">
+                2018-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Server/" itemprop="url" rel="index">
+                    <span itemprop="name">Server</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <!-- Table of Contents -->
+      
+
+      
         
-        <ul>
+          
+            <ul>
 <li><p>基本用法</p>
 <blockquote>
 <p>ssh user@host</p>
@@ -490,50 +1199,147 @@ name = property(getName,setName)
 </blockquote>
 <p><a href="http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" target="_blank" rel="noopener">详细介绍</a></p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Server/ssh相关知识/" data-id="cjjsawxe1000b1m530q1t8aqh" class="article-share-link">分享</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
       
       
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
- 
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-Server/linux命令要点" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/Server/linux命令要点/" class="article-date">
-  <time datetime="2018-07-18T09:57:16.429Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Server/">Server</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://Alexzzn.github.io/2018/07/18/Server/linux命令要点/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzn">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
     
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/Server/linux命令要点/">linux命令要点</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/18/Server/linux命令要点/" itemprop="url">linux命令要点</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T17:57:16+08:00">
+                2018-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Server/" itemprop="url" rel="index">
+                    <span itemprop="name">Server</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <!-- Table of Contents -->
+      
+
+      
         
-        <p><code>`</code><br>管道：ls -al | more<br>查找：grep -n “hello” hello.txt<br>软链接：ln name name2<br>硬链接：ln -s name name2<br>查找：<br>    find /User/zzn -name “<em>file</em>“<br>    find /User/zzn -size +100M<br>    find /User/zzn -size +100M -size +1G<br>归档管理:<br>    //.tar<br>    tar -cvf test.tar <em>.py -C /User/zzn<br>    tar -xvf test.tar<br>    //.tar.gz<br>    tar -zcvf test.tar.gz </em>.py<br>    tar -zxvf test.tar<br>    //.tar.bz2<br>    tar -jcvf test.tar.gz <em>.py<br>    tar -jxvf test.tar<br>    //zip<br>    zip test.zip </em>.py<br>    unzip test.zip -d /User/zzn<br>进程信息:<br>    ps -aux //运行的程序<br>    kill -9 pid<br>    top<br>    htop<br>系统相关:<br>    shutdown -h 20:20<br>    reboot<br>    df -h //磁盘查询<br>    du -h //当前目录占用查询<br>用户相关:<br>    sudo useradd -m name1     //创建家目录<br>    su - name1                //切换家目录<br>    sudo passwd name1<br>    userdel -r name<br>    sudo -s                 //切换到root用户</p>
+          
+            <p><code>`</code><br>管道：ls -al | more<br>查找：grep -n “hello” hello.txt<br>软链接：ln name name2<br>硬链接：ln -s name name2<br>查找：<br>    find /User/zzn -name “<em>file</em>“<br>    find /User/zzn -size +100M<br>    find /User/zzn -size +100M -size +1G<br>归档管理:<br>    //.tar<br>    tar -cvf test.tar <em>.py -C /User/zzn<br>    tar -xvf test.tar<br>    //.tar.gz<br>    tar -zcvf test.tar.gz </em>.py<br>    tar -zxvf test.tar<br>    //.tar.bz2<br>    tar -jcvf test.tar.gz <em>.py<br>    tar -jxvf test.tar<br>    //zip<br>    zip test.zip </em>.py<br>    unzip test.zip -d /User/zzn<br>进程信息:<br>    ps -aux //运行的程序<br>    kill -9 pid<br>    top<br>    htop<br>系统相关:<br>    shutdown -h 20:20<br>    reboot<br>    df -h //磁盘查询<br>    du -h //当前目录占用查询<br>用户相关:<br>    sudo useradd -m name1     //创建家目录<br>    su - name1                //切换家目录<br>    sudo passwd name1<br>    userdel -r name<br>    sudo -s                 //切换到root用户</p>
 <pre><code>groupadd
 groupdel
 
@@ -565,50 +1371,147 @@ G：回到代码的最后一行
 gg：回到代码的第一行
 R：替换光标后面的字符
 </code></pre>
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Server/linux命令要点/" data-id="cjjsawxdv00071m53r4ddldtw" class="article-share-link">分享</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
       
       
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
- 
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-Server/Python_1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/Server/Python_1/" class="article-date">
-  <time datetime="2018-07-18T09:57:16.429Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Server/">Server</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://Alexzzn.github.io/2018/07/18/Server/Python_1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzn">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
     
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/Server/Python_1/">Python_1</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/18/Server/Python_1/" itemprop="url">Python_1</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T17:57:16+08:00">
+                2018-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Server/" itemprop="url" rel="index">
+                    <span itemprop="name">Server</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <!-- Table of Contents -->
+      
+
+      
         
-        <p><code>`</code>python</p>
+          
+            <p><code>`</code>python</p>
 <p>#!/usr/bin/python3<br>import _thread<br>import time</p>
 <p>class Person:<br>    name = ‘Haha’<br>    print(“Hello,Python!”)</p>
 <p>counter = 100<br>miles = 100.00<br>name = “Python”</p>
@@ -643,50 +1546,147 @@ while 1:
     pass
 </code></pre><p>t = Thread()</p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Server/Python_1/" data-id="cjjsawxdr00041m53yz70y0pr" class="article-share-link">分享</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
       
       
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
- 
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-Web/php学习2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/Web/php学习2/" class="article-date">
-  <time datetime="2018-07-18T09:53:42.904Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Web/">Web</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://Alexzzn.github.io/2018/07/18/Web/php学习2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzn">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
     
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/Web/php学习2/">php学习2</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/18/Web/php学习2/" itemprop="url">php学习2</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T17:53:42+08:00">
+                2018-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web/" itemprop="url" rel="index">
+                    <span itemprop="name">Web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <!-- Table of Contents -->
+      
+
+      
         
-        <h4 id="Day11"><a href="#Day11" class="headerlink" title="Day11"></a>Day11</h4><blockquote>
+          
+            <h4 id="Day11"><a href="#Day11" class="headerlink" title="Day11"></a>Day11</h4><blockquote>
 <p>1,增删改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1,数据库设计规范：</span><br><span class="line">        1，原子xing性</span><br><span class="line">        2，唯一性</span><br><span class="line">        3，独立性</span><br><span class="line">2，数据库操作：</span><br><span class="line">        insert into table_name ([a],[b]) values (a1,a2);</span><br><span class="line">        replace into table_name ([a],[b]) values (a1,a2);</span><br><span class="line">        insert  into  table_name  set  key1=value1，key2=value2；</span><br><span class="line">        insert into table_name (key1,key2) select key_other1,key_otber2 from  table_name2</span><br><span class="line">3, 删除数据</span><br><span class="line">    delete from table_name where [condition] order by key1 desc limit start range;</span><br><span class="line">4, 修改数据</span><br><span class="line">    update table_name set key1=value1,key2=value2 where [condition] order by `id` desc;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
@@ -697,50 +1697,147 @@ while 1:
 <p>4,事务：<br><code>`</code><br>• 原子性：一个事务中的所有语句，应该做到：要么全做，要么一个都不做；<br>• 一致性：让数据保持逻辑上的“合理性”，比如：一个商品出库时，既要让商品库中的该商品数量减1，又要让对应用户的购物车中的该商品加1；<br>• 隔离性：如果多个事务同时并发执行，但每个事务就像各自独立执行一样。<br>• 持久性：一个事务执行成功，则对数据来说应该是一个明确的硬盘数据更改（而不仅仅是内存中的变化）。</p>
 <p>1，开启一个事务：<br>    start  transaction；​//也可以写成：begin；<br>2，执行多条增删改语句；​//也就是相当于希望这多条语句要作为一个“不可分割”的整体去执行的任务<br>3，判断这些语句执行的结果情况，并进行提交或回滚：<br>    if(  没有出错 ）{<br>    commit；​//提交事务；此时就是一次性完成；<br>    }<br>    else{<br>    rollback；​//回滚事务；此时就是全部撤销；<br>    }</p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Web/php学习2/" data-id="cjjsawxeh00161m53h6viai8b" class="article-share-link">分享</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
       
       
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
- 
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-Web/Mac工具" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/Web/Mac工具/" class="article-date">
-  <time datetime="2018-07-18T09:53:42.903Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Web/">Web</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://Alexzzn.github.io/2018/07/18/Web/Mac工具/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzn">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
     
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/Web/Mac工具/">Mac工具</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/18/Web/Mac工具/" itemprop="url">Mac工具</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T17:53:42+08:00">
+                2018-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web/" itemprop="url" rel="index">
+                    <span itemprop="name">Web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <!-- Table of Contents -->
+      
+
+      
         
-        <ul>
+          
+            <ul>
 <li><h4 id="1-homebrew"><a href="#1-homebrew" class="headerlink" title="1.homebrew"></a>1.homebrew</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1,一般安装目录在:/usr/local/Cellar/</span><br><span class="line">        </span><br><span class="line">2,一般配置目录在:/usr/local/etc/php</span><br><span class="line"></span><br><span class="line">3,获取软件安装的路径:brew --prefix homebrew/php/php70</span><br></pre></td></tr></table></figure>
 </li>
 <li><h4 id="1-tar-使用"><a href="#1-tar-使用" class="headerlink" title="1.tar 使用"></a>1.tar 使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">-c: 建立压缩档案</span><br><span class="line">-x：解压</span><br><span class="line">-t：查看内容</span><br><span class="line">-r：向压缩归档文件末尾追加文件</span><br><span class="line">-u：更新原压缩包中的文件</span><br><span class="line">这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。下面的参数是根据需要在压缩或解压档案时可选的。</span><br><span class="line">-z：有gzip属性的</span><br><span class="line">-j：有bz2属性的</span><br><span class="line">-Z：有compress属性的</span><br><span class="line">-v：显示所有过程</span><br><span class="line">-O：将文件解开到标准输出</span><br><span class="line"></span><br><span class="line">压缩</span><br><span class="line">tar –cvf jpg.tar *.jpg //将目录里所有jpg文件打包成tar.jpg</span><br><span class="line">tar –czf jpg.tar.gz *.jpg   //将目录里所有jpg文件打包成jpg.tar后，并且将其用gzip压缩，生成一  个gzip压缩过的包，命名为jpg.tar.gz</span><br><span class="line">tar –cjf jpg.tar.bz2 *.jpg //将目录里所有jpg文件打包成jpg.tar后，并且将其用bzip2压缩，生成一个bzip2压缩过的包，命名为jpg.tar.bz2</span><br><span class="line">tar –cZf jpg.tar.Z *.jpg   //将目录里所有jpg文件打包成jpg.tar后，并且将其用compress压缩，生成一个umcompress压缩过的包，命名为jpg.tar.Z</span><br><span class="line">rar a jpg.rar *.jpg //rar格式的压缩，需要先下载rar for linux</span><br><span class="line">zip jpg.zip *.jpg //zip格式的压缩，需要先下载zip for linux</span><br><span class="line">解压</span><br><span class="line">tar –xvf file.tar //解压 tar包</span><br><span class="line">tar -xzvf file.tar.gz //解压tar.gz</span><br><span class="line">tar -xjvf file.tar.bz2   //解压 tar.bz2</span><br><span class="line">tar –xZvf file.tar.Z   //解压tar.Z</span><br><span class="line">unrar e file.rar //解压rar</span><br><span class="line">unzip file.zip //解压zip</span><br></pre></td></tr></table></figure>
@@ -784,179 +1881,320 @@ while 1:
         @php &quot;%~dp0composer.phar&quot; %*
         最后重新打开一个命令行窗口试一试执行 composer --version 看看是否正确输出版本号。
 </code></pre>
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Web/Mac工具/" data-id="cjjsawxe7000m1m53xt8xco1a" class="article-share-link">分享</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
       
       
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
- 
+  
+  
+  </article>
 
+
+    
+  </section>
 
   
-
-
-  <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/6/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/8/">下一页&raquo;</a>
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
   </nav>
-</section>
-           
-    <aside id="sidebar">
-  
-    
 
-  
-    
-  
-    
 
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
   
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title recent-posts">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2018/07/19/Web/mysql/">mysql</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/19/Server/字符串/">字符串</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/19/Web/mysql基本语句/">mysql基本语句</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/18/iOS/java注解/">java注解</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/18/iOS/地图定位/">地图定位</a>
-          </li>
-        
-      </ul>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
 
-  
+  <aside id="sidebar" class="sidebar">
     
+    <div class="sidebar-inner">
 
-  
-    
-  
-    <!--微信公众号二维码-->
-
-
-  
-</aside>
-
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-left">
-      &copy; 2014 - 2018 zzn&nbsp;|&nbsp;
-      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
-    </div>
-     <div id="footer-right">
-      联系方式&nbsp;|&nbsp;youemail@outlook.com
-    </div>
-  </div>
-</footer>
- <script src="/jquery/jquery.min.js"></script>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">首页</a>
-  
-    <a href="/archives" class="mobile-nav-link">归档</a>
-  
-    <a href="/about" class="mobile-nav-link">关于</a>
-  
-</nav>
-    <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
-<script>
-// Elevator script included on the page, already.
-window.onload = function() {
-  var elevator = new Elevator({
-    selector:'.back-to-top-btn',
-    element: document.querySelector('.back-to-top-btn'),
-    duration: 1000 // milliseconds
-  });
-}
-</script>
       
 
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">zzn</p>
+              <p class="site-description motion-element" itemprop="description">我的博客分享</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">95</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zzn</span>
+
   
-    <script>
-      var cloudTieConfig = {
-        url: document.location.href, 
-        sourceId: "",
-        productKey: "e2fb4051c49842688ce669e634bc983f",
-        target: "cloud-tie-wrapper"
-      };
-    </script>
-    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
 
-  
+    
 
-
-
-
-
-
-
-<!-- author:forvoid begin -->
-<!-- author:forvoid begin -->
-
-<!-- author:forvoid end -->
-
-<!-- author:forvoid end -->
-
-
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      })
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      })
-    </script>
-    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
-
-
- <script src="/js/is.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-<script src="/js/elevator.js"></script>
   </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>

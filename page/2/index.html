@@ -1,11 +1,85 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
+
+
+
   
-  <title>MyBlog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我的博客分享">
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="我的博客分享">
 <meta property="og:type" content="website">
 <meta property="og:title" content="MyBlog">
 <meta property="og:url" content="https://Alexzzn.github.io/page/2/index.html">
@@ -15,93 +89,243 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MyBlog">
 <meta name="twitter:description" content="我的博客分享">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://Alexzzn.github.io/page/2/"/>
+
+
+
+
+
+  <title>MyBlog</title>
   
-    <link rel="alternate" href="/atom.xml" title="MyBlog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
+
+
+
+
+
+
+
 
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    
-    <div id="header-inner" class="inner">
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://Alexzzn.github.io"></form>
-      </div>
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">首页</a>
-        
-          <a class="main-nav-link" href="/archives">归档</a>
-        
-          <a class="main-nav-link" href="/about">关于</a>
-        
-      </nav>
-      
-    </div>
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">MyBlog</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">博客</a>
-        </h2>
-      
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-iOS/ruby安装错误总结" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/iOS/ruby安装错误总结/" class="article-date">
-  <time datetime="2018-07-18T10:10:21.186Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/iOS/">iOS</a>
-  </div>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/iOS/ruby安装错误总结/">ruby安装错误总结</a>
-    </h1>
+  
+    
   
 
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">MyBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://Alexzzn.github.io/2018/07/18/iOS/ruby安装错误总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzn">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/18/iOS/ruby安装错误总结/" itemprop="url">ruby安装错误总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T18:10:21+08:00">
+                2018-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <!-- Table of Contents -->
+      
+
+      
         
-        <blockquote>
+          
+            <blockquote>
 <p>1，安装后 如何卸载系统自带的ruby2.0版本库，从新从官网下载 源码编译，要确保ruby，brew，gem，homebrew目录和文件 清理干净，可通过 which gem </p>
 </blockquote>
 <blockquote>
@@ -112,50 +336,147 @@
 <p>ruby -e “$(curl -fsSL <a href="https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;" target="_blank" rel="noopener">https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</a></p>
 </blockquote>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/ruby安装错误总结/" data-id="cjjsawxft00351m536lg4awm1" class="article-share-link">分享</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
       
       
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
- 
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-iOS/Block_OC_2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/iOS/Block_OC_2/" class="article-date">
-  <time datetime="2018-07-18T10:10:21.184Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/iOS/">iOS</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://Alexzzn.github.io/2018/07/18/iOS/Block_OC_2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzn">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
     
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/iOS/Block_OC_2/">Block_OC_2</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/18/iOS/Block_OC_2/" itemprop="url">Block_OC_2</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T18:10:21+08:00">
+                2018-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <!-- Table of Contents -->
+      
+
+      
         
-        <p>本文翻译自苹果的文档，有删减，也有添加自己的理解部分。</p>
+          
+            <p>本文翻译自苹果的文档，有删减，也有添加自己的理解部分。</p>
 <p>如果有Block语法不懂的，可以参考fuckingblocksyntax，里面对于Block</p>
 <p>为了方便对比，下面的代码我假设是写在ViewController子类中的</p>
 <p>1、第一部分</p>
@@ -184,50 +505,147 @@
 <p>Github中的代码，可以开启两种调试模式，你需要在项目的配置文件BlockSamp-Prefix.pch中注释或者解注释下面的代码，</p>
 <p>####define Debug_BlcokPassValueEnable<br>即可开启两种调试的方式，如果注释了上面的语句就是使用Delegate进行调试；否则使用Block进行调试。</p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/Block_OC_2/" data-id="cjjsawxf3001v1m53y8kvtzvj" class="article-share-link">分享</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
       
       
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
- 
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-iOS/R.Swift简要" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/iOS/R.Swift简要/" class="article-date">
-  <time datetime="2018-07-18T10:10:21.183Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/iOS/">iOS</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://Alexzzn.github.io/2018/07/18/iOS/R.Swift简要/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzn">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
     
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/iOS/R.Swift简要/">R</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/18/iOS/R.Swift简要/" itemprop="url">R</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T18:10:21+08:00">
+                2018-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <!-- Table of Contents -->
+      
+
+      
         
-        <h4 id="RSwift-简要说明"><a href="#RSwift-简要说明" class="headerlink" title="RSwift 简要说明"></a>RSwift 简要说明</h4><blockquote>
+          
+            <h4 id="RSwift-简要说明"><a href="#RSwift-简要说明" class="headerlink" title="RSwift 简要说明"></a>RSwift 简要说明</h4><blockquote>
 <p>配置脚本 尽量保持runscript 执行靠前<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 执行script</span><br><span class="line">&quot;$PODS_ROOT/R.swift/rswift&quot; generate &quot;$SRCROOT/MYCard/Support Files&quot;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
@@ -241,50 +659,147 @@
 </ul>
 </blockquote>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/R.Swift简要/" data-id="cjjsawxfc002b1m5314qtu4hh" class="article-share-link">分享</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
       
       
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
- 
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-iOS/Block_OC_1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/iOS/Block_OC_1/" class="article-date">
-  <time datetime="2018-07-18T10:10:21.181Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/iOS/">iOS</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://Alexzzn.github.io/2018/07/18/iOS/Block_OC_1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzn">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
     
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/iOS/Block_OC_1/">Block_OC_1</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/18/iOS/Block_OC_1/" itemprop="url">Block_OC_1</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T18:10:21+08:00">
+                2018-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <!-- Table of Contents -->
+      
+
+      
         
-        <h4 id="mongoDb常用语句"><a href="#mongoDb常用语句" class="headerlink" title="mongoDb常用语句"></a>mongoDb常用语句</h4><p>本文来自台湾的某开发人员的博客，被墙，感觉讲的比较易懂，所以引过来。文字简体化了，原来是繁体，变数=变量，这个注意一下。</p>
+          
+            <h4 id="mongoDb常用语句"><a href="#mongoDb常用语句" class="headerlink" title="mongoDb常用语句"></a>mongoDb常用语句</h4><p>本文来自台湾的某开发人员的博客，被墙，感觉讲的比较易懂，所以引过来。文字简体化了，原来是繁体，变数=变量，这个注意一下。</p>
 <p>本文的顺序是层层深入的，要想简单的了解，只看X.1 初探Block就好了</p>
 <p>本章学习目标：</p>
 <blockquote>
@@ -527,50 +1042,147 @@
 <p>  14:// 注意: 这个block 定义仅在if 后的两个大括号中有效。</p>
 <p>  15:     }<br>  16:// …<br>  17: }</p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/Block_OC_1/" data-id="cjjsawxh0005l1m536vyrhwz8" class="article-share-link">分享</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
       
       
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
- 
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-iOS/SwiftDate处理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/iOS/SwiftDate处理/" class="article-date">
-  <time datetime="2018-07-18T10:10:21.180Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/iOS/">iOS</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://Alexzzn.github.io/2018/07/18/iOS/SwiftDate处理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzn">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
     
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/iOS/SwiftDate处理/">SwiftDate处理</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/18/iOS/SwiftDate处理/" itemprop="url">SwiftDate处理</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T18:10:21+08:00">
+                2018-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <!-- Table of Contents -->
+      
+
+      
         
-        <h4 id="swiftdate"><a href="#swiftdate" class="headerlink" title="swiftdate"></a>swiftdate</h4><p><code>`</code>swift<br>        // 获取当前date<br>        let date1 = Date.init()<br>        let data2 = “2015-07-26”.date(format: DateFormat.custom(“yyyy.mm.dd”), fromRegion: Region.Local())<br>        let date3 = DateInRegion.init(components: DateComponents.init(calendar: Calendar.autoupdatingCurrent, timeZone: TimeZone.current, era: 1, year: 2010, month: 1, day: 1, hour: 1, minute: 1, second: 1, nanosecond: 1, weekday: nil))<br>        // dataregion 修改时间元素值<br>        let date4 = date3! + 14.minutes + 12.seconds<br>        // 比较时间<br>        let bv = date3! &gt; date4<br>        // 时间起始值<br>        let date5 = date4.startOf(component: Calendar.Component.hour)<br>        let date6 = date4.endOfDay</p>
+          
+            <h4 id="swiftdate"><a href="#swiftdate" class="headerlink" title="swiftdate"></a>swiftdate</h4><p><code>`</code>swift<br>        // 获取当前date<br>        let date1 = Date.init()<br>        let data2 = “2015-07-26”.date(format: DateFormat.custom(“yyyy.mm.dd”), fromRegion: Region.Local())<br>        let date3 = DateInRegion.init(components: DateComponents.init(calendar: Calendar.autoupdatingCurrent, timeZone: TimeZone.current, era: 1, year: 2010, month: 1, day: 1, hour: 1, minute: 1, second: 1, nanosecond: 1, weekday: nil))<br>        // dataregion 修改时间元素值<br>        let date4 = date3! + 14.minutes + 12.seconds<br>        // 比较时间<br>        let bv = date3! &gt; date4<br>        // 时间起始值<br>        let date5 = date4.startOf(component: Calendar.Component.hour)<br>        let date6 = date4.endOfDay</p>
 <pre><code>// 时间戳
 let inter1 = TimeInterval.init(&quot;1244&quot;)!
 let date7 = Date.init(timeIntervalSinceNow: inter1)
@@ -586,50 +1198,147 @@ let date1Str = date1.string(format: DateFormat.custom(&quot;YYYY-MM-DD&quot;), i
 let dateStr1 = data2?.string(dateStyle: DateFormatter.Style.medium, timeStyle: DateFormatter.Style.short)
 //
 </code></pre>
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/SwiftDate处理/" data-id="cjjsawxfe002f1m53cor3r72l" class="article-share-link">分享</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
       
       
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
- 
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-iOS/swift4 字符串" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/iOS/swift4 字符串/" class="article-date">
-  <time datetime="2018-07-18T10:10:21.179Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/iOS/">iOS</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://Alexzzn.github.io/2018/07/18/iOS/swift4 字符串/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzn">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
     
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/iOS/swift4 字符串/">swift4 字符串</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/18/iOS/swift4 字符串/" itemprop="url">swift4 字符串</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T18:10:21+08:00">
+                2018-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <!-- Table of Contents -->
+      
+
+      
         
-        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> greeting = <span class="string">"Hello, world!"</span></span><br><span class="line"><span class="keyword">let</span> index = greeting.index(of: <span class="string">","</span>) ?? greeting.endIndex</span><br><span class="line"><span class="keyword">let</span> beginning = greeting[..&lt;index]</span><br><span class="line"><span class="comment">// beginning is "Hello"</span></span><br><span class="line"><span class="comment">//但是注意SubString可能会用到原来string的内存。官方建议是短时间使用，如果想要长时间保持，需要转为String</span></span><br><span class="line"><span class="comment">// Convert the result to a String for long-term storage.</span></span><br><span class="line"><span class="keyword">let</span> newString = <span class="type">String</span>(beginning)</span><br></pre></td></tr></table></figure>
+          
+            <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> greeting = <span class="string">"Hello, world!"</span></span><br><span class="line"><span class="keyword">let</span> index = greeting.index(of: <span class="string">","</span>) ?? greeting.endIndex</span><br><span class="line"><span class="keyword">let</span> beginning = greeting[..&lt;index]</span><br><span class="line"><span class="comment">// beginning is "Hello"</span></span><br><span class="line"><span class="comment">//但是注意SubString可能会用到原来string的内存。官方建议是短时间使用，如果想要长时间保持，需要转为String</span></span><br><span class="line"><span class="comment">// Convert the result to a String for long-term storage.</span></span><br><span class="line"><span class="keyword">let</span> newString = <span class="type">String</span>(beginning)</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>插入和移除字符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var welcome = &quot;hello&quot;</span><br><span class="line">welcome.insert(&quot;!&quot;, at: welcome.endIndex)</span><br><span class="line">// welcome now equals &quot;hello!&quot;</span><br><span class="line"></span><br><span class="line">welcome.insert(contentsOf: &quot; there&quot;, at: welcome.index(before: welcome.endIndex))</span><br><span class="line">// welcome now equals &quot;hello there!&quot;</span><br><span class="line">welcome.remove(at: welcome.index(before: welcome.endIndex))</span><br><span class="line">// welcome now equals &quot;hello there&quot;</span><br><span class="line"></span><br><span class="line">let range = welcome.index(welcome.endIndex, offsetBy: -6)..&lt;welcome.endIndex</span><br><span class="line">welcome.removeSubrange(range)</span><br><span class="line">// welcome now equals &quot;hello&quot;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
@@ -637,50 +1346,147 @@ let dateStr1 = data2?.string(dateStyle: DateFormatter.Style.medium, timeStyle: D
 <p>One-sided Slicing<br>Swift 4 新增了一个语法糖 … 可以对字符串进行单侧边界取子串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//Swift 3:</span><br><span class="line"></span><br><span class="line">let values = &quot;abcdefg&quot;</span><br><span class="line">let startSlicingIndex = values.index(values.startIndex, offsetBy: 3)</span><br><span class="line">let subvalues = values[startSlicingIndex..&lt;values.endIndex] // defg</span><br><span class="line"></span><br><span class="line">//Swift 4:</span><br><span class="line"></span><br><span class="line">let values = &quot;abcdefg&quot;</span><br><span class="line">let startSlicingIndex = values.index(values.startIndex, offsetBy: 3)</span><br><span class="line">let subvalues = values[startSlicingIndex...] // One-sided Slicing // defg</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/swift4 字符串/" data-id="cjjsawxg1003l1m53yhubtu69" class="article-share-link">分享</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
       
       
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
- 
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-iOS/cocoapods 私有仓库" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/iOS/cocoapods 私有仓库/" class="article-date">
-  <time datetime="2018-07-18T10:10:20.348Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/iOS/">iOS</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://Alexzzn.github.io/2018/07/18/iOS/cocoapods 私有仓库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzn">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
     
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/iOS/cocoapods 私有仓库/">cocoapods 私有仓库</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/18/iOS/cocoapods 私有仓库/" itemprop="url">cocoapods 私有仓库</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T18:10:20+08:00">
+                2018-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <!-- Table of Contents -->
+      
+
+      
         
-        <p><a href="https://guides.cocoapods.org/syntax/podspec.html#vendored_frameworks" target="_blank" rel="noopener">官方文档</a></p>
+          
+            <p><a href="https://guides.cocoapods.org/syntax/podspec.html#vendored_frameworks" target="_blank" rel="noopener">官方文档</a></p>
 <blockquote>
 <p>首先同步git repo 仓库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod repo add demo www.gitee.demo:jj/xx.git</span><br></pre></td></tr></table></figure></p>
 </blockquote>
@@ -710,50 +1516,147 @@ let dateStr1 = data2?.string(dateStyle: DateFormatter.Style.medium, timeStyle: D
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1, swift库注意 SWIFT_VERSION 和 module_name</span><br><span class="line">2, pod spec lint 可以添加--allow-warnings</span><br><span class="line">3, storyboard，xib等资源文件可以打包成bundle后，通过s.resource_bundles引用</span><br><span class="line">4, 库中引用资源等，需要找到当前文件所在的bundle来引用</span><br><span class="line">	let moudleFileBundle = Bundle.init(for: self.classForCoder())</span><br><span class="line">	let img = UIImage.init(named: name, in: moudleFileBundle, compatibleWith: nil)</span><br></pre></td></tr></table></figure>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/cocoapods 私有仓库/" data-id="cjjsawxfi002n1m53e47iwu4i" class="article-share-link">分享</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
       
       
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
- 
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-iOS/web和js交互小结" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/iOS/web和js交互小结/" class="article-date">
-  <time datetime="2018-07-18T10:10:20.338Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/iOS/">iOS</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://Alexzzn.github.io/2018/07/18/iOS/web和js交互小结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzn">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
     
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/iOS/web和js交互小结/">web和js交互小结</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/18/iOS/web和js交互小结/" itemprop="url">web和js交互小结</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T18:10:20+08:00">
+                2018-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <!-- Table of Contents -->
+      
+
+      
         
-        <blockquote>
+          
+            <blockquote>
 <p>iOS 7 引入 JSCore， iOS8 后引入WebKit，提供WKScriptMessageHandler</p>
 </blockquote>
 <ul>
@@ -795,95 +1698,289 @@ let dateStr1 = data2?.string(dateStyle: DateFormatter.Style.medium, timeStyle: D
 <p>web端调用</p>
 </blockquote>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// html5</span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"margin-top: 100px"</span>&gt;</span> </span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>JsToNative/h1&gt; </span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"show"</span> <span class="attr">onclick</span>=<span class="string">"mymodel.showAlert()"</span>&gt;</span> </span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/web和js交互小结/" data-id="cjjsawxg4003r1m53m7fkr6e9" class="article-share-link">分享</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
       
       
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
- 
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-Android/JAVA8 lambada表达式" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/Android/JAVA8 lambada表达式/" class="article-date">
-  <time datetime="2018-07-18T10:10:04.531Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://Alexzzn.github.io/2018/07/18/Android/JAVA8 lambada表达式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzn">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
     
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/Android/JAVA8 lambada表达式/">JAVA8 lambada表达式</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/18/Android/JAVA8 lambada表达式/" itemprop="url">JAVA8 lambada表达式</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T18:10:04+08:00">
+                2018-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <!-- Table of Contents -->
+      
+
+      
         
-        <h4 id="lambada表达式"><a href="#lambada表达式" class="headerlink" title="lambada表达式"></a>lambada表达式</h4><h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> defaultConfig &#123;</span><br><span class="line">        jackOptions &#123;</span><br><span class="line">            enabled <span class="keyword">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">compileOptions &#123;</span><br><span class="line">        targetCompatibility <span class="number">1.8</span></span><br><span class="line">        sourceCompatibility <span class="number">1.8</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+          
+            <h4 id="lambada表达式"><a href="#lambada表达式" class="headerlink" title="lambada表达式"></a>lambada表达式</h4><h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> defaultConfig &#123;</span><br><span class="line">        jackOptions &#123;</span><br><span class="line">            enabled <span class="keyword">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">compileOptions &#123;</span><br><span class="line">        targetCompatibility <span class="number">1.8</span></span><br><span class="line">        sourceCompatibility <span class="number">1.8</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//声明接口</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">showLab</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//要执行的闭包函数声明</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">backGound</span><span class="params">(<span class="keyword">int</span> a)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//实现闭包函数的方法</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    lab:闭包的声明的实例</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">implementLam</span><span class="params">(showLab lab)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">2</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//可以对闭包回调 返回值 操作</span></span><br><span class="line">    <span class="keyword">int</span> b = lab.backGound(a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//实现lambada函数</span></span><br><span class="line"></span><br><span class="line">implementLam((a)-&gt;&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//闭包返回值</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Android/JAVA8 lambada表达式/" data-id="cjjsawxg900431m53xco0swqx" class="article-share-link">分享</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
       
       
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
- 
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-Android/java8" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/18/Android/java8/" class="article-date">
-  <time datetime="2018-07-18T10:08:32.069Z" itemprop="datePublished">2018-07-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://Alexzzn.github.io/2018/07/18/Android/java8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzn">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MyBlog">
+    </span>
+
     
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/Android/java8/">java8</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/18/Android/java8/" itemprop="url">java8</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T18:08:32+08:00">
+                2018-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <!-- Table of Contents -->
+      
+
+      
         
-        <p><code>`</code>java<br>import com.sun.istack.internal.Nullable;<br>import com.sun.xml.internal.xsom.impl.scd.Iterators;<br>import java.time.LocalDate;<br>import java.util.*;<br>import java.util.function.Supplier;<br>import java.util.stream.Stream;</p>
+          
+            <p><code>`</code>java<br>import com.sun.istack.internal.Nullable;<br>import com.sun.xml.internal.xsom.impl.scd.Iterators;<br>import java.time.LocalDate;<br>import java.util.*;<br>import java.util.function.Supplier;<br>import java.util.stream.Stream;</p>
 <p>import static java.util.Optional.ofNullable;</p>
 <p>interface Success {<br>    void succ(String string);<br>}<br>interface Fail {<br>    void fail(String string);<br>}</p>
 <p>public class Main {</p>
@@ -1013,179 +2110,320 @@ public void testInterface() {
 }
 </code></pre><p>}</p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://Alexzzn.github.io/2018/07/18/Android/java8/" data-id="cjjsawxgd004c1m53ardvt1rs" class="article-share-link">分享</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
       
       
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
- 
+  
+  
+  </article>
 
+
+    
+  </section>
 
   
-
-
-  <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/">下一页&raquo;</a>
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
-</section>
-           
-    <aside id="sidebar">
-  
-    
 
-  
-    
-  
-    
 
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
   
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title recent-posts">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2018/07/19/Web/mysql/">mysql</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/19/Server/字符串/">字符串</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/19/Web/mysql基本语句/">mysql基本语句</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/18/iOS/java注解/">java注解</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/18/iOS/地图定位/">地图定位</a>
-          </li>
-        
-      </ul>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
 
-  
+  <aside id="sidebar" class="sidebar">
     
+    <div class="sidebar-inner">
 
-  
-    
-  
-    <!--微信公众号二维码-->
-
-
-  
-</aside>
-
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-left">
-      &copy; 2014 - 2018 zzn&nbsp;|&nbsp;
-      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
-    </div>
-     <div id="footer-right">
-      联系方式&nbsp;|&nbsp;youemail@outlook.com
-    </div>
-  </div>
-</footer>
- <script src="/jquery/jquery.min.js"></script>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">首页</a>
-  
-    <a href="/archives" class="mobile-nav-link">归档</a>
-  
-    <a href="/about" class="mobile-nav-link">关于</a>
-  
-</nav>
-    <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
-<script>
-// Elevator script included on the page, already.
-window.onload = function() {
-  var elevator = new Elevator({
-    selector:'.back-to-top-btn',
-    element: document.querySelector('.back-to-top-btn'),
-    duration: 1000 // milliseconds
-  });
-}
-</script>
       
 
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">zzn</p>
+              <p class="site-description motion-element" itemprop="description">我的博客分享</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">95</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zzn</span>
+
   
-    <script>
-      var cloudTieConfig = {
-        url: document.location.href, 
-        sourceId: "",
-        productKey: "e2fb4051c49842688ce669e634bc983f",
-        target: "cloud-tie-wrapper"
-      };
-    </script>
-    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
 
-  
+    
 
-
-
-
-
-
-
-<!-- author:forvoid begin -->
-<!-- author:forvoid begin -->
-
-<!-- author:forvoid end -->
-
-<!-- author:forvoid end -->
-
-
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      })
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      })
-    </script>
-    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
-
-
- <script src="/js/is.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-<script src="/js/elevator.js"></script>
   </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>
