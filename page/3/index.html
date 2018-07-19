@@ -1,1 +1,1002 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="我的博客分享"><title>MyBlog | 博客</title><link rel="stylesheet" type="text/css" href="//fonts.neworld.org/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.1"><link rel="stylesheet" type="text/css" href="/css/highlight.css?v=2.0.1"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">MyBlog</h1><a id="logo" href="/.">MyBlog</a><p class="description">博客</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="Arama"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h2 class="post-title"><a href="/2018/07/18/Android/js交互/">js交互</a></h2><div class="post-meta"><p><span class="date">2018-07-18</span><span><a href="/categories/Android/" class="category">Android</a></span></p></div><div class="post-content"><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main6Activity</span> : <span class="type">AppCompatActivity</span></span>() &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">var</span> contentWebView: WebView? = <span class="literal">null</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@SuppressLint(<span class="meta-string">"JavascriptInterface"</span>)</span></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState)</span><br><span class="line">        setContentView(R.layout.activity_main6)</span><br><span class="line">        contentWebView = findViewById(R.id.webview) <span class="keyword">as</span> WebView</span><br><span class="line">        contentWebView?.setBackgroundColor(Color.CYAN)</span><br><span class="line">        <span class="comment">// 启用javascript</span></span><br><span class="line">        contentWebView!!.settings.javaScriptEnabled = <span class="literal">true</span></span><br><span class="line">        <span class="comment">// 从assets目录下面的加载html</span></span><br><span class="line">        contentWebView!!.loadUrl(<span class="string">"file:///android_asset/web.html"</span>)</span><br><span class="line">        contentWebView!!.addJavascriptInterface(<span class="keyword">this</span><span class="symbol">@Main6Activity</span>, <span class="string">"android"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//无参调用Js点击</span></span><br><span class="line">        findViewById(R.id.bt1).setOnClickListener &#123;</span><br><span class="line">            <span class="comment">// 无参数调用</span></span><br><span class="line">            contentWebView!!.loadUrl(<span class="string">"javascript:javacalljs()"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//有参调用Js点击</span></span><br><span class="line">        findViewById(R.id.btn2).setOnClickListener &#123;</span><br><span class="line">            <span class="comment">// 传递参数调用</span></span><br><span class="line">            contentWebView!!.loadUrl(<span class="string">"javascript:javacalljswith("</span> + <span class="string">"'http://blog.csdn.net/Leejizhou'"</span> + <span class="string">")"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//由于安全原因 需要加 @JavascriptInterface</span></span><br><span class="line">    <span class="meta">@JavascriptInterface</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">startFunction</span><span class="params">()</span></span> &#123;</span><br><span class="line"></span><br><span class="line">        runOnUiThread &#123; Toast.makeText(<span class="keyword">this</span><span class="symbol">@Main6Activity</span>, <span class="string">"show"</span>, Toast.LENGTH_SHORT).show() &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@JavascriptInterface</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">startFunction</span><span class="params">(text: <span class="type">String</span>)</span></span> &#123;</span><br><span class="line">        runOnUiThread &#123; AlertDialog.Builder(<span class="keyword">this</span><span class="symbol">@Main6Activity</span>).setMessage(text).show() &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><p class="readmore"><a href="/2018/07/18/Android/js交互/">阅读更多</a></p></div><div class="post"><h2 class="post-title"><a href="/2018/07/18/Android/RxJava/">RxJava</a></h2><div class="post-meta"><p><span class="date">2018-07-18</span><span><a href="/categories/Android/" class="category">Android</a></span></p></div><div class="post-content"><p><code>`</code>java<br>import java.util.ArrayList;<br>import java.util.List;<br>import java.util.concurrent.TimeUnit;</p></div><p class="readmore"><a href="/2018/07/18/Android/RxJava/">阅读更多</a></p></div><div class="post"><h2 class="post-title"><a href="/2018/07/18/Android/内部类/">内部类</a></h2><div class="post-meta"><p><span class="date">2018-07-18</span><span><a href="/categories/Android/" class="category">Android</a></span></p></div><div class="post-content"><h4 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h4><ul></div><p class="readmore"><a href="/2018/07/18/Android/内部类/">阅读更多</a></p></div><div class="post"><h2 class="post-title"><a href="/2018/07/18/Android/笔记/">笔记</a></h2><div class="post-meta"><p><span class="date">2018-07-18</span><span><a href="/categories/Android/" class="category">Android</a></span></p></div><div class="post-content"><h4 id="开发细节"><a href="#开发细节" class="headerlink" title="开发细节"></a>开发细节</h4><blockquote></div><p class="readmore"><a href="/2018/07/18/Android/笔记/">阅读更多</a></p></div><div class="post"><h2 class="post-title"><a href="/2018/07/18/Android/data绑定 kotlin/">data绑定 kotlin</a></h2><div class="post-meta"><p><span class="date">2018-07-18</span><span><a href="/categories/Android/" class="category">Android</a></span></p></div><div class="post-content"><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">layout</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">data</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">import</span> <span class="attr">type</span>=<span class="string">"com.example.zzn.myapplication.Main2Activity.Action"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">import</span> <span class="attr">type</span>=<span class="string">"com.example.zzn.myapplication.Person"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">variable</span></span></span><br><span class="line"><span class="tag">            <span class="attr">name</span>=<span class="string">"action"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">type</span>=<span class="string">"Action"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">variable</span></span></span><br><span class="line"><span class="tag">            <span class="attr">name</span>=<span class="string">"model"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">type</span>=<span class="string">"Person"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">data</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">android.support.constraint.ConstraintLayout</span></span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">tools:context</span>=<span class="string">"com.example.zzn.myapplication.Main2Activity"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/textView"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:text</span>=<span class="string">"@&#123;model.name&#125;"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintLeft_toLeftOf</span>=<span class="string">"parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintTop_toTopOf</span>=<span class="string">"parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_marginTop</span>=<span class="string">"16dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_marginRight</span>=<span class="string">"8dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintRight_toRightOf</span>=<span class="string">"parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_marginEnd</span>=<span class="string">"8dp"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Button</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:text</span>=<span class="string">"按钮"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:onClick</span>=<span class="string">"@&#123;action.tap&#125;"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"60dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_marginTop</span>=<span class="string">"32dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintTop_toBottomOf</span>=<span class="string">"@+id/textView"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_marginLeft</span>=<span class="string">"8dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintLeft_toLeftOf</span>=<span class="string">"parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_marginRight</span>=<span class="string">"8dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintRight_toRightOf</span>=<span class="string">"parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintHorizontal_bias</span>=<span class="string">"0.502"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">android.support.constraint.ConstraintLayout</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br></pre></td></tr></table></figure></div><p class="readmore"><a href="/2018/07/18/Android/data绑定 kotlin/">阅读更多</a></p></div><div class="post"><h2 class="post-title"><a href="/2018/07/18/Android/主题相关/">主题相关</a></h2><div class="post-meta"><p><span class="date">2018-07-18</span><span><a href="/categories/Android/" class="category">Android</a></span></p></div><div class="post-content"><p><code>`</code>xml<br> <!-- Base application theme. --><br>      <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar"><br>          <!-- Customize your theme here. --><br>          <item name="colorPrimary">@color/colorPrimary</item><br>          <item name="colorPrimaryDark">@color/colorPrimaryDark</item><br>          <item name="colorAccent">@color/colorAccent</item><br>          <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/colorAccent</item><br>      </style></p></div><p class="readmore"><a href="/2018/07/18/Android/主题相关/">阅读更多</a></p></div><div class="post"><h2 class="post-title"><a href="/2018/07/18/编程/常用n2排序算法/">常用n2排序算法</a></h2><div class="post-meta"><p><span class="date">2018-07-18</span><span><a href="/categories/编程/" class="category">编程</a></span></p></div><div class="post-content"><p><code>`</code>c++</p></div><p class="readmore"><a href="/2018/07/18/编程/常用n2排序算法/">阅读更多</a></p></div><div class="post"><h2 class="post-title"><a href="/2018/07/18/编程/常用nlogn排序算法/">常用nlogn排序算法</a></h2><div class="post-meta"><p><span class="date">2018-07-18</span><span><a href="/categories/编程/" class="category">编程</a></span></p></div><div class="post-content"><h4 id="归并排序算法"><a href="#归并排序算法" class="headerlink" title="归并排序算法"></a>归并排序算法</h4><p><code>`</code>c++</p></div><p class="readmore"><a href="/2018/07/18/编程/常用nlogn排序算法/">阅读更多</a></p></div><div class="post"><h2 class="post-title"><a href="/2018/07/18/编程/CPlus知识点/">CPlus知识点</a></h2><div class="post-meta"><p><span class="date">2018-07-18</span><span><a href="/categories/编程/" class="category">编程</a></span></p></div><div class="post-content"><h4 id="Person-h"><a href="#Person-h" class="headerlink" title="Person.h"></a>Person.h</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  Person.hpp</span><br><span class="line">//  CPlusL</span><br><span class="line">//</span><br><span class="line">//  Created by ZZN on 2018/3/19.</span><br><span class="line">//  Copyright © 2018年 ZZN. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#ifndef Person_hpp</span><br><span class="line">#define Person_hpp</span><br><span class="line"></span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">class Student;</span><br><span class="line"></span><br><span class="line">class Person &#123;</span><br><span class="line"></span><br><span class="line">private:</span><br><span class="line"></span><br><span class="line">    int age;</span><br><span class="line">    </span><br><span class="line">public:</span><br><span class="line"></span><br><span class="line">    string name;</span><br><span class="line">    // 初始化列表</span><br><span class="line">    Person(int _pid = 0);</span><br><span class="line">    const int pid;</span><br><span class="line">    // 拷贝构造函数</span><br><span class="line">    Person(const Person &amp;p,int _pid = 0);</span><br><span class="line"></span><br><span class="line">    void desc();</span><br><span class="line">    void setAge(int age);</span><br><span class="line"></span><br><span class="line">    // 引用</span><br><span class="line">    void reference();</span><br><span class="line">    // 声明add 回调</span><br><span class="line">    void swap(int a, int b,const function&lt;void(int value)&gt; &amp;test);</span><br><span class="line">    // 纯虚函数</span><br><span class="line">    virtual void learn() = 0;</span><br><span class="line">    // 友元函数</span><br><span class="line">    friend void print_info(Person &amp;c) &#123; // Student:: 指定</span><br><span class="line">        c.desc();</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line">#endif /* Person_hpp */</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#ifndef Student_hpp</span><br><span class="line">#define Student_hpp</span><br><span class="line"></span><br><span class="line">// 学生</span><br><span class="line">class Student:virtual public Person &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public:</span><br><span class="line">    // 派生类 释放</span><br><span class="line">    virtual ~Student();</span><br><span class="line">    void getName();</span><br><span class="line"></span><br><span class="line">    // 实现</span><br><span class="line">    void print_info(Person &amp;c) &#123;</span><br><span class="line">        c.desc();</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></div><p class="readmore"><a href="/2018/07/18/编程/CPlus知识点/">阅读更多</a></p></div><div class="post"><h2 class="post-title"><a href="/2018/07/18/编程/常用算法/">常用算法</a></h2><div class="post-meta"><p><span class="date">2018-07-18</span><span><a href="/categories/编程/" class="category">编程</a></span></p></div><div class="post-content"><h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">时间复杂度：<span class="type">O</span>（nlogn）</span><br><span class="line">代码实现：</span><br><span class="line"></span><br><span class="line"><span class="comment">//快速排序  </span></span><br><span class="line"><span class="comment">//快速排序  </span></span><br><span class="line"><span class="comment">// 快速排序法</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sort4</span><span class="params">( list:<span class="keyword">inout</span> Array&lt;Int&gt;,start:Int,end:Int)</span></span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> start &lt; end &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> low = start, high = end ,mid = list[low]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> low &lt; high &#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span> (low &lt; high) &amp;&amp; list[high] &gt;= mid &#123;</span><br><span class="line">                </span><br><span class="line">                high -= <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">            list[low] = list[high]</span><br><span class="line"></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span> (low &lt; high &amp;&amp; list[low] &lt; mid) &#123;</span><br><span class="line">                low += <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            list[high] = list[low]</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        list[low] = mid</span><br><span class="line">        </span><br><span class="line">        sort4(list: &amp;list, start: start, end: low-<span class="number">1</span>)</span><br><span class="line">        sort4(list: &amp;list, start: low+<span class="number">1</span>, end: end)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><p class="readmore"><a href="/2018/07/18/编程/常用算法/">阅读更多</a></p></div><nav class="page-navigator"><a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/4/">下一页</a></nav></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/19/Web/mysql/">mysql</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/19/Server/字符串/">字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/19/Web/mysql基本语句/">mysql基本语句</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/java注解/">java注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/地图定位/">地图定位</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/tableview/">tableview</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/swift4/">swift4</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/pod 错误问题/">pod 错误问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/BASH小结/">BASH小结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/WKWebView/">WKWebView</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Server/">Server</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a><span class="category-list-count">45</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统相关/">系统相关</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">4</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li></ul></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">Baidu Site Haritası</a> |  <a href="/atom.xml">订阅</a> |  <a href="/about/">关于</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次</p><p><span> Copyright &copy;<a href="/." rel="nofollow">zzn.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.1"></script><script type="text/javascript" src="/js/totop.js?v=2.0.1" async></script></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>MyBlog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发" >
+    <meta name="description" content="Jelon个人前端小站" >
+
+    
+    <link rel="alternative" href="/atom.xml" title="MyBlog" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+</head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">MyBlog</span>
+                    <span class="description">博客</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/page/3/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/page/3/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/page/3/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/page/3/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/jangdelong" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://pages.coding.me" target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="http://weibo.com/jangdelong" class="sinaweibo" target="_blank"><b>■</b> 新浪微博</a>
+                    
+                        <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/jelon.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 首页 -->
+
+    
+    <h3 class="widget-hd">
+        <strong>
+            
+                最近动态
+            
+        </strong>
+    </h3>
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Android/">Android</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://Alexzzn.github.io/2018/07/18/Android/js交互/">
+    		js交互
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2018-07-18T10:08:32.069Z">2018-07-18</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main6Activity</span> : <span class="type">AppCompatActivity</span></span>() &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">var</span> contentWebView: WebView? = <span class="literal">null</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@SuppressLint(<span class="meta-string">"JavascriptInterface"</span>)</span></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState)</span><br><span class="line">        setContentView(R.layout.activity_main6)</span><br><span class="line">        contentWebView = findViewById(R.id.webview) <span class="keyword">as</span> WebView</span><br><span class="line">        contentWebView?.setBackgroundColor(Color.CYAN)</span><br><span class="line">        <span class="comment">// 启用javascript</span></span><br><span class="line">        contentWebView!!.settings.javaScriptEnabled = <span class="literal">true</span></span><br><span class="line">        <span class="comment">// 从assets目录下面的加载html</span></span><br><span class="line">        contentWebView!!.loadUrl(<span class="string">"file:///android_asset/web.html"</span>)</span><br><span class="line">        contentWebView!!.addJavascriptInterface(<span class="keyword">this</span><span class="symbol">@Main6Activity</span>, <span class="string">"android"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//无参调用Js点击</span></span><br><span class="line">        findViewById(R.id.bt1).setOnClickListener &#123;</span><br><span class="line">            <span class="comment">// 无参数调用</span></span><br><span class="line">            contentWebView!!.loadUrl(<span class="string">"javascript:javacalljs()"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//有参调用Js点击</span></span><br><span class="line">        findViewById(R.id.btn2).setOnClickListener &#123;</span><br><span class="line">            <span class="comment">// 传递参数调用</span></span><br><span class="line">            contentWebView!!.loadUrl(<span class="string">"javascript:javacalljswith("</span> + <span class="string">"'http://blog.csdn.net/Leejizhou'"</span> + <span class="string">")"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//由于安全原因 需要加 @JavascriptInterface</span></span><br><span class="line">    <span class="meta">@JavascriptInterface</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">startFunction</span><span class="params">()</span></span> &#123;</span><br><span class="line"></span><br><span class="line">        runOnUiThread &#123; Toast.makeText(<span class="keyword">this</span><span class="symbol">@Main6Activity</span>, <span class="string">"show"</span>, Toast.LENGTH_SHORT).show() &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@JavascriptInterface</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">startFunction</span><span class="params">(text: <span class="type">String</span>)</span></span> &#123;</span><br><span class="line">        runOnUiThread &#123; AlertDialog.Builder(<span class="keyword">this</span><span class="symbol">@Main6Activity</span>).setMessage(text).show() &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>`</code>html<br>&lt;!DOCTYPE html&gt;</p>
+<html><br><head><br>    <title>js 交互</title><br>    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"><br>    <script type="text/javascript"><br><br>    function javacalljs(){<br>         document.getElementById(“content”).innerHTML =<br>             “&lt;br>JAVA”;<br>    }<br><br>    function javacalljswith(arg){<br>         document.getElementById(“content”).innerHTML =<br>             (“&lt;br>“+arg);<br>    }<br></script><br></head><br><body><br><br><h1><div id="content">js to navtive </div></h1><br><br><br><input type="button" value="执行native方法无参" onclick="window.android.startFunction()"><br><br><br><input type="button" value="执行native方法有参" onclick="window.android.startFunction('http://blog.csdn.net/Leejizhou')"><br><br></body><br></html>
+            
+            <p class="more">
+                <a href="https://Alexzzn.github.io/2018/07/18/Android/js交互/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://Alexzzn.github.io/2018/07/18/Android/js交互/" title="js交互">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/8.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Android/">Android</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://Alexzzn.github.io/2018/07/18/Android/RxJava/">
+    		RxJava
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2018-07-18T10:08:32.068Z">2018-07-18</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p><code>`</code>java<br>import java.util.ArrayList;<br>import java.util.List;<br>import java.util.concurrent.TimeUnit;</p>
+<p>import io.reactivex.*;<br>import io.reactivex.functions.Action;<br>import io.reactivex.schedulers.Schedulers;</p>
+<p>/**</p>
+<ul>
+<li>Created by zzn on 2017/4/28.<br>*/</li>
+</ul>
+<p> public class MyRxJava {</p>
+<pre><code>public List&lt;String&gt; dataList;
+List&lt;DataModel&gt; result = new ArrayList&lt;&gt;();
+
+public static void main(String[] args) {
+
+    MyRxJava java = new MyRxJava();
+
+}
+
+//RxJava 有四个基本概念：Observable (可观察者，即被观察者)、 Observer (观察者)、 subscribe (订阅)、事件。Observable 和 Observer 通过 subscribe()
+void  setup() {
+
+    //数据源
+   Observable&lt;String&gt; obser = Observable.create(new ObservableOnSubscribe&lt;String&gt;() {
+       @Override
+       public void subscribe(ObservableEmitter&lt;String&gt; observableEmitter) throws Exception {
+           observableEmitter.onNext(&quot;Rx-&gt;发送数据0&quot;);
+           observableEmitter.onComplete();
+       }
+   });
+
+    Observable&lt;String&gt; obser1 = Observable.create(new ObservableOnSubscribe&lt;String&gt;() {
+        @Override
+        public void subscribe(ObservableEmitter&lt;String&gt; observableEmitter) throws Exception {
+            observableEmitter.onNext(&quot;Rx-&gt;发送数据1&quot;);
+            observableEmitter.onComplete();
+        }
+    });
+
+   //订阅
+   obser.subscribe(str-&gt;{//接收数据
+
+       System.out.println(str);
+   },err-&gt;{//错误
+       System.out.println(err.toString());
+   },()-&gt;{//完成
+       System.out.println(&quot;完成&quot;);
+   },(com)-&gt;{
+       System.out.println(&quot;开始订阅&quot;);
+   });
+
+   //just 快速创建 观察源
+    Observable&lt;String&gt; obser_just =  Observable.just(&quot;just1&quot;);
+    obser_just.subscribe(s -&gt; {
+        System.out.println(s);
+    });
+    //遍历
+    List&lt;String&gt; list = new ArrayList&lt;String&gt;();
+    list.add(&quot;value1&quot;);
+    list.add(&quot;value2&quot;);
+    Observable obser_list = Observable.fromIterable(list);
+    obser_list.subscribe(obj-&gt;{
+        System.out.println(&quot;index-&gt;&quot;+obj);
+    });
+    String[] strList = {&quot;1&quot;,&quot;2&quot;,&quot;3&quot;};
+    List&lt;Observable&lt;String&gt;&gt; task = new ArrayList&lt;&gt;();
+    for (String str:strList) {
+        task.add(Observable.just(str).subscribeOn(Schedulers.io()).map(this::setStr));
+    }
+    System.out.println(task);
+
+
+    //定时
+    Observable obser_time = Observable.timer(2, TimeUnit.SECONDS);
+    obser_time.subscribe((str)-&gt;{
+        System.out.println(&quot;启动定时器&quot;);
+    });
+
+    //线程调度
+    Observable.just(1,2,3,4)
+            .subscribeOn(Schedulers.io())
+            .observeOn(Schedulers.computation())//AndroidSchedulers.mainThread()
+            .subscribe(str-&gt;{
+                System.out.println(str);
+            });
+}
+
+String setStr(String s) {
+    //字符串处理
+    return  s+s;
+}
+
+//
+MyRxJava() {
+    setup();
+}
+</code></pre><p>}<br>class DataModel {<br>    String userName;<br>    String pwd;<br>}</p>
+
+            
+            <p class="more">
+                <a href="https://Alexzzn.github.io/2018/07/18/Android/RxJava/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://Alexzzn.github.io/2018/07/18/Android/RxJava/" title="RxJava">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/8.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Android/">Android</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://Alexzzn.github.io/2018/07/18/Android/内部类/">
+    		内部类
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2018-07-18T10:08:32.067Z">2018-07-18</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h4 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h4><ul>
+<li><p>静态内部类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">class StaticOuter &#123; </span><br><span class="line"></span><br><span class="line">private int a = 1;  </span><br><span class="line">private static int b = 2;</span><br><span class="line"></span><br><span class="line">public static void test() &#123;</span><br><span class="line"></span><br><span class="line">    System.out.println(&quot;Outer static test ...&quot;);  </span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line">public  void test2()&#123; </span><br><span class="line"></span><br><span class="line">    System.out.println(&quot;Outer instabce test ...&quot;);  </span><br><span class="line">&#125;     </span><br><span class="line">  </span><br><span class="line">    static class StaticInner &#123;</span><br><span class="line">    </span><br><span class="line">        public  int a = 200;  </span><br><span class="line">        static int b =300;  </span><br><span class="line">        </span><br><span class="line">        public static void test()&#123;  </span><br><span class="line">            System.out.println(&quot;Inner static test ...&quot;);  </span><br><span class="line">        &#125;  </span><br><span class="line">        </span><br><span class="line">        public  void test2()&#123;  </span><br><span class="line">        </span><br><span class="line">            System.out.println(&quot;Inner instance test ...&quot;);  </span><br><span class="line">            StaticOuter.test();  </span><br><span class="line">            new StaticOuter().test2();  </span><br><span class="line">            System.out.println(&quot;StaticOuter.b  = &quot;+StaticOuter.b);  </span><br><span class="line">        &#125;     </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>成员内部类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class MemberOuter&#123;  </span><br><span class="line">      </span><br><span class="line">    private String s1 = &quot;Outer InstanceMar&quot;;  </span><br><span class="line">    private String s2 = &quot;OuterStatic s2&quot;;  </span><br><span class="line">    public void setS1(String s1) &#123;  </span><br><span class="line">        this.s1 = s1; </span><br><span class="line">        </span><br><span class="line">        new MemberOuter().new MemberInner();  </span><br><span class="line">        this.new MemberInner();  </span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">    class MemberInner&#123;  </span><br><span class="line">    </span><br><span class="line">        String s1= &quot;Inner  instanceMae  &quot;;  </span><br><span class="line">        static final String s4 = &quot;static final  MemberInner&quot;;  </span><br><span class="line">              </span><br><span class="line">                void test2() &#123;  </span><br><span class="line">                    System.out.println(&quot;s2 = &quot;+s2);  </span><br><span class="line">                &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>匿名内部类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">interface Action &#123;</span><br><span class="line"></span><br><span class="line">    public void do();  </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">class Person &#123; </span><br><span class="line"></span><br><span class="line">    public void user(Action pen) &#123;  </span><br><span class="line">        pen.do();  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line">public class AnyInnerClass &#123; </span><br><span class="line"></span><br><span class="line">    public static void main(String args[]) &#123;  </span><br><span class="line">    </span><br><span class="line">        Person p = new Person();  </span><br><span class="line">          </span><br><span class="line">        p.user(new Pen() &#123; </span><br><span class="line">        </span><br><span class="line">            @Override  </span><br><span class="line">            public void write() &#123;</span><br><span class="line">            </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;);  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+            
+            <p class="more">
+                <a href="https://Alexzzn.github.io/2018/07/18/Android/内部类/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://Alexzzn.github.io/2018/07/18/Android/内部类/" title="内部类">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/8.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Android/">Android</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://Alexzzn.github.io/2018/07/18/Android/笔记/">
+    		笔记
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2018-07-18T10:08:32.065Z">2018-07-18</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h4 id="开发细节"><a href="#开发细节" class="headerlink" title="开发细节"></a>开发细节</h4><blockquote>
+<p>java windows 环境下jdk 配置<br>(1)新建-&gt;变量名”JAVA_HOME”，变量值”C:\Java\jdk1.8.0_05”(即JDK的安装路径)</p>
+<p>(2)编辑-&gt;变量名”Path”，在原变量值的最后面加上“;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin”</p>
+<p>(3)新建-&gt;变量名“CLASSPATH”,变量值”.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar”</p>
+</blockquote>
+
+            
+            <p class="more">
+                <a href="https://Alexzzn.github.io/2018/07/18/Android/笔记/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://Alexzzn.github.io/2018/07/18/Android/笔记/" title="笔记">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/8.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Android/">Android</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://Alexzzn.github.io/2018/07/18/Android/data绑定 kotlin/">
+    		data绑定 kotlin
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2018-07-18T10:08:32.064Z">2018-07-18</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">layout</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">data</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">import</span> <span class="attr">type</span>=<span class="string">"com.example.zzn.myapplication.Main2Activity.Action"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">import</span> <span class="attr">type</span>=<span class="string">"com.example.zzn.myapplication.Person"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">variable</span></span></span><br><span class="line"><span class="tag">            <span class="attr">name</span>=<span class="string">"action"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">type</span>=<span class="string">"Action"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">variable</span></span></span><br><span class="line"><span class="tag">            <span class="attr">name</span>=<span class="string">"model"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">type</span>=<span class="string">"Person"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">data</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">android.support.constraint.ConstraintLayout</span></span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">tools:context</span>=<span class="string">"com.example.zzn.myapplication.Main2Activity"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/textView"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:text</span>=<span class="string">"@&#123;model.name&#125;"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintLeft_toLeftOf</span>=<span class="string">"parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintTop_toTopOf</span>=<span class="string">"parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_marginTop</span>=<span class="string">"16dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_marginRight</span>=<span class="string">"8dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintRight_toRightOf</span>=<span class="string">"parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_marginEnd</span>=<span class="string">"8dp"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Button</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:text</span>=<span class="string">"按钮"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:onClick</span>=<span class="string">"@&#123;action.tap&#125;"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"60dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_marginTop</span>=<span class="string">"32dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintTop_toBottomOf</span>=<span class="string">"@+id/textView"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_marginLeft</span>=<span class="string">"8dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintLeft_toLeftOf</span>=<span class="string">"parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_marginRight</span>=<span class="string">"8dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintRight_toRightOf</span>=<span class="string">"parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintHorizontal_bias</span>=<span class="string">"0.502"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">android.support.constraint.ConstraintLayout</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>`</code>kotlin<br>public class Main2Activity : AppCompatActivity() {</p>
+<pre><code>private var receiver:MyReceiver? = null
+private val mNotiName = &quot;com.example.zzn.myapplication.MY_NOTI&quot;
+
+//绑定事件
+ inner class Action {
+
+    //点击事件
+    fun tap(view:View) {
+
+        Toast.makeText(view.context,&quot;发送广播&quot;,Toast.LENGTH_SHORT).show()
+        val intent = Intent(this@Main2Activity.mNotiName)
+        sendBroadcast(intent)
+
+    }
+}
+
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+</code></pre><p>//        setContentView(R.layout.activity_main2)</p>
+<pre><code>    val binding = DataBindingUtil.setContentView&lt;ActivityMain2Binding&gt;(this,R.layout.activity_main2)
+    val person =Person()
+    person.name = &quot;zhanshan&quot;
+    person.age = &quot;11&quot;
+
+    binding.action = Action()
+    binding.model = person
+    setBoardCast()
+
+}
+
+//动态广播
+fun setBoardCast() {
+
+    receiver = MyReceiver()
+    val filter = IntentFilter(mNotiName)
+    registerReceiver(receiver,filter)
+
+}
+</code></pre><p>}</p>
+<p>//<br>public class Person {</p>
+<pre><code>var name:String? = null
+var age:String? = null
+</code></pre><p>}<br>public class MyReceiver : BroadcastReceiver() {</p>
+<pre><code>override fun onReceive(context: Context, intent: Intent) {
+
+    Toast.makeText(context, &quot;收到广播&quot;, Toast.LENGTH_LONG).show()
+}
+</code></pre><p>}</p>
+
+            
+            <p class="more">
+                <a href="https://Alexzzn.github.io/2018/07/18/Android/data绑定 kotlin/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://Alexzzn.github.io/2018/07/18/Android/data绑定 kotlin/" title="data绑定 kotlin">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/8.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Android/">Android</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://Alexzzn.github.io/2018/07/18/Android/主题相关/">
+    		主题相关
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2018-07-18T10:08:32.062Z">2018-07-18</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p><code>`</code>xml<br> <!-- Base application theme. --><br>      <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar"><br>          <!-- Customize your theme here. --><br>          <item name="colorPrimary">@color/colorPrimary</item><br>          <item name="colorPrimaryDark">@color/colorPrimaryDark</item><br>          <item name="colorAccent">@color/colorAccent</item><br>          <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/colorAccent</item><br>      </style></p>
+
+            
+            <p class="more">
+                <a href="https://Alexzzn.github.io/2018/07/18/Android/主题相关/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://Alexzzn.github.io/2018/07/18/Android/主题相关/" title="主题相关">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/8.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/编程/">编程</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://Alexzzn.github.io/2018/07/18/编程/常用n2排序算法/">
+    		常用n2排序算法
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2018-07-18T09:58:09.794Z">2018-07-18</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p><code>`</code>c++</p>
+<p>#include <iostream></iostream></p>
+<p>int num[] = {8,6,3,5,1,3,7,9}; // 8</p>
+<p>void swap(int &amp;a,int &amp;b) {</p>
+<pre><code>int temp = 0;
+temp = a;
+a = b;
+b = temp;
+</code></pre><p>}</p>
+<p>// 冒泡排序<br>void sort1(int arr[],int n) {</p>
+<pre><code>int i,j = 0;
+for (i = 0; i &lt; n; ++i) {
+
+    for (j = 0; j &lt; n - i -1; ++j) {
+
+        if (arr[j]&gt;arr[j+1]){
+
+            swap(arr[j],arr[j+1]);
+        }
+    }
+}
+</code></pre><p>}</p>
+<p>// 选择排序<br>void sort2(int arr[],int n) {</p>
+<pre><code>for (int i = 0; i &lt; n; ++i) {
+
+    // 每次循环第一个i默认最小值
+    int minIndex = i;
+    for (int j = i+1; j &lt; n; ++j) {
+
+        if (arr[minIndex] &gt; arr[j]) {
+            minIndex = j;
+        }
+    }
+    // 替换最小值
+    swap(arr[minIndex],arr[i]);
+}
+</code></pre><p>}</p>
+<p>// 插入排序</p>
+<p>void sort3(int arr[], int n) {</p>
+<pre><code>for (int i = 1; i &lt; n; ++i) {
+
+    // 对比i前几个元素
+    for (int j = i; j &gt;= 1; j--) {
+
+        if (arr[j]&lt;arr[j-1]) {
+            swap(arr[j],arr[j-1]);
+        }
+    }
+}
+</code></pre><p>}</p>
+<p>//  插入排序优化<br>void sort4(int arr[],int n) {</p>
+<pre><code>for (int i = 1; i &lt; n; i++) {
+    /* code */
+    int j = 0;
+    int temp = arr[i];
+
+    for (j = i; j &gt; 0 &amp;&amp; arr[j-1]&gt;temp; j--) {
+        /* code */
+        arr[j] = arr[j-1];
+    }
+    arr[j] = temp;
+}
+</code></pre><p>}</p>
+<p>int main(int argc, char const <em>argv[])<br>{<br>    /</em> code */<br>    sort4(num,8);<br>    for (int i = 0; i &lt; 8; ++i) {<br>        printf(“%d\n”, num[i]);<br>    }<br>    return 0;<br>}</p>
+
+            
+            <p class="more">
+                <a href="https://Alexzzn.github.io/2018/07/18/编程/常用n2排序算法/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://Alexzzn.github.io/2018/07/18/编程/常用n2排序算法/" title="常用n2排序算法">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/8.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/编程/">编程</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://Alexzzn.github.io/2018/07/18/编程/常用nlogn排序算法/">
+    		常用nlogn排序算法
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2018-07-18T09:58:09.793Z">2018-07-18</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h4 id="归并排序算法"><a href="#归并排序算法" class="headerlink" title="归并排序算法"></a>归并排序算法</h4><p><code>`</code>c++</p>
+<p>#include <iostream></iostream></p>
+<p>// 归并排序<br>void __merge(int arr[],int l,int mid,int r) {</p>
+<pre><code>// int aux[r-l+1];
+int *aux = new int[r-l+1];
+
+// 复制aux数组
+for (int i = l; i &lt;= r; i++) {
+
+    aux[i-l] = arr[i];
+}
+// 对比下标 i,j k
+int i = l,j = mid + 1;
+for (int k=l;k&lt;=r;k++) {
+
+    // 判断索引越界
+    if (i &gt; mid) {
+
+        arr[k] = aux[j-l];
+        j++;
+    } else if (j &gt; r) {
+        arr[k] = aux[i-l];
+        i++;
+    } else if (aux[i-l] &gt; aux[j-l]) { // 比较两边下表索引
+        arr[k] = aux[j-l];
+        j++;
+    } else {
+        arr[k] = aux[i-l];
+        i++;
+    }
+}
+
+delete []aux;
+</code></pre><p>}</p>
+<p>void __mergeSort(int arr[],int l,int r) {</p>
+<pre><code>if (l &gt;= r) {
+    return;
+}
+
+int mid = (l+r) / 2;
+
+// 递归 把数组分成 单个元素
+__mergeSort(arr,l,mid);
+__mergeSort(arr,mid+1,r);
+__merge(arr,l,mid,r);
+</code></pre><p>}</p>
+<p>void mergeSort(int arr[],int n) {</p>
+<pre><code>__mergeSort(arr,0,n-1);
+</code></pre><p>}</p>
+<p>int main(int argc, char const *argv[]) {</p>
+<pre><code>int arr[] = {3,5,2};
+mergeSort(arr,3);
+for (int i=0; i&lt;3; i++) {
+    printf(&quot;%d\n&quot;,arr[i]);
+}
+
+return 0;
+</code></pre><p>}</p>
+
+            
+            <p class="more">
+                <a href="https://Alexzzn.github.io/2018/07/18/编程/常用nlogn排序算法/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://Alexzzn.github.io/2018/07/18/编程/常用nlogn排序算法/" title="常用nlogn排序算法">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/8.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/编程/">编程</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://Alexzzn.github.io/2018/07/18/编程/CPlus知识点/">
+    		CPlus知识点
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2018-07-18T09:58:09.792Z">2018-07-18</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h4 id="Person-h"><a href="#Person-h" class="headerlink" title="Person.h"></a>Person.h</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  Person.hpp</span><br><span class="line">//  CPlusL</span><br><span class="line">//</span><br><span class="line">//  Created by ZZN on 2018/3/19.</span><br><span class="line">//  Copyright © 2018年 ZZN. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#ifndef Person_hpp</span><br><span class="line">#define Person_hpp</span><br><span class="line"></span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">class Student;</span><br><span class="line"></span><br><span class="line">class Person &#123;</span><br><span class="line"></span><br><span class="line">private:</span><br><span class="line"></span><br><span class="line">    int age;</span><br><span class="line">    </span><br><span class="line">public:</span><br><span class="line"></span><br><span class="line">    string name;</span><br><span class="line">    // 初始化列表</span><br><span class="line">    Person(int _pid = 0);</span><br><span class="line">    const int pid;</span><br><span class="line">    // 拷贝构造函数</span><br><span class="line">    Person(const Person &amp;p,int _pid = 0);</span><br><span class="line"></span><br><span class="line">    void desc();</span><br><span class="line">    void setAge(int age);</span><br><span class="line"></span><br><span class="line">    // 引用</span><br><span class="line">    void reference();</span><br><span class="line">    // 声明add 回调</span><br><span class="line">    void swap(int a, int b,const function&lt;void(int value)&gt; &amp;test);</span><br><span class="line">    // 纯虚函数</span><br><span class="line">    virtual void learn() = 0;</span><br><span class="line">    // 友元函数</span><br><span class="line">    friend void print_info(Person &amp;c) &#123; // Student:: 指定</span><br><span class="line">        c.desc();</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line">#endif /* Person_hpp */</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#ifndef Student_hpp</span><br><span class="line">#define Student_hpp</span><br><span class="line"></span><br><span class="line">// 学生</span><br><span class="line">class Student:virtual public Person &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public:</span><br><span class="line">    // 派生类 释放</span><br><span class="line">    virtual ~Student();</span><br><span class="line">    void getName();</span><br><span class="line"></span><br><span class="line">    // 实现</span><br><span class="line">    void print_info(Person &amp;c) &#123;</span><br><span class="line">        c.desc();</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  Person.cpp</span><br><span class="line">//  CPlusL</span><br><span class="line">//</span><br><span class="line">//  Created by ZZN on 2018/3/19.</span><br><span class="line">//  Copyright © 2018年 ZZN. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#include &quot;Person.hpp&quot;</span><br><span class="line"></span><br><span class="line">Person::Person(int _pid):pid(_pid) &#123;</span><br><span class="line"></span><br><span class="line">    this-&gt;age = 0;</span><br><span class="line">    this-&gt;name = &quot;&quot;;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">Person::Person(const Person &amp;p,int _pid):pid(_pid) &#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void Person::desc() &#123;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; this-&gt;age &lt;&lt; this-&gt;name &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void Person::setAge(int _a) &#123;</span><br><span class="line">    this-&gt;age = _a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void Person::swap(int a, int b, const function&lt;void (int)&gt; &amp;test) &#123;</span><br><span class="line"></span><br><span class="line">    auto sum = a + b;</span><br><span class="line">    test(sum);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void Person::reference() &#123;</span><br><span class="line"></span><br><span class="line">    //</span><br><span class="line">    int a = 10;</span><br><span class="line"></span><br><span class="line">    // 指针 指向a地址</span><br><span class="line">    int *p = &amp;a;</span><br><span class="line"></span><br><span class="line">    int *&amp;q = p;</span><br><span class="line">    // 指针p的引用</span><br><span class="line">    *q = 20;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // const</span><br><span class="line">    int x = 3;</span><br><span class="line">    int y = 5;</span><br><span class="line"></span><br><span class="line">    int *const m = &amp;x;</span><br><span class="line">    int const *n = &amp;y;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    *m = 10;</span><br><span class="line">    n = &amp;y;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; a &lt;&lt; m &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Main-m"><a href="#Main-m" class="headerlink" title="Main.m"></a>Main.m</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  main.cpp</span><br><span class="line">//  CPlusL</span><br><span class="line">//</span><br><span class="line">//  Created by ZZN on 2018/3/19.</span><br><span class="line">//  Copyright © 2018年 ZZN. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &quot;Person.hpp&quot;</span><br><span class="line">#include &quot;STLib.hpp&quot;</span><br><span class="line"></span><br><span class="line">int main(int argc, const char * argv[]) &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // 栈中变量</span><br><span class="line">    Person p1;</span><br><span class="line">    p1.name = &quot;zhanshan&quot;;</span><br><span class="line">    p1.desc();</span><br><span class="line">    </span><br><span class="line">    // 堆中变量</span><br><span class="line">    auto p2 = new Person();</span><br><span class="line">    p2-&gt;name = &quot;王五&quot;;</span><br><span class="line">    p2-&gt;setAge(20);</span><br><span class="line">    p2-&gt;desc();</span><br><span class="line"></span><br><span class="line">    // 对象数组 内存回收</span><br><span class="line">    auto pa = new Person[3];</span><br><span class="line">    pa[0].desc();</span><br><span class="line">    pa[1].reference();</span><br><span class="line">    pa++;</span><br><span class="line">    pa-&gt;desc();</span><br><span class="line">    pa--;</span><br><span class="line">    delete []pa;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // lamada</span><br><span class="line">    p2-&gt;swap(5, 5, [](int v)-&gt;void&#123;</span><br><span class="line"></span><br><span class="line">        std::cout &lt;&lt; &quot;age:&quot; &lt;&lt; v &lt;&lt; endl;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    p2-&gt;reference();</span><br><span class="line"></span><br><span class="line">    //</span><br><span class="line">    auto lib = new STLib();</span><br><span class="line">    lib-&gt;HelloWorld(&quot;Haha&quot;);</span><br><span class="line">    </span><br><span class="line">    delete p2;</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            
+            <p class="more">
+                <a href="https://Alexzzn.github.io/2018/07/18/编程/CPlus知识点/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://Alexzzn.github.io/2018/07/18/编程/CPlus知识点/" title="CPlus知识点">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/8.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/编程/">编程</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://Alexzzn.github.io/2018/07/18/编程/常用算法/">
+    		常用算法
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2018-07-18T09:58:09.792Z">2018-07-18</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">时间复杂度：<span class="type">O</span>（nlogn）</span><br><span class="line">代码实现：</span><br><span class="line"></span><br><span class="line"><span class="comment">//快速排序  </span></span><br><span class="line"><span class="comment">//快速排序  </span></span><br><span class="line"><span class="comment">// 快速排序法</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sort4</span><span class="params">( list:<span class="keyword">inout</span> Array&lt;Int&gt;,start:Int,end:Int)</span></span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> start &lt; end &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> low = start, high = end ,mid = list[low]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> low &lt; high &#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span> (low &lt; high) &amp;&amp; list[high] &gt;= mid &#123;</span><br><span class="line">                </span><br><span class="line">                high -= <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">            list[low] = list[high]</span><br><span class="line"></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span> (low &lt; high &amp;&amp; list[low] &lt; mid) &#123;</span><br><span class="line">                low += <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            list[high] = list[low]</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        list[low] = mid</span><br><span class="line">        </span><br><span class="line">        sort4(list: &amp;list, start: start, end: low-<span class="number">1</span>)</span><br><span class="line">        sort4(list: &amp;list, start: low+<span class="number">1</span>, end: end)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="二分法查找"><a href="#二分法查找" class="headerlink" title="二分法查找"></a>二分法查找</h4><p><code>`</code>java<br>    public int search(int[] arr,int num ) {</p>
+<pre><code>    int low = 0;
+    int high = arr.length-1;
+    while (low &lt;= high ) {
+
+        int middle = (low + high)/2;
+        if (num == arr[middle]) {
+
+            return  middle;
+        } else if (num &lt; arr[middle]) {
+
+            return middle -1;
+        } else {
+
+            return  middle + 1;
+        }
+
+    }
+    return  -1;
+}
+</code></pre>
+            
+            <p class="more">
+                <a href="https://Alexzzn.github.io/2018/07/18/编程/常用算法/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://Alexzzn.github.io/2018/07/18/编程/常用算法/" title="常用算法">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/8.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+
+    
+    <nav class="page-navigator">
+        <a class="extend prev" rel="prev" href="/page/2/">前一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/4/">后一页</a>
+    </nav>
+    
+
+
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/Android/">Android</a>
+        <span class="badge">(14)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/Server/">Server</a>
+        <span class="badge">(9)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/Web/">Web</a>
+        <span class="badge">(21)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/iOS/">iOS</a>
+        <span class="badge">(45)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/系统相关/">系统相关</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/编程/">编程</a>
+        <span class="badge">(4)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="http://blog.sina.com.cn/u/1825875765" target="_blank" title="网络安全博客">Haoren博客</a>
+        </li>
+    
+        <li>
+            <a href="http://blog.csdn.net/yeweiouyang" target="_blank" title="技术博客">Maxwell博客</a>
+        </li>
+    
+        <li>
+            <a href="http://xuanzh.cc/" target="_blank" title="技术博客">朱旋个人博客</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2018
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>

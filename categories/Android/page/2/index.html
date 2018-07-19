@@ -1,1 +1,508 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="我的博客分享"><title>Android | MyBlog</title><link rel="stylesheet" type="text/css" href="//fonts.neworld.org/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.1"><link rel="stylesheet" type="text/css" href="/css/highlight.css?v=2.0.1"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">MyBlog</h1><a id="logo" href="/.">MyBlog</a><p class="description">博客</p></div><div id="nav-menu"><a href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/" class="current"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="Arama"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="label-title">正在查看<i class="fa fa-gui">Android</i>下的文章</h1><div class="post-archive"><div class="archive-wrap tag-cat"><ul class="listing"><li><a href="/2018/07/18/Android/kotlin 小结/" title="kotlin ѧϰ"><span class="tite">2018/07/18  kotlin ѧϰ</span></a></li><li><a href="/2018/07/18/Android/java线程池/" title="java线程池"><span class="tite">2018/07/18  java线程池</span></a></li><li><a href="/2018/07/18/Android/kotlin配置/" title="kotlin配置"><span class="tite">2018/07/18  kotlin配置</span></a></li><li><a href="/2018/07/18/Android/drawlayout/" title="drawlayout"><span class="tite">2018/07/18  drawlayout</span></a></li></ul></div></div></div><nav class="page-navigator"><a class="extend prev" rel="prev" href="/categories/Android/">上一页</a><a class="page-number" href="/categories/Android/">1</a><span class="page-number current">2</span></nav></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/19/Web/mysql/">mysql</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/19/Server/字符串/">字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/19/Web/mysql基本语句/">mysql基本语句</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/java注解/">java注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/地图定位/">地图定位</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/tableview/">tableview</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/swift4/">swift4</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/pod 错误问题/">pod 错误问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/BASH小结/">BASH小结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/WKWebView/">WKWebView</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Server/">Server</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a><span class="category-list-count">45</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统相关/">系统相关</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">4</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li></ul></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">Baidu Site Haritası</a> |  <a href="/atom.xml">订阅</a> |  <a href="/about/">关于</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次</p><p><span> Copyright &copy;<a href="/." rel="nofollow">zzn.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.1"></script></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>`Android`分类下的文章 | MyBlog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发" >
+    <meta name="description" content="Jelon个人前端小站" >
+
+    
+    <link rel="alternative" href="/atom.xml" title="MyBlog" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+    <![endif]-->
+    
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fd459238242776d173cdc64918fb32f2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+</head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">MyBlog</span>
+                    <span class="description">博客</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/categories/Android/page/2/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/categories/Android/page/2/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/categories/Android/page/2/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/categories/Android/page/2/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/jangdelong" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://pages.coding.me" target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="http://weibo.com/jangdelong" class="sinaweibo" target="_blank"><b>■</b> 新浪微博</a>
+                    
+                        <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/jelon.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章分类 -->
+
+    <h3 class="widget-hd">
+        <strong>
+            
+                `Android`分类下的文章
+            
+        </strong>
+    </h3>
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Android/">Android</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://Alexzzn.github.io/2018/07/18/Android/java线程池/">
+    		java线程池
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2018-07-18T09:57:38.566Z">2018-07-18</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p><code>`</code>java<br>package com.company;</p>
+<p>import java.util.concurrent.*;</p>
+<p>public class Main {</p>
+<pre><code>public static void main(String[] args) {
+</code></pre><p>//        Executors.newCachedThreadPool();        //创建一个缓冲池，缓冲池容量大小为Integer.MAX_VALUE<br>//        Executors.newSingleThreadExecutor();   //创建容量为1的缓冲池<br>//        Executors.newFixedThreadPool(int);    //创建固定容量大小的缓冲池</p>
+<p>//        任务缓存队列及排队策<br>//　　    ArrayBlockingQueue：基于数组的先进先出队列，此队列创建时必须指定大小；<br>//　　    LinkedBlockingQueue：基于链表的先进先出队列，则默认为Integer.MAX_VALUE；<br>//　　    synchronousQueue：不保存提交的任务，而是将直接新建一个线程来执行新来的任务。</p>
+<p>//        线程池容量的动态调整<br>//        setCorePoolSize：设置核心池大小<br>//        setMaximumPoolSize：设置线程池最大能创建的线程数目大小</p>
+<pre><code>ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newCachedThreadPool();
+</code></pre><p>//        ThreadPoolExecutor executor = new ThreadPoolExecutor(5,20,200,<br>//                TimeUnit.MINUTES,new LinkedBlockingDeque<runnable>());</runnable></p>
+<pre><code>    for (int i = 0;i&lt;100;i++) {
+
+        MyTask task = new MyTask(i);
+        executor.execute(task);
+        System.out.println(&quot;线程池中线程数目：&quot;+executor.getPoolSize()+&quot;，队列中等待执行的任务数目：&quot;+
+                executor.getQueue().size()+&quot;，已执行玩别的任务数目：&quot;+executor.getCompletedTaskCount());
+    }
+
+    executor.shutdown();
+}
+</code></pre><p>}</p>
+<p>class MyTask implements Runnable {</p>
+<pre><code>//
+private int taskId;
+
+MyTask(int num) {
+    this.taskId = num;
+}
+
+@Override
+public void run() {
+
+    try {
+
+        Thread.currentThread().sleep(4000);
+        System.out.println(&quot;taskId:&quot; + taskId);
+
+    } catch (InterruptedException e) {
+
+        e.printStackTrace();
+    }
+}
+</code></pre><p>}</p>
+
+            
+            <p class="more">
+                <a href="https://Alexzzn.github.io/2018/07/18/Android/java线程池/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://Alexzzn.github.io/2018/07/18/Android/java线程池/" title="java线程池">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/8.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Android/">Android</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://Alexzzn.github.io/2018/07/18/Android/kotlin 小结/">
+    		kotlin ѧϰ
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2018-07-18T09:57:38.566Z">2018-07-18</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h4 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h4><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">var</span> clo:(()-&gt;<span class="built_in">Unit</span>)? = <span class="literal">null</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">var</span> name:String? = <span class="literal">null</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//扩展属性</span></span><br><span class="line"><span class="keyword">val</span> Person.kinds:<span class="built_in">Int</span></span><br><span class="line"><span class="keyword">get</span>() = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//扩展函数</span></span><br><span class="line"><span class="function"><span class="keyword">fun</span> Person.<span class="title">desc</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    println(<span class="string">"扩展函数"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">enum</span> <span class="class"><span class="keyword">class</span> <span class="title">Direction</span> </span>&#123;</span><br><span class="line">    North,South,West,East</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//lamada</span></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">testClosure</span><span class="params">(closure: ()</span></span>-&gt;<span class="built_in">Unit</span>) &#123;</span><br><span class="line"></span><br><span class="line">    closure()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">1</span>,  <span class="built_in">Double</span>	<span class="number">64</span> ,<span class="built_in">Float</span>	<span class="number">32</span>, <span class="built_in">Long</span>	<span class="number">64</span>,<span class="built_in">Int</span>	<span class="number">32</span>,<span class="built_in">Short</span>	<span class="number">16</span>,<span class="built_in">Byte</span>,</span><br><span class="line"><span class="number">2</span>,  <span class="keyword">break</span> 和 <span class="keyword">continue</span> 标签</span><br><span class="line">    <span class="symbol">loop@</span> <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1.</span><span class="number">.100</span>) &#123;</span><br><span class="line">    	<span class="keyword">for</span> (j <span class="keyword">in</span> i.<span class="number">.100</span>) &#123;</span><br><span class="line">    		<span class="keyword">if</span> (...)</span><br><span class="line">    			<span class="keyword">break</span><span class="symbol">@loop</span></span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="number">3</span>, 构造函数</span><br><span class="line">    <span class="number">1</span>，<span class="class"><span class="keyword">class</span> <span class="title">Customer</span></span>(name: String) &#123;&#125; <span class="comment">//一级</span></span><br><span class="line">    <span class="number">2</span>，<span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123; <span class="comment">// 二级</span></span><br><span class="line">        	<span class="keyword">constructor</span>(parent: Person) &#123;</span><br><span class="line">        		parent.children.add(<span class="keyword">this</span>)</span><br><span class="line">        	&#125;</span><br><span class="line">        &#125; </span><br><span class="line"><span class="number">4</span>, 接口重写</span><br><span class="line">        <span class="class"><span class="keyword">interface</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">            <span class="function"><span class="keyword">fun</span> <span class="title">foo</span><span class="params">()</span></span> &#123; print(<span class="string">"A"</span>) &#125;</span><br><span class="line">            <span class="function"><span class="keyword">fun</span> <span class="title">bar</span><span class="params">()</span></span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="class"><span class="keyword">interface</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">            <span class="function"><span class="keyword">fun</span> <span class="title">foo</span><span class="params">()</span></span> &#123; print(<span class="string">"B"</span>) &#125;</span><br><span class="line">            <span class="function"><span class="keyword">fun</span> <span class="title">bar</span><span class="params">()</span></span> &#123; print(<span class="string">"bar"</span>) &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="class"><span class="keyword">class</span> <span class="title">C</span> : <span class="type">A &#123;</span></span></span><br><span class="line">            <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">bar</span><span class="params">()</span></span> &#123; print(<span class="string">"bar"</span>) &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="class"><span class="keyword">class</span> <span class="title">D</span> : <span class="type">A</span>, <span class="type">B &#123;</span></span></span><br><span class="line">            <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">foo</span><span class="params">()</span></span> &#123;</span><br><span class="line">                <span class="keyword">super</span>&lt;A&gt;.foo()</span><br><span class="line">                <span class="keyword">super</span>&lt;B&gt;.foo()</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line"><span class="number">4</span>， 嵌套类</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Outer</span> </span>&#123;</span><br><span class="line">	    <span class="keyword">private</span> <span class="keyword">val</span> bar: <span class="built_in">Int</span> = <span class="number">1</span></span><br><span class="line">	    <span class="class"><span class="keyword">class</span> <span class="title">Nested</span> </span>&#123;</span><br><span class="line">		    <span class="function"><span class="keyword">fun</span> <span class="title">foo</span><span class="params">()</span></span> = <span class="number">2</span></span><br><span class="line">	    &#125;</span><br><span class="line">	内部类</span><br><span class="line">    	<span class="class"><span class="keyword">class</span> <span class="title">Outer</span> </span>&#123;</span><br><span class="line">    	    <span class="keyword">private</span> <span class="keyword">val</span> bar: <span class="built_in">Int</span> = <span class="number">1</span></span><br><span class="line">    	    inner <span class="class"><span class="keyword">class</span> <span class="title">Inner</span> </span>&#123;</span><br><span class="line">    		    <span class="function"><span class="keyword">fun</span> <span class="title">foo</span><span class="params">()</span></span> = bar</span><br><span class="line">    	&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="延伸"><a href="#延伸" class="headerlink" title="延伸"></a>延伸</h4><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LearnOne</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 函数声明</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">sum</span><span class="params">(a:<span class="type">Int</span>, b:<span class="type">Int</span>)</span></span>:<span class="built_in">Int</span> &#123;</span><br><span class="line"></span><br><span class="line">        println(a+b)</span><br><span class="line">        <span class="keyword">return</span> a+b</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 自推导型的返回值</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">sum1</span><span class="params">(a: <span class="type">Int</span>, b: <span class="type">Int</span>)</span></span> = a + b</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回无意义值 Unit， $ 获取参数值</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">printSum</span><span class="params">(a: <span class="type">Int</span>, b: <span class="type">Int</span>)</span></span>: <span class="built_in">Unit</span> &#123;</span><br><span class="line">        println(<span class="string">"sum of <span class="variable">$a</span> and <span class="variable">$b</span> is <span class="subst">$&#123;a + b&#125;</span>"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 字符串模版</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">str</span><span class="params">(args:<span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line">        <span class="keyword">val</span> s1 = <span class="string">"a is <span class="variable">$a</span>"</span></span><br><span class="line">        <span class="keyword">var</span> s2 = <span class="string">"args[1] is <span class="subst">$&#123;args[<span class="number">0</span>]&#125;</span>"</span></span><br><span class="line">        println(s1)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 可空值</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">parseInt</span><span class="params">(str: <span class="type">String</span>?)</span></span>: <span class="built_in">Int</span>? &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> valueInt = str?.toInt()</span><br><span class="line">        <span class="keyword">return</span> valueInt</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 高阶函数</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="type">&lt;T&gt;</span> <span class="title">locked</span><span class="params">(lock:<span class="type">Lock</span>,v1:<span class="type">T</span>,v2:<span class="type">T</span>,body:(<span class="type">a</span>:<span class="type">Int</span>)</span></span>-&gt;T):<span class="built_in">Boolean</span> where T:Comparable&lt;T&gt;&#123;</span><br><span class="line"></span><br><span class="line">        lock.lock()</span><br><span class="line">        <span class="keyword">val</span> a = body(<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">        println(a)</span><br><span class="line">        <span class="keyword">return</span>  v1 &gt; v2</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 测试</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">test</span><span class="params">()</span></span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">val</span> lock = ReentrantLock()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> l1 = locked(lock,<span class="number">1</span>,<span class="number">2</span>, &#123; a:<span class="built_in">Int</span> -&gt;</span><br><span class="line"></span><br><span class="line">            <span class="number">1000</span></span><br><span class="line">        &#125;)</span><br><span class="line">        print(l1)</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            
+            <p class="more">
+                <a href="https://Alexzzn.github.io/2018/07/18/Android/kotlin 小结/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://Alexzzn.github.io/2018/07/18/Android/kotlin 小结/" title="kotlin ѧϰ">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/8.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Android/">Android</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://Alexzzn.github.io/2018/07/18/Android/kotlin配置/">
+    		kotlin配置
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2018-07-18T09:57:38.564Z">2018-07-18</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p><code>`</code>gradle<br>buildscript {<br>    repositories {<br>        jcenter()<br>    }<br>    dependencies {<br>        classpath “org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version”<br>    }<br>}</p>
+<p>apply plugin: ‘com.android.application’<br>apply plugin: ‘kotlin-android’<br>apply plugin: ‘kotlin-android-extensions’</p>
+<p>android {<br>    compileSdkVersion 23<br>    buildToolsVersion “23.0.2”</p>
+<pre><code>defaultConfig {
+    applicationId &quot;me.chunyu.spike.wcl_kotlin_demo&quot;
+    minSdkVersion 14
+    targetSdkVersion 23
+    versionCode 1
+    versionName &quot;1.0&quot;
+}
+buildTypes {
+    release {
+        minifyEnabled false
+        proguardFiles getDefaultProguardFile(&apos;proguard-android.txt&apos;), &apos;proguard-rules.pro&apos;
+    }
+}
+sourceSets {
+    main.java.srcDirs += &apos;src/main/kotlin&apos;
+}
+</code></pre><p>}</p>
+<p>dependencies {<br>    compile fileTree(dir: ‘libs’, include: [‘*.jar’])<br>    testCompile ‘junit:junit:4.12’<br>    compile ‘com.android.support:appcompat-v7:23.1.1’<br>    compile “org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version”<br>}</p>
+
+            
+            <p class="more">
+                <a href="https://Alexzzn.github.io/2018/07/18/Android/kotlin配置/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://Alexzzn.github.io/2018/07/18/Android/kotlin配置/" title="kotlin配置">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/8.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章 -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+        <a class="cat-link" href="/categories/Android/">Android</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://Alexzzn.github.io/2018/07/18/Android/drawlayout/">
+    		drawlayout
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2018-07-18T07:07:52.000Z">2018-07-18</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main4Activity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> ListView mLv;</span><br><span class="line">    <span class="keyword">private</span> DrawerLayout drawerLayout;</span><br><span class="line">    <span class="keyword">private</span> FrameLayout mContentLayout;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_drawerlayout);</span><br><span class="line">        mLv = (ListView) findViewById(R.id.left_lv);</span><br><span class="line">        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);</span><br><span class="line">        mContentLayout = (FrameLayout) findViewById(R.id.drawer_content);</span><br><span class="line"></span><br><span class="line">        drawerLayout.addDrawerListener(<span class="keyword">new</span> DrawerLayout.DrawerListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDrawerSlide</span><span class="params">(View drawerView, <span class="keyword">float</span> slideOffset)</span> </span>&#123;</span><br><span class="line">                <span class="comment">//抽屉滑动式回调的方法  </span></span><br><span class="line">                Log.i(<span class="string">"tag"</span>,<span class="string">"---onDrawerSlide---"</span>+slideOffset);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDrawerOpened</span><span class="params">(View drawerView)</span> </span>&#123;</span><br><span class="line">                <span class="comment">//抽屉打开时会回调的方法  </span></span><br><span class="line">                Log.i(<span class="string">"tag"</span>,<span class="string">"---onDrawerOpened---"</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDrawerClosed</span><span class="params">(View drawerView)</span> </span>&#123;</span><br><span class="line">                Log.i(<span class="string">"tag"</span>,<span class="string">"---onDrawerClosed---"</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDrawerStateChanged</span><span class="params">(<span class="keyword">int</span> newState)</span> </span>&#123;</span><br><span class="line">                <span class="comment">//抽屉的状态改变时会回调的方法  </span></span><br><span class="line">                Log.i(<span class="string">"tag"</span>,<span class="string">"---onDrawerStateChanged---"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        mLv.setOnItemClickListener(<span class="keyword">new</span> AdapterView.OnItemClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onItemClick</span><span class="params">(AdapterView&lt;?&gt; parent, View view, <span class="keyword">int</span> position, <span class="keyword">long</span> id)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">                TextView textView = (TextView)view; </span><br><span class="line">                Toast.makeText(getApplicationContext(),textView.getText().toString(),Toast.LENGTH_SHORT).show();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">open</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">        drawerLayout.openDrawer(mLv);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>`</code>xml<br>&lt;?xml version=”1.0” encoding=”utf-8”?&gt;</p>
+<p>&lt;android.support.v4.widget.DrawerLayout<br>    xmlns:android=”<a href="http://schemas.android.com/apk/res/android&quot;" target="_blank" rel="noopener">http://schemas.android.com/apk/res/android&quot;</a><br>    xmlns:app=”<a href="http://schemas.android.com/apk/res-auto&quot;" target="_blank" rel="noopener">http://schemas.android.com/apk/res-auto&quot;</a><br>    xmlns:tools=”<a href="http://schemas.android.com/tools&quot;" target="_blank" rel="noopener">http://schemas.android.com/tools&quot;</a></p>
+<pre><code>android:id=&quot;@+id/drawer_layout&quot;
+android:layout_height=&quot;match_parent&quot;
+android:layout_width=&quot;match_parent&quot;&gt;
+&lt;FrameLayout
+    android:id=&quot;@+id/drawer_content&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:background=&quot;#00ffff&quot;&gt;
+    &lt;Button
+        android:id=&quot;@+id/open&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;打开抽屉&quot;
+        android:onClick=&quot;open&quot;/&gt;
+&lt;/FrameLayout&gt;
+&lt;ListView
+    android:id=&quot;@+id/left_lv&quot;
+    android:layout_width=&quot;200dp&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:layout_gravity=&quot;start&quot;
+    android:background=&quot;#ff0033&quot;
+    android:entries=&quot;@array/books&quot;&gt;
+
+&lt;/ListView&gt;
+</code></pre><p>&lt;/android.support.v4.widget.DrawerLayout&gt;  </p>
+
+            
+            <p class="more">
+                <a href="https://Alexzzn.github.io/2018/07/18/Android/drawlayout/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://Alexzzn.github.io/2018/07/18/Android/drawlayout/" title="drawlayout">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/8.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+
+    
+    <nav class="page-navigator">
+        <a class="extend prev" rel="prev" href="/categories/Android/">前一页</a><a class="page-number" href="/categories/Android/">1</a><span class="page-number current">2</span>
+    </nav>
+    
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/Android/">Android</a>
+        <span class="badge">(14)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/Server/">Server</a>
+        <span class="badge">(9)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/Web/">Web</a>
+        <span class="badge">(21)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/iOS/">iOS</a>
+        <span class="badge">(45)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/系统相关/">系统相关</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/编程/">编程</a>
+        <span class="badge">(4)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="http://blog.sina.com.cn/u/1825875765" target="_blank" title="网络安全博客">Haoren博客</a>
+        </li>
+    
+        <li>
+            <a href="http://blog.csdn.net/yeweiouyang" target="_blank" title="技术博客">Maxwell博客</a>
+        </li>
+    
+        <li>
+            <a href="http://xuanzh.cc/" target="_blank" title="技术博客">朱旋个人博客</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2018
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+<script src="/js/main.js"></script>
+</body>
+</html>
