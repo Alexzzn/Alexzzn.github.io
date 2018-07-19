@@ -1,1 +1,708 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="我的博客分享"><title>MyBlog | 博客</title><link rel="stylesheet" type="text/css" href="//fonts.neworld.org/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.1"><link rel="stylesheet" type="text/css" href="/css/highlight.css?v=2.0.1"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">MyBlog</h1><a id="logo" href="/.">MyBlog</a><p class="description">博客</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="Arama"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h2 class="post-title"><a href="/2018/07/18/iOS/runtime/">runtime</a></h2><div class="post-meta"><p><span class="date">2018-07-18</span><span><a href="/categories/iOS/" class="category">iOS</a></span></p></div><div class="post-content"><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">test</span><span class="params">()</span></span> &#123;</span><br><span class="line">       </span><br><span class="line">        <span class="keyword">var</span> <span class="built_in">count</span>:<span class="type">UInt32</span> = <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">let</span> cla = <span class="type">NSClassFromString</span>(<span class="string">"LDShareContentModel"</span>)</span><br><span class="line">        <span class="keyword">let</span> properties = class_copyPropertyList(cla, &amp;<span class="built_in">count</span>)</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>..&lt;<span class="built_in">count</span> &#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">let</span> index = <span class="type">Int</span>(i)</span><br><span class="line">            <span class="keyword">let</span> property = properties[index]</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">let</span> propertyName = property_getName(property)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">let</span> strName = <span class="type">String</span>.fromCString(propertyName)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"---"</span>,strName)</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        free(properties)</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">        <span class="built_in">count</span> = <span class="number">0</span></span><br><span class="line">        <span class="keyword">let</span> methods = class_copyMethodList(cla, &amp;<span class="built_in">count</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>..&lt;<span class="built_in">count</span> &#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">let</span> index = <span class="type">Int</span>(i)</span><br><span class="line">            <span class="keyword">let</span> method = methods[index]</span><br><span class="line">            <span class="keyword">let</span> sel = method_getName(method)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">let</span> selName = sel_getName(sel)</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">            <span class="keyword">let</span> argumentNum = method_getNumberOfArguments(method)</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"selName:"</span> + <span class="string">"\(String.fromCString(selName))---&gt;"</span> + <span class="string">"\(Int(argumentNum))"</span>)<span class="comment">//"个返回值")</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">var</span> point:<span class="type">Int8</span> = <span class="number">0</span></span><br><span class="line">            <span class="keyword">let</span> argument = method_getReturnType(method, &amp;point, <span class="type">Int</span>(argumentNum))</span><br><span class="line"><span class="comment">//            print(argument)</span></span><br><span class="line">            <span class="keyword">let</span> str = <span class="type">String</span>.fromCString(&amp;point)</span><br><span class="line">            <span class="built_in">print</span>(str)</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">`</span><br></pre></td></tr></table></figure></div><p class="readmore"><a href="/2018/07/18/iOS/runtime/">阅读更多</a></p></div><div class="post"><h2 class="post-title"><a href="/2018/07/18/Android/drawlayout/">drawlayout</a></h2><div class="post-meta"><p><span class="date">2018-07-18</span><span><a href="/categories/Android/" class="category">Android</a></span></p></div><div class="post-content"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main4Activity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> ListView mLv;</span><br><span class="line">    <span class="keyword">private</span> DrawerLayout drawerLayout;</span><br><span class="line">    <span class="keyword">private</span> FrameLayout mContentLayout;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_drawerlayout);</span><br><span class="line">        mLv = (ListView) findViewById(R.id.left_lv);</span><br><span class="line">        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);</span><br><span class="line">        mContentLayout = (FrameLayout) findViewById(R.id.drawer_content);</span><br><span class="line"></span><br><span class="line">        drawerLayout.addDrawerListener(<span class="keyword">new</span> DrawerLayout.DrawerListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDrawerSlide</span><span class="params">(View drawerView, <span class="keyword">float</span> slideOffset)</span> </span>&#123;</span><br><span class="line">                <span class="comment">//抽屉滑动式回调的方法  </span></span><br><span class="line">                Log.i(<span class="string">"tag"</span>,<span class="string">"---onDrawerSlide---"</span>+slideOffset);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDrawerOpened</span><span class="params">(View drawerView)</span> </span>&#123;</span><br><span class="line">                <span class="comment">//抽屉打开时会回调的方法  </span></span><br><span class="line">                Log.i(<span class="string">"tag"</span>,<span class="string">"---onDrawerOpened---"</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDrawerClosed</span><span class="params">(View drawerView)</span> </span>&#123;</span><br><span class="line">                Log.i(<span class="string">"tag"</span>,<span class="string">"---onDrawerClosed---"</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDrawerStateChanged</span><span class="params">(<span class="keyword">int</span> newState)</span> </span>&#123;</span><br><span class="line">                <span class="comment">//抽屉的状态改变时会回调的方法  </span></span><br><span class="line">                Log.i(<span class="string">"tag"</span>,<span class="string">"---onDrawerStateChanged---"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        mLv.setOnItemClickListener(<span class="keyword">new</span> AdapterView.OnItemClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onItemClick</span><span class="params">(AdapterView&lt;?&gt; parent, View view, <span class="keyword">int</span> position, <span class="keyword">long</span> id)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">                TextView textView = (TextView)view; </span><br><span class="line">                Toast.makeText(getApplicationContext(),textView.getText().toString(),Toast.LENGTH_SHORT).show();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">open</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">        drawerLayout.openDrawer(mLv);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><p class="readmore"><a href="/2018/07/18/Android/drawlayout/">阅读更多</a></p></div><div class="post"><h2 class="post-title"><a href="/2018/07/18/iOS/WebviewBridge小结/">webviewTojs</a></h2><div class="post-meta"><p><span class="date">2018-07-18</span><span><a href="/categories/iOS/" class="category">iOS</a></span></p></div><div class="post-content"><h4 id="html-页面"><a href="#html-页面" class="headerlink" title="html 页面"></a>html 页面</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">//1 申请交互</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setupWebViewJavascriptBridge</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">window</span>.WebViewJavascriptBridge) &#123; <span class="keyword">return</span> callback(WebViewJavascriptBridge); &#125;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">window</span>.WVJBCallbacks) &#123; <span class="keyword">return</span> <span class="built_in">window</span>.WVJBCallbacks.push(callback); &#125;</span><br><span class="line">      <span class="built_in">window</span>.WVJBCallbacks = [callback];</span><br><span class="line">      <span class="keyword">var</span> WVJBIframe = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>);</span><br><span class="line">      WVJBIframe.style.display = <span class="string">'none'</span>;</span><br><span class="line">      WVJBIframe.src = <span class="string">'https://__bridge_loaded__'</span>;</span><br><span class="line">      <span class="built_in">document</span>.documentElement.appendChild(WVJBIframe);</span><br><span class="line">      setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">document</span>.documentElement.removeChild(WVJBIframe) &#125;, <span class="number">0</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//注册 回调</span></span><br><span class="line">  setupWebViewJavascriptBridge(<span class="function"><span class="keyword">function</span>(<span class="params">bridge</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">      &lt;!--oc -&gt; js --&gt;</span><br><span class="line">     bridge.registerHandler(<span class="string">'testJavascriptHandler'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data, responseCallback</span>) </span>&#123;</span><br><span class="line">                             </span><br><span class="line">          alert(<span class="string">"收到Native的通知"</span>)</span><br><span class="line">	<span class="keyword">var</span> responseData = &#123; <span class="string">'Javascript Says'</span>:<span class="string">'Right back atcha!----'</span> &#125;</span><br><span class="line">	responseCallback(responseData)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">      &lt;!--js -&gt; oc --&gt;</span><br><span class="line">      <span class="keyword">var</span> callbackButton = <span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>)</span><br><span class="line">      callbackButton.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">                               bridge.callHandler(<span class="string">'jsToOc2'</span>, &#123;<span class="string">'foo'</span>: <span class="string">'bar'</span>&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</span><br><span class="line">                      <span class="comment">//执行js操作</span></span><br><span class="line">          &#125;)</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure></div><p class="readmore"><a href="/2018/07/18/iOS/WebviewBridge小结/">阅读更多</a></p></div><div class="post"><h2 class="post-title"><a href="/2018/07/18/iOS/mdtest/">mdtest</a></h2><div class="post-meta"><p><span class="date">2018-07-18</span><span><a href="/categories/iOS/" class="category">iOS</a></span></p></div><div class="post-content"><h4 id="test"><a href="#test" class="headerlink" title="test"></a>test</h4><p><strong>text w</strong><br><em>test dgddg dg dfg dgadg dgasd</em></p></div><p class="readmore"><a href="/2018/07/18/iOS/mdtest/">阅读更多</a></p></div><div class="post"><h2 class="post-title"><a href="/2018/07/17/hello-world/">Hello World</a></h2><div class="post-meta"><p><span class="date">2018-07-17</span></p></div><div class="post-content"><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p></div><p class="readmore"><a href="/2018/07/17/hello-world/">阅读更多</a></p></div><nav class="page-navigator"><a class="extend prev" rel="prev" href="/page/9/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span></nav></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/19/Web/mysql/">mysql</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/19/Server/字符串/">字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/19/Web/mysql基本语句/">mysql基本语句</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/java注解/">java注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/地图定位/">地图定位</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/tableview/">tableview</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/swift4/">swift4</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/pod 错误问题/">pod 错误问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/BASH小结/">BASH小结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/WKWebView/">WKWebView</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Server/">Server</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a><span class="category-list-count">45</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统相关/">系统相关</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">4</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li></ul></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">Baidu Site Haritası</a> |  <a href="/atom.xml">订阅</a> |  <a href="/about/">关于</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次</p><p><span> Copyright &copy;<a href="/." rel="nofollow">zzn.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.1"></script><script type="text/javascript" src="/js/totop.js?v=2.0.1" async></script></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>MyBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="我的博客分享">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MyBlog">
+<meta property="og:url" content="https://Alexzzn.github.io/page/10/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="我的博客分享">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MyBlog">
+<meta name="twitter:description" content="我的博客分享">
+  
+    <link rel="alternate" href="/atom.xml" title="MyBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://Alexzzn.github.io"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">MyBlog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">博客</a>
+        </h2>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-iOS/swift3 协议" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/18/iOS/swift3 协议/" class="article-date">
+  <time datetime="2018-07-18T07:07:54.000Z" itemprop="datePublished">2018-07-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/iOS/">iOS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/18/iOS/swift3 协议/">swift3 协议</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p><code>`</code>swift<br>import UIKit</p>
+<p>var str = “Hello, playground”<br>class Person {</p>
+<pre><code>let name: String
+init(name: String) { self.name = name }
+var classes: Classess?
+
+deinit { print(&quot;\(name) is being deinitialized&quot;) }
+</code></pre><p>}</p>
+<p>class Classess {</p>
+<pre><code>let no: String
+init(no: String) { self.no = no }
+weak var member: Person?
+
+deinit { print(&quot;Apartment \(no) is being deinitialized&quot;) }
+</code></pre><p>}</p>
+<p>let p1 = Person.init(name: “zhanshan”)<br>let c1 = Classess.init(no: “111”)</p>
+<p>p1.classes = c1<br>c1.member = p1</p>
+<p>print(p1.classes ?? “”)<br>print(c1.member ?? “”)<br>extension Double {</p>
+<pre><code>var km:Double { return self*888}
+</code></pre><p>}</p>
+<p>let d1:Double = 2<br>d1.km</p>
+<p>//<br>protocol SomeProtocol {</p>
+<pre><code>var value1: String { get set }
+var value2: String { get }
+static var value3:String { get }
+
+//异变方法
+mutating func getName()
+</code></pre><p>}<br>//<br>protocol TwoProtocol {</p>
+<p>}<br>//多承载<br>protocol AllProtocol: SomeProtocol, TwoProtocol {</p>
+<pre><code>//定义属性别名
+associatedtype DefineType
+var weight:DefineType { get }
+</code></pre><p>}</p>
+<p>//结构体继承协议<br>struct Toprotocol:SomeProtocol {</p>
+<pre><code>mutating internal func getName() {
+
+    self.value1 = &quot;edit&quot;
+}
+
+internal var value1: String
+internal var value2: String
+internal static var value3: String = &quot;value3&quot;
+var value4:String
+</code></pre><p>}</p>
+<p>var struct1 = Toprotocol.init(value1: “value1”, value2: “value2”, value4: “value4”)</p>
+<p>var struct2:Toprotocol = struct1<br>struct2.value2 = “2”</p>
+<p>//定义别名类型<br>struct MobilePhone:AllProtocol {</p>
+<pre><code>typealias DefineType = Double
+
+internal var weight: Double
+mutating internal func getName() {
+    value2 = &quot;changed&quot;
+}
+
+internal static var value3: String = &quot;&quot;
+
+internal var value2: String
+internal var value1: String
+</code></pre><p>}</p>
+<p>let mobile1 = MobilePhone.DefineType()<br>var mobile2 = MobilePhone.init(weight: 25, value2: “value2”, value1: “value1”)<br>mobile2.getName()</p>
+<p>//Swift标准库协议</p>
+<p>//1, 比较相关的协议<br>struct Student1:Equatable {</p>
+<pre><code>var math:Int
+var english:Int
+
+static func == (lhs: Student1, rhs: Student1) -&gt; Bool {
+
+    return lhs.english == rhs.english &amp;&amp; lhs.math == rhs.math
+}
+</code></pre><p>}<br>//Student遵守Equatable<br>let s1 = Student1.init(math: 20, english: 30)<br>let s2 = Student1.init(math: 20, english: 40)<br>let isTrue1  = s1 == s2</p>
+<p>//2, 自定义比较协议<br>public protocol ZZNCompareable {</p>
+<p>   static func &lt; (lhs:Self,rhs:Self) -&gt;Bool<br>}</p>
+<p>struct Student2:ZZNCompareable {</p>
+<pre><code>var studentName1:String
+var studentName2:String
+
+//重载 &lt; 运算符
+static func &lt; (lhs:Student2,rhs:Student2) -&gt;Bool {
+
+    return lhs.studentName1 == rhs.studentName2
+}
+
+//重载 &lt;= 运算符
+static func &lt;= (lhs:Student2,rhs:Student2) -&gt;Bool {
+
+    return lhs.studentName1 == rhs.studentName2
+}
+
+//重载 &gt; 运算符
+static func &gt; (lhs:Student2,rhs:Student2) -&gt;Bool {
+
+    return lhs.studentName1 == rhs.studentName2
+}
+//重载 &gt;= 运算符
+static func &gt;= (lhs:Student2,rhs:Student2) -&gt;Bool {
+
+    return lhs.studentName1 == rhs.studentName2
+}
+</code></pre><p>}</p>
+<p>let ss2 = Student2.init(studentName1: “zz”, studentName2: “zz”)<br>let ss22 = Student2.init(studentName1: “zz”, studentName2: “zw”)<br>ss2 &lt; ss22</p>
+<p>//<br>struct Student3: Comparable {</p>
+<pre><code>var math: Int
+var english: Int
+
+//重载 &lt; 运算符
+static func &lt; (lhs:Student3,rhs:Student3) -&gt;Bool {
+
+    return (lhs.math + lhs.english) &lt; (rhs.math + rhs.english)
+}
+
+//重载 &lt;= 运算符
+static func &lt;= (lhs:Student3,rhs:Student3) -&gt;Bool {
+
+    return (lhs.math + lhs.english) &lt;= (rhs.math + rhs.english)
+}
+
+//重载 &gt; 运算符
+static func &gt; (lhs:Student3,rhs:Student3) -&gt;Bool {
+
+    return (lhs.math + lhs.english) &gt; (rhs.math + rhs.english)
+}
+//重载 &gt;= 运算符
+static func &gt;= (lhs:Student3,rhs:Student3) -&gt;Bool {
+
+    return (lhs.math + lhs.english) &gt;= (rhs.math + rhs.english)
+}
+//重载 == 运算符
+static func == (lhs:Student3,rhs:Student3) -&gt;Bool {
+
+    return (lhs.math + lhs.english) == (rhs.math + rhs.english)
+}
+</code></pre><p>}</p>
+<p>let s3_left = Student3(math: 80, english: 60)<br>let s3_right = Student3(math: 70, english: 90)<br>s3_left &gt; s3_right</p>
+<p>//—–<br>//枚举继承协议<br>protocol NetServiceProtocol {</p>
+<pre><code>var netName:String { get }//只需实现get
+mutating func change()//外部修改enum 枚举值
+</code></pre><p>}</p>
+<p>enum NetServiceType:NetServiceProtocol {</p>
+<pre><code>case union(String)
+case mobile(String)
+case telecom(String)
+
+mutating func change() {
+
+    self = .mobile(&quot;mobile&quot;)
+
+}
+
+var netName: String {
+
+    get {
+
+        return NetServiceType.mobile(&quot;mobile&quot;).netName
+    }
+}
+</code></pre><p>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/swift3 协议/" data-id="cjjs8z6jp00406p53enw08oyr" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
+    <article id="post-iOS/WebviewBridge小结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/18/iOS/WebviewBridge小结/" class="article-date">
+  <time datetime="2018-07-18T07:07:52.000Z" itemprop="datePublished">2018-07-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/iOS/">iOS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/18/iOS/WebviewBridge小结/">webviewTojs</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <h4 id="html-页面"><a href="#html-页面" class="headerlink" title="html 页面"></a>html 页面</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">//1 申请交互</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setupWebViewJavascriptBridge</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">window</span>.WebViewJavascriptBridge) &#123; <span class="keyword">return</span> callback(WebViewJavascriptBridge); &#125;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">window</span>.WVJBCallbacks) &#123; <span class="keyword">return</span> <span class="built_in">window</span>.WVJBCallbacks.push(callback); &#125;</span><br><span class="line">      <span class="built_in">window</span>.WVJBCallbacks = [callback];</span><br><span class="line">      <span class="keyword">var</span> WVJBIframe = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>);</span><br><span class="line">      WVJBIframe.style.display = <span class="string">'none'</span>;</span><br><span class="line">      WVJBIframe.src = <span class="string">'https://__bridge_loaded__'</span>;</span><br><span class="line">      <span class="built_in">document</span>.documentElement.appendChild(WVJBIframe);</span><br><span class="line">      setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">document</span>.documentElement.removeChild(WVJBIframe) &#125;, <span class="number">0</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//注册 回调</span></span><br><span class="line">  setupWebViewJavascriptBridge(<span class="function"><span class="keyword">function</span>(<span class="params">bridge</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">      &lt;!--oc -&gt; js --&gt;</span><br><span class="line">     bridge.registerHandler(<span class="string">'testJavascriptHandler'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data, responseCallback</span>) </span>&#123;</span><br><span class="line">                             </span><br><span class="line">          alert(<span class="string">"收到Native的通知"</span>)</span><br><span class="line">	<span class="keyword">var</span> responseData = &#123; <span class="string">'Javascript Says'</span>:<span class="string">'Right back atcha!----'</span> &#125;</span><br><span class="line">	responseCallback(responseData)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">      &lt;!--js -&gt; oc --&gt;</span><br><span class="line">      <span class="keyword">var</span> callbackButton = <span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>)</span><br><span class="line">      callbackButton.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">                               bridge.callHandler(<span class="string">'jsToOc2'</span>, &#123;<span class="string">'foo'</span>: <span class="string">'bar'</span>&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</span><br><span class="line">                      <span class="comment">//执行js操作</span></span><br><span class="line">          &#125;)</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>native 代码</p>
+</blockquote>
+<p><code>`</code>swift</p>
+<pre><code>//1,js -&gt; oc
+</code></pre><p>   _bridge = [WebViewJavascriptBridge bridgeForWebView:webView];<br>    [_bridge registerHandler:@”jsToOc” handler:^(id data, WVJBResponseCallback responseCallback) {</p>
+<pre><code>    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@&quot;通知&quot; message:@&quot;js 调用 oc 方法&quot; delegate:nil cancelButtonTitle:@&quot;OK&quot; otherButtonTitles:nil, nil];
+
+
+    [alert show];
+    responseCallback(@&quot;Response from testObjcCallback&quot;);
+}];
+</code></pre><p>//2,oc -&gt; js<br>    [callbackButton addTarget:self action:@selector(callHandler:) forControlEvents:UIControlEventTouchUpInside];</p>
+<pre><code>btn.bk_whenTap({^(UIButton *btn)
+
+
+id data = @{ @&quot;greetingFromObjC&quot;: @&quot;这是Native&quot; };
+[_bridge callHandler:@&quot;testJavascriptHandler&quot; data:data responseCallback:^(id response) {
+
+    NSLog(@&quot;testJavascriptHandler responded: %@&quot;, response);
+}];
+</code></pre><p>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/WebviewBridge小结/" data-id="cjjs8z6jf003k6p53ms6ibge3" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
+    <article id="post-Android/drawlayout" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/18/Android/drawlayout/" class="article-date">
+  <time datetime="2018-07-18T07:07:52.000Z" itemprop="datePublished">2018-07-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/18/Android/drawlayout/">drawlayout</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main4Activity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> ListView mLv;</span><br><span class="line">    <span class="keyword">private</span> DrawerLayout drawerLayout;</span><br><span class="line">    <span class="keyword">private</span> FrameLayout mContentLayout;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_drawerlayout);</span><br><span class="line">        mLv = (ListView) findViewById(R.id.left_lv);</span><br><span class="line">        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);</span><br><span class="line">        mContentLayout = (FrameLayout) findViewById(R.id.drawer_content);</span><br><span class="line"></span><br><span class="line">        drawerLayout.addDrawerListener(<span class="keyword">new</span> DrawerLayout.DrawerListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDrawerSlide</span><span class="params">(View drawerView, <span class="keyword">float</span> slideOffset)</span> </span>&#123;</span><br><span class="line">                <span class="comment">//抽屉滑动式回调的方法  </span></span><br><span class="line">                Log.i(<span class="string">"tag"</span>,<span class="string">"---onDrawerSlide---"</span>+slideOffset);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDrawerOpened</span><span class="params">(View drawerView)</span> </span>&#123;</span><br><span class="line">                <span class="comment">//抽屉打开时会回调的方法  </span></span><br><span class="line">                Log.i(<span class="string">"tag"</span>,<span class="string">"---onDrawerOpened---"</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDrawerClosed</span><span class="params">(View drawerView)</span> </span>&#123;</span><br><span class="line">                Log.i(<span class="string">"tag"</span>,<span class="string">"---onDrawerClosed---"</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDrawerStateChanged</span><span class="params">(<span class="keyword">int</span> newState)</span> </span>&#123;</span><br><span class="line">                <span class="comment">//抽屉的状态改变时会回调的方法  </span></span><br><span class="line">                Log.i(<span class="string">"tag"</span>,<span class="string">"---onDrawerStateChanged---"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        mLv.setOnItemClickListener(<span class="keyword">new</span> AdapterView.OnItemClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onItemClick</span><span class="params">(AdapterView&lt;?&gt; parent, View view, <span class="keyword">int</span> position, <span class="keyword">long</span> id)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">                TextView textView = (TextView)view; </span><br><span class="line">                Toast.makeText(getApplicationContext(),textView.getText().toString(),Toast.LENGTH_SHORT).show();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">open</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">        drawerLayout.openDrawer(mLv);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>`</code>xml<br>&lt;?xml version=”1.0” encoding=”utf-8”?&gt;</p>
+<p>&lt;android.support.v4.widget.DrawerLayout<br>    xmlns:android=”<a href="http://schemas.android.com/apk/res/android&quot;" target="_blank" rel="noopener">http://schemas.android.com/apk/res/android&quot;</a><br>    xmlns:app=”<a href="http://schemas.android.com/apk/res-auto&quot;" target="_blank" rel="noopener">http://schemas.android.com/apk/res-auto&quot;</a><br>    xmlns:tools=”<a href="http://schemas.android.com/tools&quot;" target="_blank" rel="noopener">http://schemas.android.com/tools&quot;</a></p>
+<pre><code>android:id=&quot;@+id/drawer_layout&quot;
+android:layout_height=&quot;match_parent&quot;
+android:layout_width=&quot;match_parent&quot;&gt;
+&lt;FrameLayout
+    android:id=&quot;@+id/drawer_content&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:background=&quot;#00ffff&quot;&gt;
+    &lt;Button
+        android:id=&quot;@+id/open&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;打开抽屉&quot;
+        android:onClick=&quot;open&quot;/&gt;
+&lt;/FrameLayout&gt;
+&lt;ListView
+    android:id=&quot;@+id/left_lv&quot;
+    android:layout_width=&quot;200dp&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:layout_gravity=&quot;start&quot;
+    android:background=&quot;#ff0033&quot;
+    android:entries=&quot;@array/books&quot;&gt;
+
+&lt;/ListView&gt;
+</code></pre><p>&lt;/android.support.v4.widget.DrawerLayout&gt;  </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://Alexzzn.github.io/2018/07/18/Android/drawlayout/" data-id="cjjs8z6hp00076p53bw8kgo2j" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
+    <article id="post-iOS/mdtest" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/18/iOS/mdtest/" class="article-date">
+  <time datetime="2018-07-18T07:07:46.000Z" itemprop="datePublished">2018-07-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/iOS/">iOS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/18/iOS/mdtest/">mdtest</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <h4 id="test"><a href="#test" class="headerlink" title="test"></a>test</h4><p><strong>text w</strong><br><em>test dgddg dg dfg dgadg dgasd</em></p>
+<p><a href="http://baidu.com" target="_blank" rel="noopener">title</a></p>
+<table>
+<thead>
+<tr>
+<th>姓名</th>
+<th>班级</th>
+<th>年龄</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>ddf</li>
+<li>gfd<br>dgfsfdsa  dfasdgfdf  dfsakjgfh</li>
+</ul>
+<blockquote>
+<p>fdasgd  dfasdfdfadhsfkddgfajk</p>
+<p>dsgads &gt;dfgads</p>
+<p>dgdkj</p>
+<p>dgfadsgh</p>
+<p>dgaddsg<br><code>alert(&#39;hello world&#39;) var i = 1 dgds -</code><br><code>sdga</code></p>
+<blockquote>
+<p><code>dsagdg</code></p>
+</blockquote>
+</blockquote>
+<hr>
+<h2 id="hello"><a href="#hello" class="headerlink" title="hello"></a>hello</h2><p><img src="http://img2.niutuku.com/desk/1207/1057/ntk121901.jpg" alt="image"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/mdtest/" data-id="cjjs8z6jh003o6p539eoj7izm" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/17/hello-world/" class="article-date">
+  <time datetime="2018-07-17T02:35:25.564Z" itemprop="datePublished">2018-07-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/17/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://Alexzzn.github.io/2018/07/17/hello-world/" data-id="cjjs8z6gn00016p53e84joqiy" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/9/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span>
+  </nav>
+</section>
+           
+    <aside id="sidebar">
+  
+    
+
+  
+    
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title recent-posts">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/19/Web/mysql/">mysql</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/19/Server/字符串/">字符串</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/19/Web/mysql基本语句/">mysql基本语句</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/18/iOS/java注解/">java注解</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/18/iOS/地图定位/">地图定位</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+
+  
+    
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2014 - 2018 zzn&nbsp;|&nbsp;
+      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+    </div>
+     <div id="footer-right">
+      联系方式&nbsp;|&nbsp;youemail@outlook.com
+    </div>
+  </div>
+</footer>
+ <script src="/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+  
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "e2fb4051c49842688ce669e634bc983f",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+    
+
+  
+
+
+
+
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+ <script src="/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/elevator.js"></script>
+  </div>
+</body>
+</html>

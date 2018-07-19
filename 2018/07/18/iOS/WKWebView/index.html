@@ -1,4 +1,106 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="我的博客分享"><title>WKWebView | MyBlog</title><link rel="stylesheet" type="text/css" href="//fonts.neworld.org/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.1"><link rel="stylesheet" type="text/css" href="/css/highlight.css?v=2.0.1"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">WKWebView</h1><a id="logo" href="/.">MyBlog</a><p class="description">博客</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="Arama"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">WKWebView</h1><div class="post-meta"><a href="/2018/07/18/iOS/WKWebView/#comments" class="comment-count"></a><p><span class="date">Jul 18, 2018</span><span><a href="/categories/iOS/" class="category">iOS</a></span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><p>创建配置类<br>在创建WKWebView之前，需要先创建配置对象，用于做一些配置：</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>WKWebView | MyBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="创建配置类在创建WKWebView之前，需要先创建配置对象，用于做一些配置： 1WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init]; 配置偏好设置偏好设置也没有必须去修改它，都使用默认的就可以了，除非你真的需要修改它： 123456789101112131415// 设置偏好设置config.preferen">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WKWebView">
+<meta property="og:url" content="https://Alexzzn.github.io/2018/07/18/iOS/WKWebView/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="创建配置类在创建WKWebView之前，需要先创建配置对象，用于做一些配置： 1WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init]; 配置偏好设置偏好设置也没有必须去修改它，都使用默认的就可以了，除非你真的需要修改它： 123456789101112131415// 设置偏好设置config.preferen">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-18T10:10:21.187Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WKWebView">
+<meta name="twitter:description" content="创建配置类在创建WKWebView之前，需要先创建配置对象，用于做一些配置： 1WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init]; 配置偏好设置偏好设置也没有必须去修改它，都使用默认的就可以了，除非你真的需要修改它： 123456789101112131415// 设置偏好设置config.preferen">
+  
+    <link rel="alternate" href="/atom.xml" title="MyBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://Alexzzn.github.io"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">MyBlog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">博客</a>
+        </h2>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-iOS/WKWebView" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/18/iOS/WKWebView/" class="article-date">
+  <time datetime="2018-07-18T10:10:21.187Z" itemprop="datePublished">2018-07-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/iOS/">iOS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      WKWebView
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>创建配置类<br>在创建WKWebView之前，需要先创建配置对象，用于做一些配置：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];</span><br></pre></td></tr></table></figure>
 <p>配置偏好设置<br>偏好设置也没有必须去修改它，都使用默认的就可以了，除非你真的需要修改它：</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置偏好设置</span></span><br><span class="line"></span><br><span class="line">config.preferences = [[<span class="type">WKPreferences</span> alloc] <span class="keyword">init</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 默认为0</span></span><br><span class="line"></span><br><span class="line">config.preferences.minimumFontSize = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 默认认为YES</span></span><br><span class="line"></span><br><span class="line">config.preferences.javaScriptEnabled = <span class="type">YES</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在iOS上默认为NO，表示不能自动通过窗口打开</span></span><br><span class="line"></span><br><span class="line">config.preferences.javaScriptCanOpenWindowsAutomatically = <span class="type">NO</span>;</span><br></pre></td></tr></table></figure>
@@ -54,5 +156,231 @@
 <h4 id="WKNavigationDelegate"><a href="#WKNavigationDelegate" class="headerlink" title="WKNavigationDelegate"></a>WKNavigationDelegate</h4><p>如果需要处理web导航操作，比如链接跳转、接收响应、在导航开始、成功、失败等时要做些处理，就可以通过实现相关的代理方法：</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">#pragma mark - <span class="type">WKNavigationDelegate</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 请求开始前，会先调用此代理方法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 与UIWebView的</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// - (BOOL)webView:(UIWebView *)webView </span></span><br><span class="line"></span><br><span class="line"><span class="comment">// shouldStartLoadWithRequest:(NSURLRequest *)request </span></span><br><span class="line"></span><br><span class="line"><span class="comment">// navigationType:(UIWebViewNavigationType)navigationType;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 类型，在请求先判断能不能跳转（请求）</span></span><br><span class="line"></span><br><span class="line">- (void)webView:(<span class="type">WKWebView</span> *)webView decidePolicyForNavigationAction:(<span class="type">WKNavigationAction</span> *)navigationAction decisionHandler:(void (^)(<span class="type">WKNavigationActionPolicy</span>))decisionHandler &#123;</span><br><span class="line">  <span class="type">NSString</span> *hostname = navigationAction.request.<span class="type">URL</span>.host.lowercaseString;</span><br><span class="line">  <span class="keyword">if</span> (navigationAction.navigationType == <span class="type">WKNavigationTypeLinkActivated</span></span><br><span class="line">      &amp;&amp; ![hostname containsString:@<span class="string">".baidu.com"</span>]) &#123;</span><br><span class="line">  <span class="comment">// 对于跨域，需要手动跳转</span></span><br><span class="line">    [[<span class="type">UIApplication</span> sharedApplication] openURL:navigationAction.request.<span class="type">URL</span>];</span><br><span class="line">    <span class="comment">// 不允许web内跳转</span></span><br><span class="line">    decisionHandler(<span class="type">WKNavigationActionPolicyCancel</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">self</span>.progressView.alpha = <span class="number">1.0</span>;</span><br><span class="line">    decisionHandler(<span class="type">WKNavigationActionPolicyAllow</span>);</span><br><span class="line">  &#125;</span><br><span class="line">    <span class="type">NSLog</span>(@<span class="string">"%s"</span>, <span class="type">FUNCTION</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在响应完成时，会回调此方法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果设置为不允许响应，web内容就不会传过来</span></span><br><span class="line"></span><br><span class="line">- (void)webView:(<span class="type">WKWebView</span> *)webView decidePolicyForNavigationResponse:(<span class="type">WKNavigationResponse</span> *)navigationResponse decisionHandler:(void (^)(<span class="type">WKNavigationResponsePolicy</span>))decisionHandler &#123;</span><br><span class="line">  decisionHandler(<span class="type">WKNavigationResponsePolicyAllow</span>);</span><br><span class="line">  <span class="type">NSLog</span>(@<span class="string">"%s"</span>, <span class="type">FUNCTION</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开始导航跳转时会回调</span></span><br><span class="line"></span><br><span class="line">- (void)webView:(<span class="type">WKWebView</span> *)webView didStartProvisionalNavigation:(null_unspecified <span class="type">WKNavigation</span> *)navigation &#123;</span><br><span class="line">    <span class="type">NSLog</span>(@<span class="string">"%s"</span>, <span class="type">FUNCTION</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 接收到重定向时会回调</span></span><br><span class="line"></span><br><span class="line">- (void)webView:(<span class="type">WKWebView</span> *)webView didReceiveServerRedirectForProvisionalNavigation:(null_unspecified <span class="type">WKNavigation</span> *)navigation &#123;</span><br><span class="line">    <span class="type">NSLog</span>(@<span class="string">"%s"</span>, <span class="type">FUNCTION</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 导航失败时会回调</span></span><br><span class="line"></span><br><span class="line">- (void)webView:(<span class="type">WKWebView</span> *)webView didFailProvisionalNavigation:(null_unspecified <span class="type">WKNavigation</span> *)navigation withError:(<span class="type">NSError</span> *)error &#123;</span><br><span class="line">    <span class="type">NSLog</span>(@<span class="string">"%s"</span>, <span class="type">FUNCTION</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 页面内容到达main frame时回调</span></span><br><span class="line"></span><br><span class="line">- (void)webView:(<span class="type">WKWebView</span> *)webView didCommitNavigation:(null_unspecified <span class="type">WKNavigation</span> *)navigation &#123;</span><br><span class="line">    <span class="type">NSLog</span>(@<span class="string">"%s"</span>, <span class="type">FUNCTION</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 导航完成时，会回调（也就是页面载入完成了）</span></span><br><span class="line"></span><br><span class="line">- (void)webView:(<span class="type">WKWebView</span> *)webView didFinishNavigation:(null_unspecified <span class="type">WKNavigation</span> *)navigation &#123;</span><br><span class="line">    <span class="type">NSLog</span>(@<span class="string">"%s"</span>, <span class="type">FUNCTION</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 导航失败时会回调</span></span><br><span class="line"></span><br><span class="line">- (void)webView:(<span class="type">WKWebView</span> *)webView didFailNavigation:(null_unspecified <span class="type">WKNavigation</span> *)navigation withError:(<span class="type">NSError</span> *)error &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对于HTTPS的都会触发此代理，如果不要求验证，传默认就行</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果需要证书验证，与使用AFN进行HTTPS证书验证是一样的</span></span><br><span class="line"></span><br><span class="line">- (void)webView:(<span class="type">WKWebView</span> *)webView didReceiveAuthenticationChallenge:(<span class="type">NSURLAuthenticationChallenge</span> *)challenge completionHandler:(void (^)(<span class="type">NSURLSessionAuthChallengeDisposition</span> disposition, <span class="type">NSURLCredential</span> *__nullable credential))completionHandler &#123;</span><br><span class="line">    <span class="type">NSLog</span>(@<span class="string">"%s"</span>, <span class="type">FUNCTION</span>);</span><br><span class="line">  completionHandler(<span class="type">NSURLSessionAuthChallengePerformDefaultHandling</span>, <span class="literal">nil</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 9.0才能使用，web内容处理中断时会触发</span></span><br><span class="line"></span><br><span class="line">- (void)webViewWebContentProcessDidTerminate:(<span class="type">WKWebView</span> *)webView &#123;</span><br><span class="line">    <span class="type">NSLog</span>(@<span class="string">"%s"</span>, <span class="type">FUNCTION</span>);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <p>JS端代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;title&gt;iOS and Js&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">    &lt;style type="text/</span>css<span class="string">"&gt;</span></span><br><span class="line"><span class="string">      * &#123;</span></span><br><span class="line"><span class="string">        font-size: 40px;</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    &lt;/style&gt;</span></span><br><span class="line"><span class="string">  &lt;/head&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  &lt;body&gt;</span></span><br><span class="line"><span class="string">    &lt;div style="</span>margin-top: <span class="number">100</span>px<span class="string">"&gt;</span></span><br><span class="line"><span class="string">      &lt;h1&gt;Test how to use objective-c call js&lt;/h1&gt;&lt;br/&gt;</span></span><br><span class="line"><span class="string">      &lt;div&gt;&lt;input type="</span>button<span class="string">" value="</span>call js alert<span class="string">" onclick="</span>callJsAlert()<span class="string">"&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="string">      &lt;br/&gt;</span></span><br><span class="line"><span class="string">      &lt;div&gt;&lt;input type="</span>button<span class="string">" value="</span>Call js confirm<span class="string">" onclick="</span>callJsConfirm()<span class="string">"&gt;&lt;/div&gt;&lt;br/&gt;</span></span><br><span class="line"><span class="string">    &lt;/div&gt;</span></span><br><span class="line"><span class="string">    &lt;br/&gt;</span></span><br><span class="line"><span class="string">    &lt;div&gt;</span></span><br><span class="line"><span class="string">      &lt;div&gt;&lt;input type="</span>button<span class="string">" value="</span>Call Js prompt <span class="string">" onclick="</span>callJsInput()<span class="string">"&gt;&lt;/div&gt;&lt;br/&gt;</span></span><br><span class="line"><span class="string">      &lt;div&gt;Click me here: &lt;a href="</span>http:<span class="comment">//www.baidu.com"&gt;Jump to Baidu&lt;/a&gt;&lt;/div&gt;</span></span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">    &lt;br/</span>&gt;</span><br><span class="line">    &lt;div id=<span class="string">"SwiftDiv"</span>&gt;</span><br><span class="line">      &lt;span id=<span class="string">"jsParamFuncSpan"</span> style=<span class="string">"color: red; font-size: 50px;"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">    &lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">      function callJsAlert() &#123;</span></span><br><span class="line"><span class="string">        alert('Objective-C call js to show alert');</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        window.webkit.messageHandlers.AppModel.postMessage(&#123;body: 'call js alert in js'&#125;);</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    function callJsConfirm() &#123;</span></span><br><span class="line"><span class="string">      if (confirm('confirm', 'Objective-C call js to show confirm')) &#123;</span></span><br><span class="line"><span class="string">        document.getElementById('jsParamFuncSpan').innerHTML = 'true';</span></span><br><span class="line"><span class="string">      &#125; else &#123;</span></span><br><span class="line"><span class="string">        document.getElementById('jsParamFuncSpan').innerHTML = 'false';</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">      // AppModel是我们所注入的对象</span></span><br><span class="line"><span class="string">      window.webkit.messageHandlers.AppModel.postMessage(&#123;body: 'call js confirm in js'&#125;);</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    function callJsInput() &#123;</span></span><br><span class="line"><span class="string">      var response = prompt('Hello', 'Please input your name:');</span></span><br><span class="line"><span class="string">      document.getElementById('jsParamFuncSpan').innerHTML = response; </span></span><br><span class="line"><span class="string">       // AppModel是我们所注入的对象</span></span><br><span class="line"><span class="string">      window.webkit.messageHandlers.AppModel.postMessage(&#123;body: response&#125;);</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">   &lt;/script&gt;</span></span><br><span class="line"><span class="string">  &lt;/body&gt;</span></span><br><span class="line"><span class="string">&lt;/html&gt;</span></span><br></pre></td></tr></table></figure></div><div class="tags"></div><div class="post-share"><div class="bdsharebuttonbox"><span style="float:left;line-height: 28px;height: 28px;font-size:16px;font-weight:blod">分享到：</span><a href="#" data-cmd="more" class="bds_more"></a><a href="#" data-cmd="mshare" title="分享到一键分享" class="bds_mshare"></a><a href="#" data-cmd="fbook" title="分享到Facebook" class="bds_fbook"></a><a href="#" data-cmd="twi" title="分享到Twitter" class="bds_twi"></a><a href="#" data-cmd="linkedin" title="分享到linkedin" class="bds_linkedin"></a><a href="#" data-cmd="youdao" title="分享到有道云笔记" class="bds_youdao"></a><a href="#" data-cmd="evernotecn" title="分享到印象笔记" class="bds_evernotecn"></a><a href="#" data-cmd="weixin" title="分享到微信" class="bds_weixin"></a><a href="#" data-cmd="qzone" title="分享到QQ空间" class="bds_qzone"></a><a href="#" data-cmd="tsina" title="分享到新浪微博" class="bds_tsina"></a></div></div><div class="post-nav"><a href="/2018/07/18/iOS/BASH小结/" class="pre">BASH小结</a><a href="/2018/07/18/iOS/ruby安装错误总结/" class="next">ruby安装错误总结</a></div><div id="comments"></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#WKNavigationDelegate"><span class="toc-text">WKNavigationDelegate</span></a></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/19/Web/mysql/">mysql</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/19/Server/字符串/">字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/19/Web/mysql基本语句/">mysql基本语句</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/java注解/">java注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/地图定位/">地图定位</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/tableview/">tableview</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/swift4/">swift4</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/pod 错误问题/">pod 错误问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/BASH小结/">BASH小结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/18/iOS/WKWebView/">WKWebView</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Server/">Server</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a><span class="category-list-count">45</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统相关/">系统相关</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">4</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li></ul></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">Baidu Site Haritası</a> |  <a href="/atom.xml">订阅</a> |  <a href="/about/">关于</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次</p><p><span> Copyright &copy;<a href="/." rel="nofollow">zzn.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.1"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.1" async></script><script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","weixin","tsina","qzone","linkedin","fbook","twi","print","renren","sqq","evernotecn","bdysc","tqq","tqf","bdxc","kaixin001","tieba","douban","bdhome","thx","ibaidu","meilishuo","mogujie","diandian","huaban","duitang","hx","fx","youdao","sdo","qingbiji","people","xinhua","mail","isohu","yaolan","wealink","ty","iguba","h163","copy"],"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["tsina","qzone","weixin","fbook","twi","linkedin","youdao","evernotecn","mshare"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","qzone","weixin","fbook","twi","linkedin","youdao","evernotecn","mshare"]}};with(document)0[(getElementsByTagName('head')[0]||head).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-</script></body></html>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;title&gt;iOS and Js&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">    &lt;style type="text/</span>css<span class="string">"&gt;</span></span><br><span class="line"><span class="string">      * &#123;</span></span><br><span class="line"><span class="string">        font-size: 40px;</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    &lt;/style&gt;</span></span><br><span class="line"><span class="string">  &lt;/head&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  &lt;body&gt;</span></span><br><span class="line"><span class="string">    &lt;div style="</span>margin-top: <span class="number">100</span>px<span class="string">"&gt;</span></span><br><span class="line"><span class="string">      &lt;h1&gt;Test how to use objective-c call js&lt;/h1&gt;&lt;br/&gt;</span></span><br><span class="line"><span class="string">      &lt;div&gt;&lt;input type="</span>button<span class="string">" value="</span>call js alert<span class="string">" onclick="</span>callJsAlert()<span class="string">"&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="string">      &lt;br/&gt;</span></span><br><span class="line"><span class="string">      &lt;div&gt;&lt;input type="</span>button<span class="string">" value="</span>Call js confirm<span class="string">" onclick="</span>callJsConfirm()<span class="string">"&gt;&lt;/div&gt;&lt;br/&gt;</span></span><br><span class="line"><span class="string">    &lt;/div&gt;</span></span><br><span class="line"><span class="string">    &lt;br/&gt;</span></span><br><span class="line"><span class="string">    &lt;div&gt;</span></span><br><span class="line"><span class="string">      &lt;div&gt;&lt;input type="</span>button<span class="string">" value="</span>Call Js prompt <span class="string">" onclick="</span>callJsInput()<span class="string">"&gt;&lt;/div&gt;&lt;br/&gt;</span></span><br><span class="line"><span class="string">      &lt;div&gt;Click me here: &lt;a href="</span>http:<span class="comment">//www.baidu.com"&gt;Jump to Baidu&lt;/a&gt;&lt;/div&gt;</span></span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">    &lt;br/</span>&gt;</span><br><span class="line">    &lt;div id=<span class="string">"SwiftDiv"</span>&gt;</span><br><span class="line">      &lt;span id=<span class="string">"jsParamFuncSpan"</span> style=<span class="string">"color: red; font-size: 50px;"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">    &lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">      function callJsAlert() &#123;</span></span><br><span class="line"><span class="string">        alert('Objective-C call js to show alert');</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        window.webkit.messageHandlers.AppModel.postMessage(&#123;body: 'call js alert in js'&#125;);</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    function callJsConfirm() &#123;</span></span><br><span class="line"><span class="string">      if (confirm('confirm', 'Objective-C call js to show confirm')) &#123;</span></span><br><span class="line"><span class="string">        document.getElementById('jsParamFuncSpan').innerHTML = 'true';</span></span><br><span class="line"><span class="string">      &#125; else &#123;</span></span><br><span class="line"><span class="string">        document.getElementById('jsParamFuncSpan').innerHTML = 'false';</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">      // AppModel是我们所注入的对象</span></span><br><span class="line"><span class="string">      window.webkit.messageHandlers.AppModel.postMessage(&#123;body: 'call js confirm in js'&#125;);</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    function callJsInput() &#123;</span></span><br><span class="line"><span class="string">      var response = prompt('Hello', 'Please input your name:');</span></span><br><span class="line"><span class="string">      document.getElementById('jsParamFuncSpan').innerHTML = response; </span></span><br><span class="line"><span class="string">       // AppModel是我们所注入的对象</span></span><br><span class="line"><span class="string">      window.webkit.messageHandlers.AppModel.postMessage(&#123;body: response&#125;);</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">   &lt;/script&gt;</span></span><br><span class="line"><span class="string">  &lt;/body&gt;</span></span><br><span class="line"><span class="string">&lt;/html&gt;</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://Alexzzn.github.io/2018/07/18/iOS/WKWebView/" data-id="cjjs8z6kx005j6p53gto62bgi" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+ <script src="/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>推荐文章</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
+
+    
+<nav id="article-nav">
+  
+    <a href="/2018/07/18/iOS/BASH小结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          BASH小结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/07/18/iOS/ruby安装错误总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">ruby安装错误总结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+       
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+       
+      
+      
+  </div>
+ 
+  
+
+</section>
+           
+    <aside id="sidebar">
+  
+    
+
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#WKNavigationDelegate"><span class="toc-number">1.</span> <span class="toc-text">WKNavigationDelegate</span></a></li></ol>
+          </div>
+      </div>
+    </div>
+
+  
+    
+
+  
+    
+  
+    
+  
+    
+
+  
+    
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2014 - 2018 zzn&nbsp;|&nbsp;
+      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+    </div>
+     <div id="footer-right">
+      联系方式&nbsp;|&nbsp;youemail@outlook.com
+    </div>
+  </div>
+</footer>
+ <script src="/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+  
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "e2fb4051c49842688ce669e634bc983f",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+    
+
+  
+
+
+
+
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+ <script src="/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/elevator.js"></script>
+  </div>
+</body>
+</html>
